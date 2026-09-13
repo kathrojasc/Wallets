@@ -24,6 +24,27 @@ Gestores de local en Perú (cafeterías, restaurantes, gimnasios, spas, retail d
 - **Estadísticas** (foco principal de las últimas iteraciones): ver más abajo.
 - **Configuración:** datos del negocio; **Plan y facturación** (movido aquí desde el menú); reglas; eliminar cuenta.
 - **Planes y checkout:** Free / Starter / Growth; el checkout activa el plan y actualiza toda la app (`window.__setPlan`, `localStorage w2_plan`).
+- **Locales (multi-local):** gateado a Growth — nav item oculto en Free/Starter, acceso directo a `locales`/`crearLocal`/`localDetail` redirige a Planes con toast. Reactivo a `window.__setPlan`.
+- **Sistema de Insights:** ver sección propia más abajo.
+- **Top clientes por frecuencia (Inicio):** tabla nueva, gateada a Starter, conectada a la misma fuente de datos que "Mis clientes" (`window.__clients`) — ver sección de Insights.
+
+### Sistema de Insights
+
+9 insights mockeados en 6 pantallas (Inicio ×4, Mis clientes, Notificaciones, Locales, Detalle de tarjeta, Detalle de local), auditados contra la hoja "Insights del Gestor" del Excel de referencia (`Dashboard_Final_v15.xlsx`) y corregidos para que su umbral/copy coincida con su ficha:
+
+| Insight | Pantalla | Ficha | Plan |
+|---|---|---|---|
+| "20 clientes a 1 sello del premio" | Inicio (hero + top insights) | #5 | Free |
+| "12 clientes están a 1 sello del premio" | Detalle de tarjeta | #5 | Free |
+| "Tus clientes del programa visitan más seguido" | Mis clientes | #2 | Free |
+| "38 clientes llevan +21 días sin volver" | Notificaciones | #3 | Free |
+| "La tasa de canje bajó 12 pts" | Inicio | #8 | Starter |
+| "Los VIP crecieron +18%" | Inicio | #13 | Starter |
+| "14 membresías vencen esta semana" | Inicio | indicador #10 | Starter |
+| "Barranco tiene 20 pts menos de retención" | Locales | #16 | Growth |
+| Insight dinámico de retención | Detalle de local | #16 | Growth |
+
+Mecanismo: cada bloque de insight lleva `class="ins-gate" data-tier="free|starter|growth"`; se muestra/oculta con la misma escala `RANK` que ya usa Estadísticas (no es un mecanismo paralelo). Free ve 4/9, Starter 7/9 (acumulativo), Growth 9/9.
 
 ### Estadísticas (detalle)
 
@@ -182,8 +203,8 @@ Escritorio primero; el panel de gestión colapsa el sidebar y apila el panel lat
 Base para el gating de Estadísticas. **No cambiar sin revisar el Excel.**
 
 - **FREE:** Tarjetas entregadas, Clientes activos (30 días), Frecuencia de visita, Clientes nuevos vs. que vuelven, Premios y canjes (canjes + tasa de canje), Altas menos bajas de tarjetas, Membresías activas, Nuevas membresías, Membresías vencidas sin renovar.
-- **STARTER:** Retención ("clientes que vuelven"), Clientes que se están alejando, Días y horas con más visitas, Tipos de cliente (Casual/Habitual/VIP), **Edad y sexo** (demográficos — el Excel los ubica en Starter, no en Growth), Top 10 clientes, Cerca del premio (1–2 sellos), Renovación de membresías, Uso de la membresía (sin uso 30d + frecuencia), Niveles de membresía (distribución/ascensos/cerca de subir), De sellos a membresía (conversión + tiempo de vida).
-- **GROWTH:** Comparar tus locales, Clientes de varios locales / embajadores, Perfiles avanzados (horario, patrón, velocidad de ciclo, ascendente), Dónde viven tus clientes (distrito), Ventas de tus socios / POS (gasto, ingreso atribuible, productos, frecuencia compra vs escaneo — **requiere integración de caja, V2**).
+- **STARTER:** Retención ("clientes que vuelven"), Clientes que se están alejando, Días y horas con más visitas, Tipos de cliente (Casual/Habitual/VIP), **Edad y sexo** (demográficos — el Excel los ubica en Starter, no en Growth), Top 10 clientes (también replicado como tabla "Top clientes por frecuencia" en Inicio, indicador #25), Cerca del premio (1–2 sellos), Renovación de membresías, Uso de la membresía (sin uso 30d + frecuencia), Niveles de membresía (distribución/ascensos/cerca de subir), De sellos a membresía (conversión + tiempo de vida).
+- **GROWTH:** **Todo el módulo "Locales"** (nav, crear/editar/ver local — no solo las comparativas: el Excel clasifica la sección completa como "MULTI-LOCAL — EXCLUSIVO GROWTH", indicadores #43–48), Comparar tus locales, Clientes de varios locales / embajadores, Perfiles avanzados (horario, patrón, velocidad de ciclo, ascendente), Dónde viven tus clientes (distrito), Ventas de tus socios / POS (gasto, ingreso atribuible, productos, frecuencia compra vs escaneo — **requiere integración de caja, V2**).
 
 Las listas de la vista **Planes** están alineadas con este mapeo.
 
@@ -206,6 +227,9 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 - **Componentes que antes eran oscuros sin token** ("Ideas para hoy", toast, botón Starter, App Scanner, wallet toggles) unificados al sistema claro; `.si-badge` reutiliza los mismos tintes que `.badge`.
 - Colores casi-duplicados consolidados a los tokens `--green`/`--blue` (dots de estado, iconos de check, CTA del hero) — se conservan aparte los colores que son **elección de marca del gestor** (paleta de la tarjeta/local), que no son duplicados sino opciones reales.
 - Inter empaquetada localmente (`assets/fonts/`), sin dependencia del CDN.
+- **Locales gateado a Growth**: nav oculto en Free/Starter; `go()` intercepta accesos directos a `locales`/`crearLocal`/`localDetail` y redirige a Planes con toast.
+- **Sistema de Insights auditado contra el Excel**: 9 insights en 6 pantallas, copy/umbral corregido donde no coincidía con su ficha, gateados por plan (`.ins-gate` + `data-tier`, misma escala que Estadísticas). Ver sección "Sistema de Insights".
+- **Top clientes por frecuencia** nuevo en Inicio, gateado a Starter, conectado a `window.__clients` (mismo array que "Mis clientes") y reactivo a las reglas de perfil vía `window.__refreshTopClientesHome`.
 
 ### IN PROGRESS
 - Ajustes finos de contenido/copy de indicadores según feedback iterativo.
@@ -226,6 +250,9 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 - `window.__setPlan` y el gating por `data-tier` (free/starter/growth).
 - El mapeo indicador → plan de la sección anterior (deriva del Excel del cliente).
 - Lenguaje llano de la UI (no reintroducir jerga).
+- `.ins-gate` + `data-tier` en bloques de insight (9 instancias, ver "Sistema de Insights") y el `NAV_GATE` de `locales`/`crearLocal`/`localDetail` a Growth — ambos vivos en la misma IIFE ("Gating por plan fuera de Estadísticas").
+- `window.__clients` (referencia al array de "Mis clientes", no copiar) y `window.__refreshTopClientesHome` (hook que el motor de reglas de perfil llama en `applyToClients`) — la tabla de Inicio depende de ambos.
+- Los umbrales/copy de las 9 fichas de insight documentadas: derivan de `Dashboard_Final_v15.xlsx` → hoja "Insights del Gestor". No cambiar sin revisar esa hoja.
 
 ---
 
@@ -246,3 +273,6 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 | Mini-preview de "Mis tarjetas" sin progreso simulado | El progreso (ej. "6/10 sellos") daba la impresión de ser el avance personal del gestor, no la estructura del programa | Etiqueta "Vista previa" manteniendo el progreso de ejemplo | No mostrar sellos/usos rellenos en la grilla de administración; el progreso real de un cliente vive en su propia tarjeta/drawer |
 | Drawer de cliente en 2 columnas (900px) | A 490px mezclaba billetera + datos en una sola columna larga | Mantener una columna angosta | No volver a una sola columna en desktop |
 | Inter empaquetada localmente | Quitar la dependencia de red del CDN de Google Fonts | Mantener el `<link>` a fonts.googleapis.com | No reintroducir el `<link>` al CDN sin acordarlo |
+| Módulo "Locales" gateado a Growth | El Excel clasifica todo multi-local como exclusivo Growth (indicadores #43–48); el módulo existía sin restricción | Gatear solo las comparativas y dejar el CRUD de locales libre | No abrir Locales a Free/Starter sin revisar el Excel |
+| Insights corregidos y gateados por plan | Umbrales/copy no coincidían con sus fichas del Excel (7pts vs. >10pts, rango "1-2" vs. "exactamente 1", 30 días vs. 21 días de la ficha); ninguno tenía gating | Dejar el copy como estaba y solo gatear; o corregir copy sin gating | No cambiar un umbral de insight sin confirmarlo contra la hoja "Insights del Gestor" |
+| "Top clientes por frecuencia" construido en Inicio | La documentación describía una tabla que no existía en el código; se decidió construirla en vez de solo corregir la doc | Solo corregir el known issue en la documentación | No duplicar el dataset de clientes — debe leer `window.__clients` |

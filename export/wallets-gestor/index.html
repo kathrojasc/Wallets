@@ -428,7 +428,7 @@
         <div class="hero" id="hero">
           <div class="hero-content">
             <span class="hero-kicker"><span class="hero-dot"></span>Insight del día · Hoy</span>
-            <h2 class="hero-title">20 clientes están a 1–2 sellos de ganar su premio</h2>
+            <h2 class="hero-title">20 clientes están a 1 sello de ganar su premio</h2>
             <p class="hero-desc">Históricamente vuelven dentro de 3 días tras un recordatorio. Envíales un push hoy y podrías cerrar <strong>~14 canjes</strong> esta semana.</p>
             <div class="hero-actions">
               <button class="hero-cta" data-goto="estadisticas">Activar push ahora<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
@@ -500,10 +500,10 @@
           <div class="in-card">
             <div class="in-card-head"><h3>Top insights</h3><button class="link sm" data-goto="estadisticas">Ver todos</button></div>
             <ul class="insight-list">
-              <li><span class="badge alerta">Alerta</span><div class="il-txt"><h4>La tasa de canje bajó 7 pts este mes</h4><p>74 tarjetas completadas y 31 sin canjear — S/372 en premios pendientes.</p></div></li>
-              <li><span class="badge oport">Oportunidad</span><div class="il-txt"><h4>20 clientes a 1–2 sellos del premio</h4><p>Suelen volver 3 días después de recibir un push personalizado.</p></div></li>
-              <li><span class="badge tend">Tendencia</span><div class="il-txt"><h4>Los VIP crecieron +18% — 7 nuevos</h4><p>47 VIP vs. 40 el mes pasado; 7 subieron desde Habitual.</p></div></li>
-              <li><span class="badge memb">Membresías</span><div class="il-txt"><h4>14 membresías vencen esta semana</h4><p>Renueva a tiempo: S/1.246 en cuotas en riesgo si no avisas a los socios.</p></div></li>
+              <li class="ins-gate" data-tier="starter"><span class="badge alerta">Alerta</span><div class="il-txt"><h4>La tasa de canje bajó 12 pts este mes</h4><p>74 tarjetas completadas y 31 sin canjear — S/372 en premios pendientes.</p></div></li>
+              <li class="ins-gate" data-tier="free"><span class="badge oport">Oportunidad</span><div class="il-txt"><h4>20 clientes a 1 sello del premio</h4><p>Suelen volver 3 días después de recibir un push personalizado.</p></div></li>
+              <li class="ins-gate" data-tier="starter"><span class="badge tend">Tendencia</span><div class="il-txt"><h4>Los VIP crecieron +18% — 7 nuevos</h4><p>47 VIP vs. 40 el mes pasado; 7 subieron desde Habitual.</p></div></li>
+              <li class="ins-gate" data-tier="starter"><span class="badge memb">Membresías</span><div class="il-txt"><h4>14 membresías vencen esta semana</h4><p>Renueva a tiempo: S/1.246 en cuotas en riesgo si no avisas a los socios.</p></div></li>
             </ul>
           </div>
           <div class="in-card">
@@ -526,6 +526,17 @@
               </li>
             </ul>
           </div>
+        </div>
+
+        <div class="card tbl-card sec-data ins-gate" data-tier="starter" style="margin-top:24px">
+          <div class="tbl-head">
+            <h4>Top clientes por frecuencia</h4>
+            <span class="meta">Los 5 que más visitan — se actualiza con tus reglas de perfil</span>
+          </div>
+          <table class="cli-table">
+            <thead><tr><th>Cliente</th><th>Perfil</th><th>Frecuencia</th><th>Última visita</th></tr></thead>
+            <tbody id="homeTopClientsBody"></tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -673,7 +684,7 @@
         <button class="btn-accent js-new-local" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear local</button>
       </div>
       <div class="wrap">
-        <div class="loc-insight">
+        <div class="loc-insight ins-gate" data-tier="growth">
           <div class="ci-txt">
             <span class="ci-kicker"><span class="hero-dot"></span>Insight detectado</span>
             <h4>Barranco tiene 20 pts menos de retención que Miraflores</h4>
@@ -734,11 +745,11 @@
           <button class="btn-ghost es-cta" data-goto="tarjetas">Ir a Mis tarjetas →</button>
         </div>
         <div class="cli-widgets sec-data">
-          <div class="cli-insight">
+          <div class="cli-insight ins-gate" data-tier="free">
             <div class="ci-txt">
               <span class="ci-kicker"><span class="hero-dot"></span>Insight de comportamiento</span>
-              <h4>El 67% vuelve dentro de 14 días</h4>
-              <p>Tus clientes habituales repiten cada 11 días en promedio. <strong>Sugerencia:</strong> envía un recordatorio al día 9 para adelantar su próxima visita.</p>
+              <h4>Tus clientes del programa visitan más seguido</h4>
+              <p>Frecuencia promedio: 2.8 visitas/mes este período vs. 2.3 hace 60 días — un +22%. <strong>Sugerencia:</strong> identifica a los 5 clientes con mayor salto de frecuencia y envíales un sello extra de agradecimiento.</p>
             </div>
             <div class="ci-art" aria-hidden="true">
               <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -843,10 +854,10 @@
           <button class="btn-accent es-cta js-new-notif" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear notificación</button>
         </div>
         <div class="nt-widgets sec-data" style="margin-bottom:24px">
-          <div class="nt-insight">
+          <div class="nt-insight ins-gate" data-tier="free">
             <div class="ci-txt">
               <span class="ci-kicker"><span class="hero-dot"></span>Insight detectado</span>
-              <h4>38 clientes llevan +30 días sin volver</h4>
+              <h4>38 clientes llevan +21 días sin volver</h4>
               <p><strong>Sugerencia:</strong> envía un push de reactivación con un beneficio. Suelen recuperar el 22% en 7 días.</p>
               <button class="nt-insight-cta js-new-notif">Crear notificación de reactivación →</button>
             </div>
@@ -1292,7 +1303,7 @@
   <div class="cd-body">
     <div class="cd-panel active" data-panel="resumen">
       <div class="cd-top">
-        <div class="cd-insight">
+        <div class="cd-insight ins-gate" data-tier="free">
           <div class="ci-txt">
             <span class="ci-kicker"><span class="hero-dot"></span>Acción recomendada</span>
             <h4 id="cdInsightTitle">12 clientes están a 1 sello del premio</h4>
@@ -1440,7 +1451,7 @@
   <div class="cd-body locd-scroll">
     <div class="cd-inner">
     <div class="cd-top">
-      <div class="cd-insight">
+      <div class="cd-insight ins-gate" data-tier="growth">
         <div class="ci-txt">
           <span class="ci-kicker"><span class="hero-dot"></span>Insight del local</span>
           <h4 id="locdInsightTitle">La retención está por debajo del promedio de la red</h4>
@@ -2166,6 +2177,46 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
   window.__setPlan=function(p){ if(!(p in RANK))return; PLAN=p; try{localStorage.setItem('w2_plan',p);}catch(e){} reflectPlan(); renderStats(); };
   if(seg) seg.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;kind=b.dataset.kind;[...seg.children].forEach(x=>x.classList.toggle('on',x===b));renderStats();});
   reflectPlan(); renderStats();
+})();
+/* ===== Gating por plan fuera de Estadísticas: nav "Locales" + Insights ===== */
+/* Reutiliza el mismo atributo data-tier y la misma escala Free<Starter<Growth
+   que ya usa Estadísticas, en vez de inventar un mecanismo paralelo. */
+(function(){
+  const RANK={free:0,starter:1,growth:2};
+  let PLAN='free'; try{PLAN=localStorage.getItem('w2_plan')||'free';}catch(e){}
+  if(!(PLAN in RANK)) PLAN='free';
+  const NAV_GATE={locales:'growth',crearLocal:'growth',localDetail:'growth'};
+
+  function applyGating(){
+    const pr=RANK[PLAN];
+    document.querySelectorAll('.nav-item[data-view]').forEach(n=>{
+      const need=NAV_GATE[n.dataset.view];
+      n.style.display=(need && RANK[need]>pr)?'none':'';
+    });
+    document.querySelectorAll('.ins-gate[data-tier]').forEach(el=>{
+      el.style.display=(RANK[el.dataset.tier||'free']<=pr)?'':'none';
+    });
+  }
+
+  const realGo=window.go;
+  window.go=function(name){
+    const need=NAV_GATE[name];
+    if(need && RANK[need]>RANK[PLAN]){
+      realGo('planes');
+      let t=document.querySelector('.in-toast');if(!t){t=document.createElement('div');t.className='in-toast';document.body.appendChild(t);}
+      t.textContent='La gestión de locales está disponible en el plan Growth';t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2600);
+      return;
+    }
+    return realGo(name);
+  };
+
+  const realSetPlan=window.__setPlan;
+  window.__setPlan=function(p){
+    if(realSetPlan) realSetPlan(p);
+    if(p in RANK) PLAN=p;
+    applyGating();
+  };
+  applyGating();
 })();
 // Siempre abrir en Inicio al cargar
 document.body.classList.remove('empty-mode');
@@ -3409,6 +3460,22 @@ document.querySelectorAll('#range button').forEach(b=>{
     c.history=buildHistory(c);
   });
   clients[0].bdayToday=true;
+  window.__clients=clients;
+  function renderTopClientesHome(){
+    const tb=document.getElementById('homeTopClientsBody'); if(!tb) return;
+    const top5=[...clients].sort((a,b)=>(b.vpm||0)-(a.vpm||0)).slice(0,5);
+    tb.innerHTML=top5.map(c=>'<tr data-id="'+c.id+'">'+
+      '<td><button class="cli-name">'+c.n+'</button></td>'+
+      '<td><span class="'+pillClass(c.profile)+'">'+c.profile+'</span></td>'+
+      '<td>'+(c.vpm||0)+' visitas/mes</td>'+
+      '<td style="color:var(--ink-soft)">'+c.last+'</td></tr>').join('');
+  }
+  window.__refreshTopClientesHome=renderTopClientesHome;
+  document.getElementById('homeTopClientsBody')?.addEventListener('click',e=>{
+    const btn=e.target.closest('.cli-name'); if(!btn) return;
+    const tr=e.target.closest('tr'); const c=clients.find(x=>x.id==tr.dataset.id);
+    if(c && window.__openDrawer) window.__openDrawer(c);
+  });
   // historial ÚNICO y consolidado: cada entrada referencia su tarjeta + quién operó (staff vs admin)
   function buildHistory(c){
     const h=[{card:c.cards[0].key,t:'Cliente registrado',d:c.since,by:c.staff,role:'staff'}];
@@ -3455,9 +3522,9 @@ document.querySelectorAll('#range button').forEach(b=>{
     if(cardFilter) list=list.filter(c=>c.cards.some(x=>x.key===cardFilter));
     if(qq) list=list.filter(c=>c.n.toLowerCase().includes(qq)||c.email.toLowerCase().includes(qq));
     render(list);
-    const meta=document.querySelector('.cli-table').closest('.tbl-card').querySelector('.tbl-head .meta');
+    const meta=body.closest('.tbl-card').querySelector('.tbl-head .meta');
     if(meta) meta.textContent=cardFilter?(list.length+' clientes con '+cards[cardFilter].name):(clients.length+' registrados al instalar una tarjeta');
-    const ttl=document.querySelector('.cli-table').closest('.tbl-card').querySelector('.tbl-head h4');
+    const ttl=body.closest('.tbl-card').querySelector('.tbl-head h4');
     if(ttl) ttl.textContent=cardFilter?('Clientes · '+cards[cardFilter].name):'Todos los clientes';
     // refleja en el dropdown de Tarjeta
     const dd=document.querySelector('.filterbar [data-dd="tarjeta"] .val');
@@ -3476,7 +3543,7 @@ document.querySelectorAll('#range button').forEach(b=>{
     try{const s=JSON.parse(localStorage.getItem('w2_prof_rules')||'null'); if(s)rules=Object.assign({},DEF,s);}catch(e){}
     const el={vip:document.getElementById('ruleVip'),hab:document.getElementById('ruleHab'),cas:document.getElementById('ruleCas'),riesgo:document.getElementById('ruleRiesgo')};
     function classify(c,r){ if(c.recDays>r.riesgo)return 'En riesgo'; if(c.vpm>=r.vip)return 'VIP'; if(c.vpm>=r.hab)return 'Habitual'; return 'Casual'; }
-    function applyToClients(r){ clients.forEach(c=>{ c.profile=classify(c,r); }); }
+    function applyToClients(r){ clients.forEach(c=>{ c.profile=classify(c,r); }); if(window.__refreshTopClientesHome) window.__refreshTopClientesHome(); }
     function setInputs(r){ el.vip.value=r.vip; el.hab.value=r.hab; el.cas.value=r.cas; el.riesgo.value=r.riesgo; }
     function readInputs(){ return {vip:+el.vip.value||DEF.vip, hab:+el.hab.value||DEF.hab, cas:+el.cas.value||DEF.cas, riesgo:+el.riesgo.value||DEF.riesgo}; }
     function valid(r){ return r.vip>r.hab && r.hab>r.cas && r.cas>=1 && r.riesgo>=1; }

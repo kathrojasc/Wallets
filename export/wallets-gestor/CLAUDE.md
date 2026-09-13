@@ -16,12 +16,13 @@ Es un **prototipo de alta fidelidad**, no un producto con backend. Data mock, si
 ## Arquitectura
 
 - **SPA sin framework.** Un único `index.html` contiene el HTML de **todas** las vistas y **todo** el JavaScript (inline, en `<script>` al final del body). No hay bundler de módulos ni router.
-- **Vistas:** cada pantalla es `<section class="view" data-view="NOMBRE">`. Se muestran/ocultan con la función global **`go('NOMBRE')`** que alterna la clase `.active`. Vistas existentes: `inicio`, `estadisticas`, `clientes`, `tarjetas`, `crear`, `crearTipo`, `notificaciones`, `scanner`, `config`, `planes`, `checkout` (+ pantallas de auth/onboarding y varios modales).
+- **Vistas:** cada pantalla es `<section class="view" data-view="NOMBRE">`. Se muestran/ocultan con la función global **`go('NOMBRE')`** que alterna la clase `.active`. Vistas existentes: `inicio`, `estadisticas`, `clientes`, `tarjetas`, `crear`, `crearTipo`, `notificaciones`, `scanner`, `config`, `planes`, `checkout`, `locales`, `crearLocal`, `localDetail` (las 3 últimas gateadas a Growth) (+ pantallas de auth/onboarding y varios modales).
 - **Navegación:** los items con `data-view` o `data-goto` llaman a `go()`. El sidebar izquierdo (`.nav-item`) cambia de vista.
 - **Estado:** en memoria (arrays JS mock) + `localStorage` para lo persistente:
   - `w2_plan` → plan actual: `free` | `starter` | `growth`.
   - `w2_prof_rules` → reglas de perfilado de clientes (VIP/Habitual/Casual/En riesgo) configuradas en "Mis clientes".
   - `w2_scan_insight_min` → si el insight de App Scanner está minimizado.
+  - `w2_cards_view` → vista de "Mis tarjetas": `grid` | `list`.
 - **Estilos:** `assets/styles.css`. Tokens de diseño en `:root` (colores, radio, sombra, ancho máx.). Todos los íconos son **SVG inline** o `data:` URIs en el CSS; no hay librería de íconos.
 
 ## Tecnologías
