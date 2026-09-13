@@ -77,14 +77,12 @@ Gestores de local en Perú (cafeterías, restaurantes, gimnasios, spas, retail d
 ## Restricciones
 
 - Sin backend ni datos reales (todo mock e intencional).
-- Requiere internet para la fuente Inter (CDN). Sin conexión, cae a system-ui.
+- Inter está empaquetada localmente (`assets/fonts/inter-latin-variable.woff2`); no depende del CDN de Google Fonts.
 - Pensado para navegadores modernos.
 
 ## Problemas conocidos (KNOWN ISSUES)
 
-- La tabla "top clientes" del **dashboard de Inicio** es estática y no se recalcula con las reglas de perfil (solo la de "Mis clientes" reacciona).
 - Los **datos de las listas de detalle** (drill-down) son de ejemplo curado, no derivan de un único dataset central.
-- La fuente Inter depende del CDN de Google (sin fallback local empaquetado).
 - No hay pruebas automatizadas.
 
 ## Deuda técnica
@@ -97,15 +95,16 @@ Gestores de local en Perú (cafeterías, restaurantes, gimnasios, spas, retail d
 
 1. Conectar los indicadores y listas a datos reales (definir el modelo de datos: cliente, escaneo, tarjeta, membresía, local, scanner).
 2. Backend + auth reales.
-3. Hacer que la tabla de "top clientes" de Inicio use las reglas de perfil.
-4. Empaquetar Inter localmente para offline.
-5. (Opcional) Migración por vistas a React/Vue conservando el sistema de diseño.
+3. Pruebas automatizadas (hoy no hay ninguna).
+4. (Opcional) Migración por vistas a React/Vue conservando el sistema de diseño.
 
 ---
 
 ## Sistema de diseño
 
 Los valores viven en `:root` de `assets/styles.css` (primeras ~28 líneas) salvo que se indique otra cosa.
+
+> Existe además un **design system formal** (Foundations, Components, Patterns, Rules) publicado como canvas de Claude Design a partir de este CSS/HTML: https://claude.ai/code/artifact/ac42707f-883d-4091-bf54-fd7586c41f13 — si el enlace ya no es accesible, se puede regenerar siguiendo esta misma sección + `CLAUDE.md`.
 
 ### Colores (HEX)
 
@@ -201,20 +200,23 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 - App Scanner con cuentas de staff en tabla + insight minimizable.
 - Reglas de perfil de cliente configurables y persistentes.
 - Facturación integrada en Configuración; nombres de plan unificados Free/Starter/Growth.
+- **Design system formalizado** en un canvas de Claude Design (Foundations/Components/Patterns/Rules), extraído fielmente de `assets/styles.css`/`index.html` — ver enlace en la sección "Sistema de diseño" más abajo.
+- **Mis tarjetas:** mini-preview sin progreso simulado (regla fija "N sellos → premio" en vez de "X/10"), dato real de clientes/socios por tarjeta (`.lc-stat`), alturas parejas entre tarjetas, toggle grilla/lista (`w2_cards_view`) reutilizando `.scanner-table`.
+- **Drawer de cliente** (`#cliDrawer`) en dos columnas (900px): billetera a la izquierda, datos/historial a la derecha.
+- **Componentes que antes eran oscuros sin token** ("Ideas para hoy", toast, botón Starter, App Scanner, wallet toggles) unificados al sistema claro; `.si-badge` reutiliza los mismos tintes que `.badge`.
+- Colores casi-duplicados consolidados a los tokens `--green`/`--blue` (dots de estado, iconos de check, CTA del hero) — se conservan aparte los colores que son **elección de marca del gestor** (paleta de la tarjeta/local), que no son duplicados sino opciones reales.
+- Inter empaquetada localmente (`assets/fonts/`), sin dependencia del CDN.
 
 ### IN PROGRESS
 - Ajustes finos de contenido/copy de indicadores según feedback iterativo.
 
 ### TODO
 - Conectar a datos reales (modelo de datos + backend + auth).
-- Recalcular la tabla "top clientes" de Inicio con las reglas de perfil.
-- Empaquetar Inter localmente (offline).
+- Pruebas automatizadas.
 - (Opcional) Migración por vistas a un framework.
 
 ### KNOWN ISSUES
-- Tabla "top clientes" de Inicio no reacciona a las reglas de perfil.
 - Datos de drill-down son mock curado, no derivan de un dataset único.
-- Dependencia del CDN de Google Fonts para Inter.
 - Sin tests.
 
 ### DO NOT CHANGE WITHOUT REVIEW
@@ -240,3 +242,7 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 | App Scanner = cuentas usuario/contraseña en tabla | Modelo de staff pedido por el usuario; formato lista | Dispositivos por código de vinculación; cards | Mantener tabla y credenciales |
 | Reglas de perfil configurables | Coherencia del dato "Perfil" en toda la app | Perfiles fijos por umbrales hardcodeados | No hardcodear los umbrales |
 | Nombres de plan Free/Starter/Growth | Unificar con el lenguaje del usuario y el Excel | Free/Pro/Business (inconsistente) | No renombrar los planes |
+| Componentes oscuros pasados a claro (Ideas para hoy, toast, botón Starter, etc.) | No tenían token propio y rompían la coherencia con el resto de la app (100% clara) | Formalizar un token "superficie oscura" y dejarlos así | No reintroducir fondos oscuros sin token en componentes nuevos |
+| Mini-preview de "Mis tarjetas" sin progreso simulado | El progreso (ej. "6/10 sellos") daba la impresión de ser el avance personal del gestor, no la estructura del programa | Etiqueta "Vista previa" manteniendo el progreso de ejemplo | No mostrar sellos/usos rellenos en la grilla de administración; el progreso real de un cliente vive en su propia tarjeta/drawer |
+| Drawer de cliente en 2 columnas (900px) | A 490px mezclaba billetera + datos en una sola columna larga | Mantener una columna angosta | No volver a una sola columna en desktop |
+| Inter empaquetada localmente | Quitar la dependencia de red del CDN de Google Fonts | Mantener el `<link>` a fonts.googleapis.com | No reintroducir el `<link>` al CDN sin acordarlo |

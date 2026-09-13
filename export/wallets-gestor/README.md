@@ -8,7 +8,7 @@ Prototipo hi-fi (alta fidelidad) de un panel web para gestores de local que admi
 
 - **Node.js 18+** (solo para el servidor de desarrollo; la app en sí no requiere build).
 - Un navegador moderno (Chrome, Edge, Safari, Firefox).
-- Conexión a internet la primera vez (la tipografía **Inter** se carga desde Google Fonts vía CDN).
+- No requiere internet: la tipografía **Inter** está empaquetada localmente en `assets/fonts/`.
 
 ## Instalación
 
@@ -49,7 +49,8 @@ wallets-gestor/
 ├── index.html            # La app completa: HTML de todas las vistas + TODO el JavaScript (inline)
 ├── assets/
 │   ├── styles.css        # Sistema de diseño + estilos de todas las vistas (tokens en :root)
-│   └── avatar.jpg        # Foto del usuario del panel (esquina inferior del sidebar)
+│   ├── avatar.jpg        # Foto del usuario del panel (esquina inferior del sidebar)
+│   └── fonts/            # Inter empaquetada localmente (variable, subset latin)
 ├── package.json          # Scripts de dev/build con Vite
 ├── .gitignore
 ├── README.md             # Este archivo

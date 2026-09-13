@@ -27,7 +27,7 @@ Es un **prototipo de alta fidelidad**, no un producto con backend. Data mock, si
 ## Tecnologías
 
 - HTML5, CSS3 (custom properties, grid, flex), JavaScript ES2019+ vanilla.
-- Tipografía **Inter** vía Google Fonts CDN.
+- Tipografía **Inter**, empaquetada localmente en `assets/fonts/` (sin CDN).
 - **Vite** solo como servidor de desarrollo / build de sitio estático (no hay framework).
 
 ## Cómo ejecutar
