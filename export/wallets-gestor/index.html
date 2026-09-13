@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wallets — Estadísticas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -2759,12 +2756,13 @@ function cardArticleHTML(d){
     const exp=d.expiry||'Sin caducidad';
     foot='Membresía ilimitada · '+(/sin/i.test(exp)?'sin caducidad':'vence en '+exp);
   } else {
-    const stamps=Array.from({length:d.stamps||0}).map(()=>'<i></i>').join('');
-    mid='<div class="mini-stamps">'+stamps+'</div>';
+    mid='';
     foot= type==='membresia'
-      ? ('0 / '+(d.stamps||0)+' usos · '+(d.service||d.reward||'uso'))
-      : ('0 / '+(d.stamps||0)+' sellos · '+(d.reward||''));
+      ? ((d.stamps||0)+' usos incluidos por membresía')
+      : ((d.stamps||0)+' sellos → '+(d.reward||''));
   }
+  const statLabel=type==='membresia'?'socios activos':'clientes con esta tarjeta';
+  const n=d.clientCount||0;
   return `
       <div class="mini-card flat" style="--bg:${d.bg};--ink:${d.ink}">
         <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo">${d.iconSVG}</span></div>
@@ -2772,6 +2770,7 @@ function cardArticleHTML(d){
         <div class="mini-foot">${foot}</div>
       </div>
       <div class="lc-meta"><div class="lc-title">${d.name}</div><div class="lc-tags">${typeTag}<span class="status"><i></i>Activa</span></div></div>
+      <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>${n} ${statLabel}</div>
       <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>`;
 }
 function setCardData(art,d){
@@ -2808,11 +2807,13 @@ function readCardData(art){
     service: art.dataset.service||art.dataset.reward||'',
     expiry: art.dataset.expiry||'',
     bg: art.dataset.bg||'#7c5cdc', ink: art.dataset.ink||'#fff',
-    iconSVG: (art.querySelector('.mini-logo svg')||{}).outerHTML || ''
+    iconSVG: (art.querySelector('.mini-logo svg')||{}).outerHTML || '',
+    clientCount: parseInt(((art.querySelector('.lc-stat')||{}).textContent||'').match(/\d+/)||0,10)||0
   };
 }
 function addCardEverywhere(d){
   d.filled=0;
+  d.clientCount=0;
   document.body.classList.remove('empty-mode');
   const grid=document.querySelector('.tarjetas-grid');
   if(grid){
@@ -2838,7 +2839,9 @@ function addCardEverywhere(d){
   }
 }
 function updateCardEverywhere(art,d){
-  d.filled=readCardData(art).filled||0;
+  const prev=readCardData(art);
+  d.filled=prev.filled||0;
+  d.clientCount=prev.clientCount||0;
   setCardData(art,d);
   art.innerHTML=cardArticleHTML(d);
 }
