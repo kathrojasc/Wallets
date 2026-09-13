@@ -230,14 +230,17 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 - **Locales gateado a Growth**: nav oculto en Free/Starter; `go()` intercepta accesos directos a `locales`/`crearLocal`/`localDetail` y redirige a Planes con toast.
 - **Sistema de Insights auditado contra el Excel**: 9 insights en 6 pantallas, copy/umbral corregido donde no coincidía con su ficha, gateados por plan (`.ins-gate` + `data-tier`, misma escala que Estadísticas). Ver sección "Sistema de Insights".
 - **Top clientes por frecuencia** nuevo en Inicio, gateado a Starter, conectado a `window.__clients` (mismo array que "Mis clientes") y reactivo a las reglas de perfil vía `window.__refreshTopClientesHome`.
+- **Canal de notificaciones reducido a WhatsApp + SMS** (se quitó Email de `#bdayChannel` y `#ntChannel`, junto con el campo "Asunto" que solo aplicaba a Email) y **scanner con Local obligatorio** (se quitó "Todos los locales" de `#scmLocal`) — corrige las 2 discrepancias detectadas al auditar `PRD-plataforma-fidelizacion.md` contra el código real.
 
 ### IN PROGRESS
 - Ajustes finos de contenido/copy de indicadores según feedback iterativo.
+- **Brecha con `PRD-plataforma-fidelizacion.md`**: fuera de las 2 correcciones ya aplicadas, ese PRD describe funcionalidad que todavía no existe en el código — Flow builder por lenguaje natural (§4.4), feed "Está pasando ahora" (§4.2), pantalla dedicada de Escaneos (§4.3-bis), pantalla de Staff/Permisos multi-local (§4.9), catálogo de tarjeta ampliado (cupones/gift cards/descuentos, §4.3), categorización de insights en accionable/sugerencia/dato-curioso (§4.7). No implementar nada de esto sin que el usuario indique por dónde seguir.
 
 ### TODO
 - Conectar a datos reales (modelo de datos + backend + auth).
 - Pruebas automatizadas.
 - (Opcional) Migración por vistas a un framework.
+- Ver ítems "Pendiente de resolver" de `PRD-plataforma-fidelizacion.md` §9 (carga de saldo en gift cards, viabilidad de WhatsApp Business API, consentimiento de datos en el formulario de registro, facturación del propio SaaS, comportamiento al bajar de plan con Locales/staff huérfanos) — decisiones del usuario, no asumir una por defecto.
 
 ### KNOWN ISSUES
 - Datos de drill-down son mock curado, no derivan de un dataset único.
@@ -253,6 +256,8 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 - `.ins-gate` + `data-tier` en bloques de insight (9 instancias, ver "Sistema de Insights") y el `NAV_GATE` de `locales`/`crearLocal`/`localDetail` a Growth — ambos vivos en la misma IIFE ("Gating por plan fuera de Estadísticas").
 - `window.__clients` (referencia al array de "Mis clientes", no copiar) y `window.__refreshTopClientesHome` (hook que el motor de reglas de perfil llama en `applyToClients`) — la tabla de Inicio depende de ambos.
 - Los umbrales/copy de las 9 fichas de insight documentadas: derivan de `Dashboard_Final_v15.xlsx` → hoja "Insights del Gestor". No cambiar sin revisar esa hoja.
+- Canales de notificación limitados a WhatsApp/SMS (`#bdayChannel`, `#ntChannel`) por decisión de `PRD-plataforma-fidelizacion.md` §9 — no reintroducir Email ni el campo "Asunto".
+- `#scmLocal` sin opción "Todos los locales" — cada scanner debe tener un Local específico para que las comparativas por sede de Growth sean confiables.
 
 ---
 
@@ -276,3 +281,5 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 | Módulo "Locales" gateado a Growth | El Excel clasifica todo multi-local como exclusivo Growth (indicadores #43–48); el módulo existía sin restricción | Gatear solo las comparativas y dejar el CRUD de locales libre | No abrir Locales a Free/Starter sin revisar el Excel |
 | Insights corregidos y gateados por plan | Umbrales/copy no coincidían con sus fichas del Excel (7pts vs. >10pts, rango "1-2" vs. "exactamente 1", 30 días vs. 21 días de la ficha); ninguno tenía gating | Dejar el copy como estaba y solo gatear; o corregir copy sin gating | No cambiar un umbral de insight sin confirmarlo contra la hoja "Insights del Gestor" |
 | "Top clientes por frecuencia" construido en Inicio | La documentación describía una tabla que no existía en el código; se decidió construirla en vez de solo corregir la doc | Solo corregir el known issue en la documentación | No duplicar el dataset de clientes — debe leer `window.__clients` |
+| Canal de notificaciones reducido a WhatsApp + SMS | `PRD-plataforma-fidelizacion.md` (sección 9) decide "WhatsApp y SMS" como únicos canales; el código tenía Email como canal (con "Asunto" propio) en `#bdayChannel` y `#ntChannel` | Mantener Email como tercer canal | No reintroducir el botón "Email" ni el campo "Asunto" (`#ntSubjectWrap`) en los selectores de canal |
+| Scanner con Local obligatorio (sin "Todos los locales") | El PRD maestro requiere que cada scanner esté atado a un Local específico para que las comparativas por sede de Growth sean confiables; `#scmLocal` tenía la opción "Todos los locales" | Dejar la opción "Todos los locales" para scanners multi-sede | No volver a agregar una opción "todos los locales" a `#scmLocal`; cada scanner nuevo debe quedar asignado a Miraflores/San Isidro/Barranco (o el Local real que corresponda) |

@@ -1225,7 +1225,6 @@
           <label>¿Por dónde se enviará?</label>
           <div class="chan-row" id="bdayChannel">
             <button type="button" class="chan on" data-chan="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/></svg>WhatsApp</button>
-            <button type="button" class="chan" data-chan="email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 5 8-5"/></svg>Email</button>
             <button type="button" class="chan" data-chan="sms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 3z"/></svg>SMS</button>
           </div>
         </div>
@@ -1582,17 +1581,12 @@
         <div class="form-sec">Canal de envío</div>
         <div class="fld">
           <div class="chan-row" id="ntChannel">
-            <button type="button" class="chan on" data-chan="email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 5 8-5"/></svg>Email</button>
-            <button type="button" class="chan" data-chan="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/></svg>WhatsApp</button>
+            <button type="button" class="chan on" data-chan="whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.8.8.8-2.7-.2-.3A8 8 0 0 1 12 4z"/></svg>WhatsApp</button>
             <button type="button" class="chan" data-chan="sms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H8l-4 3z"/></svg>SMS</button>
           </div>
         </div>
 
         <div class="form-sec">Mensaje</div>
-        <div class="fld" id="ntSubjectWrap">
-          <label>Asunto del mensaje <span class="req">*</span></label>
-          <input class="input" type="text" id="ntSubject" placeholder="Ej. ¡Te extrañamos en Café Luna!">
-        </div>
         <div class="fld">
           <label>Contenido del mensaje <span class="req">*</span></label>
           <textarea class="textarea" id="ntMsg" placeholder="Ej. ¡Te extrañamos! Vuelve esta semana y te regalamos un café ☕" maxlength="240"></textarea>
@@ -1860,7 +1854,6 @@
             <option value="Miraflores">Miraflores</option>
             <option value="San Isidro">San Isidro</option>
             <option value="Barranco">Barranco</option>
-            <option value="Todos los locales">Todos los locales</option>
           </select>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </div>
@@ -3012,7 +3005,7 @@ function updateCardEverywhere(art,d){
     }
     // right data card
     const data=document.getElementById('cdDataCard');
-    const bdayChanLbl={whatsapp:'WhatsApp',email:'Email',sms:'SMS'}[d.bdayChan]||'WhatsApp';
+    const bdayChanLbl={whatsapp:'WhatsApp',sms:'SMS'}[d.bdayChan]||'WhatsApp';
     const bdayRow=d.bdayOn
       ? '<div class="statline"><span class="k">Saludo de cumpleaños</span><span class="v pos">Activo · '+bdayChanLbl+'</span></div>'
       : '<div class="statline"><span class="k">Saludo de cumpleaños</span><span class="v">Desactivado</span></div>';
@@ -3154,10 +3147,9 @@ function updateCardEverywhere(art,d){
 (function(){
   const view=document.getElementById('notifView'); if(!view) return;
   const msg=document.getElementById('ntMsg'), count=document.getElementById('ntCount');
-  const subjectWrap=document.getElementById('ntSubjectWrap'), subject=document.getElementById('ntSubject');
   const imageWrap=document.getElementById('ntImageWrap');
   const title=document.getElementById('ntViewTitle'), sendBtn=document.getElementById('ntSend');
-  let when='ahora', chan='email', editCard=null;
+  let when='ahora', chan='whatsapp', editCard=null;
   function toast(m){let t=document.querySelector('.in-toast');if(!t){t=document.createElement('div');t.className='in-toast';document.body.appendChild(t);}t.textContent=m;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2200);}
   function open(){view.classList.add('active');document.querySelectorAll('.view').forEach(v=>{if(v!==view)v.classList.remove('active')});window.scrollTo(0,0);}
   function back(){go('notificaciones');}
@@ -3165,15 +3157,14 @@ function updateCardEverywhere(art,d){
   function setWhen(w){when=w;view.querySelectorAll('#ntWhen button').forEach(x=>x.classList.toggle('on',x.dataset.when===w));document.getElementById('ntScheduleWrap').style.display=w==='programar'?'':'none';}
   function setChannel(c){
     chan=c; view.querySelectorAll('#ntChannel .chan').forEach(x=>x.classList.toggle('on',x.dataset.chan===c));
-    subjectWrap.style.display = c==='email' ? '' : 'none';      // asunto solo email
-    imageWrap.style.display = (c==='email'||c==='whatsapp') ? '' : 'none'; // imagen email/whatsapp
+    imageWrap.style.display = c==='whatsapp' ? '' : 'none'; // imagen solo whatsapp
   }
   function resetForm(){
-    setWhen('ahora'); setChannel('email');
+    setWhen('ahora'); setChannel('whatsapp');
     view.querySelectorAll('#ntSegment .seg-opt').forEach((x,i)=>x.classList.toggle('on',i===0));
     document.getElementById('ntCard').selectedIndex=0;
-    subject.value=''; msg.value=''; count.textContent='0';
-    [subject,msg].forEach(el=>el.classList.remove('err'));
+    msg.value=''; count.textContent='0';
+    msg.classList.remove('err');
   }
 
   // crear
@@ -3187,9 +3178,8 @@ function updateCardEverywhere(art,d){
     const d=cardEl._data||{};
     title.textContent='Editar notificación'; sendBtn.textContent='Guardar cambios';
     resetForm();
-    setChannel(d.chan||'email');
+    setChannel(d.chan||'whatsapp');
     setWhen(d.when||'ahora');
-    if(d.subject){subject.value=d.subject;}
     msg.value=d.msg||''; count.textContent=msg.value.length;
     // segmento
     view.querySelectorAll('#ntSegment .seg-opt').forEach(x=>x.classList.toggle('on',x.dataset.seg===(d.seg||'todos')));
@@ -3202,11 +3192,9 @@ function updateCardEverywhere(art,d){
   }));
   view.querySelectorAll('#ntChannel .chan').forEach(b=>b.addEventListener('click',()=>setChannel(b.dataset.chan)));
   msg.addEventListener('input',()=>{count.textContent=msg.value.length;msg.classList.remove('err');});
-  subject.addEventListener('input',()=>subject.classList.remove('err'));
 
   sendBtn.addEventListener('click',()=>{
     let bad=false;
-    if(chan==='email'&&!subject.value.trim()){subject.classList.add('err');bad=true;}
     if(!msg.value.trim()){msg.classList.add('err');bad=true;}
     if(bad){toast('Completa los campos obligatorios');return;}
     back();

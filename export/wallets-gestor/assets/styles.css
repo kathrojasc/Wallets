@@ -1202,7 +1202,6 @@ select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xml
 .nt-ico{width:42px;height:42px;flex:0 0 42px;border-radius:11px;display:flex;align-items:center;justify-content:center}
 .nt-ico svg{width:21px;height:21px}
 .nt-ico.whatsapp{background:#e7f8ee;color:#1aa251}
-.nt-ico.email{background:#eef1fd;color:#2f40d6}
 .nt-ico.sms{background:#fdf1e3;color:#d98314}
 .nt-info{flex:1;min-width:0}
 .nt-title{font-size:14px;font-weight:600;color:#1e293b}
