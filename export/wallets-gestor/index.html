@@ -1776,41 +1776,47 @@
       <button class="modal-x" data-drclose aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     </div>
     <div class="dr-body">
-      <!-- badges -->
-      <div class="dr-badges" id="drBadges"></div>
+      <div class="dr-cols">
+        <div class="dr-col">
+          <!-- billetera del cliente: selector de tarjetas (híbrido) -->
+          <div class="dr-wallet" id="drWallet"></div>
 
-      <!-- billetera del cliente: selector de tarjetas (híbrido) -->
-      <div class="dr-wallet" id="drWallet"></div>
-
-      <!-- panel de la tarjeta activa: balance + acciones dinámicas según tipo -->
-      <div class="dr-active" id="drActive"></div>
-
-      <!-- datos del cliente (editables con icono) -->
-      <div class="dr-card-block" id="drDataBlock">
-        <div class="dr-block-head">
-          <h4>Datos del cliente</h4>
-          <button class="dr-edit-btn" id="drEditToggle" title="Editar datos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18.5 9.5l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></button>
+          <!-- panel de la tarjeta activa: balance + acciones dinámicas según tipo -->
+          <div class="dr-active" id="drActive"></div>
         </div>
-        <div class="dr-rows">
-          <div class="dr-row ro"><span class="dr-lbl">Perfil</span><span class="dr-ro" id="drProfile">Cliente VIP · Miraflores</span></div>
-          <div class="dr-row"><span class="dr-lbl">Nombre</span><span class="dr-ro" id="drRoName">Ana Rojas</span><input class="dr-input" id="drInName" value="Ana Rojas"></div>
-          <div class="dr-row"><span class="dr-lbl">Correo</span><span class="dr-ro" id="drRoEmail">ana.rojas@gmail.com</span><input class="dr-input" id="drInEmail" value="ana.rojas@gmail.com"></div>
-          <div class="dr-row"><span class="dr-lbl">Celular</span><span class="dr-ro" id="drRoPhone">+51 987 654 321</span><input class="dr-input" id="drInPhone" value="+51 987 654 321"></div>
-          <div class="dr-row"><span class="dr-lbl">Cumpleaños</span><span class="dr-ro" id="drRoBday">14 de marzo</span><input class="dr-input" id="drInBday" value="14 de marzo"></div>
-          <div class="dr-row"><span class="dr-lbl">Género</span><span class="dr-ro" id="drRoGender">Femenino</span><select class="dr-input" id="drInGender"><option>Femenino</option><option>Masculino</option><option>Otro</option><option>Prefiere no decir</option></select></div>
-          <div class="dr-row ro"><span class="dr-lbl">Registrado por</span><span class="dr-ro" id="drStaff">Lucía · Miraflores</span></div>
-          <div class="dr-row ro"><span class="dr-lbl">Fecha de registro</span><span class="dr-ro" id="drSince">12 feb 2026</span></div>
-          <div class="dr-row ro"><span class="dr-lbl">Última visita</span><span class="dr-ro" id="drLast">hace 2 días</span></div>
+
+        <div class="dr-col">
+          <!-- badges -->
+          <div class="dr-badges" id="drBadges"></div>
+
+          <!-- datos del cliente (editables con icono) -->
+          <div class="dr-card-block" id="drDataBlock">
+            <div class="dr-block-head">
+              <h4>Datos del cliente</h4>
+              <button class="dr-edit-btn" id="drEditToggle" title="Editar datos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L18.5 9.5l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg></button>
+            </div>
+            <div class="dr-rows">
+              <div class="dr-row ro"><span class="dr-lbl">Perfil</span><span class="dr-ro" id="drProfile">Cliente VIP · Miraflores</span></div>
+              <div class="dr-row"><span class="dr-lbl">Nombre</span><span class="dr-ro" id="drRoName">Ana Rojas</span><input class="dr-input" id="drInName" value="Ana Rojas"></div>
+              <div class="dr-row"><span class="dr-lbl">Correo</span><span class="dr-ro" id="drRoEmail">ana.rojas@gmail.com</span><input class="dr-input" id="drInEmail" value="ana.rojas@gmail.com"></div>
+              <div class="dr-row"><span class="dr-lbl">Celular</span><span class="dr-ro" id="drRoPhone">+51 987 654 321</span><input class="dr-input" id="drInPhone" value="+51 987 654 321"></div>
+              <div class="dr-row"><span class="dr-lbl">Cumpleaños</span><span class="dr-ro" id="drRoBday">14 de marzo</span><input class="dr-input" id="drInBday" value="14 de marzo"></div>
+              <div class="dr-row"><span class="dr-lbl">Género</span><span class="dr-ro" id="drRoGender">Femenino</span><select class="dr-input" id="drInGender"><option>Femenino</option><option>Masculino</option><option>Otro</option><option>Prefiere no decir</option></select></div>
+              <div class="dr-row ro"><span class="dr-lbl">Registrado por</span><span class="dr-ro" id="drStaff">Lucía · Miraflores</span></div>
+              <div class="dr-row ro"><span class="dr-lbl">Fecha de registro</span><span class="dr-ro" id="drSince">12 feb 2026</span></div>
+              <div class="dr-row ro"><span class="dr-lbl">Última visita</span><span class="dr-ro" id="drLast">hace 2 días</span></div>
+            </div>
+          </div>
+
+          <!-- historial -->
+          <div class="dr-card-block">
+            <div class="dr-block-head"><h4>Historial de movimientos</h4></div>
+            <ul class="dr-timeline" id="drTimeline"></ul>
+          </div>
+
+          <button class="dr-delete" id="drDelete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>Eliminar cliente</button>
         </div>
       </div>
-
-      <!-- historial -->
-      <div class="dr-card-block">
-        <div class="dr-block-head"><h4>Historial de movimientos</h4></div>
-        <ul class="dr-timeline" id="drTimeline"></ul>
-      </div>
-
-      <button class="dr-delete" id="drDelete"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2M6 7l1 13h10l1-13"/></svg>Eliminar cliente</button>
     </div>
     <div class="dr-foot" id="drFoot">
       <span class="cfg-foot-note">Cambios sin guardar</span>
