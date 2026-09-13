@@ -535,7 +535,13 @@
     <section class="view" data-view="tarjetas" data-screen-label="Mis tarjetas">
       <div class="topbar head">
         <h1>Mis tarjetas</h1>
-        <button class="btn-accent js-create" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear nueva tarjeta</button>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="view-toggle" id="tarjetasViewToggle">
+            <button type="button" class="on" data-view-mode="grid" title="Ver como tarjetas" aria-label="Ver como tarjetas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button>
+            <button type="button" data-view-mode="list" title="Ver como lista" aria-label="Ver como lista"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button>
+          </div>
+          <button class="btn-accent js-create" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear nueva tarjeta</button>
+        </div>
       </div>
       <div class="wrap">
         <div class="empty-state" data-empty="tarjetas">
@@ -544,7 +550,64 @@
           <p>Crea tu primera tarjeta de fidelidad o membresía y empieza a sumar clientes que vuelven.</p>
           <button class="btn-accent es-cta js-create" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear tarjeta</button>
         </div>
-        <div class="tarjetas-grid sec-data">
+        <div class="card tbl-card tarjetas-list sec-data" id="tarjetasList" style="padding:8px 8px 0" hidden>
+          <table class="scanner-table">
+            <thead><tr>
+              <th>Tarjeta</th><th>Tipo</th><th>Regla</th><th>Clientes</th><th>Estado</th><th></th>
+            </tr></thead>
+            <tbody>
+              <tr class="tl-row" data-name="Tarjeta Sellos · Cafés">
+                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#b8814e;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3v2M11 3v2"/></svg></span><span class="sc-name">Tarjeta Sellos · Cafés</span></div></td>
+                <td><span class="lc-type fid">Fidelidad</span></td>
+                <td class="sct-dev">10 sellos → café gratis</td>
+                <td class="sct-num">156</td>
+                <td><span class="status"><i></i>Activa</span></td>
+                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
+              </tr>
+              <tr class="tl-row" data-name="Gym · 10 Clases">
+                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#1f9d57;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9v6M17.5 9v6M4 10.5v3M20 10.5v3M6.5 12h11"/></svg></span><span class="sc-name">Gym · 10 Clases</span></div></td>
+                <td><span class="lc-type mem">Membresía</span></td>
+                <td class="sct-dev">10 clases incluidas por membresía</td>
+                <td class="sct-num">34</td>
+                <td><span class="status"><i></i>Activa</span></td>
+                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
+              </tr>
+              <tr class="tl-row" data-name="Promoción Verano">
+                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#2f6bff;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"/></svg></span><span class="sc-name">Promoción Verano</span></div></td>
+                <td><span class="lc-type fid">Fidelidad</span></td>
+                <td class="sct-dev">8 sellos → 2x1 bebidas</td>
+                <td class="sct-num">52</td>
+                <td><span class="status"><i></i>Activa</span></td>
+                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
+              </tr>
+              <tr class="tl-row" data-name="Plan Café Ilimitado">
+                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#1c1f26;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9a3 3 0 1 0 0 6c2 0 3-2 5.5-3s3.5-3 5.5-3a3 3 0 1 1 0 6c-2 0-3-2-5.5-3"/></svg></span><span class="sc-name">Plan Café Ilimitado</span></div></td>
+                <td><span class="lc-type mem">Membresía</span></td>
+                <td class="sct-dev">Membresía ilimitada · vence en 30 días</td>
+                <td class="sct-num">19</td>
+                <td><span class="status"><i></i>Activa</span></td>
+                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
+              </tr>
+              <tr class="tl-row" data-name="Tarjeta Postres">
+                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#7c5cdc;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M6 21v-5a6 6 0 0 1 12 0v5"/><path d="M12 7V4M9.5 5l5 0"/></svg></span><span class="sc-name">Tarjeta Postres</span></div></td>
+                <td><span class="lc-type fid">Fidelidad</span></td>
+                <td class="sct-dev">6 sellos → postre gratis</td>
+                <td class="sct-num">41</td>
+                <td><span class="status"><i></i>Activa</span></td>
+                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
+              </tr>
+              <tr class="tl-row" data-name="Tarjeta Almuerzos">
+                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#0f9b8e;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14M7 11V7a5 5 0 0 1 10 0v4M6 11l1 9h10l1-9"/></svg></span><span class="sc-name">Tarjeta Almuerzos</span></div></td>
+                <td><span class="lc-type fid">Fidelidad</span></td>
+                <td class="sct-dev">10 sellos → almuerzo gratis</td>
+                <td class="sct-num">27</td>
+                <td><span class="status"><i></i>Activa</span></td>
+                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tarjetas-grid sec-data" id="tarjetasGrid">
           <article class="loyalty-card" data-type="fidelidad" data-name="Tarjeta Sellos · Cafés" data-reward="café gratis" data-stamps="10" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#b8814e" data-ink="#fff" data-bday-on="1" data-bday-chan="whatsapp" data-bday-msg="¡Feliz cumpleaños, {nombre}! 🎉 En Café Luna queremos celebrarte: pasa hoy y disfruta de un café de nuestra parte.">
             <div class="mini-card flat" style="--bg:#b8814e;--ink:#fff">
               <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3v2M11 3v2"/></svg></span></div>
@@ -2782,6 +2845,33 @@ function updateCardEverywhere(art,d){
     if(e.target.closest('.act-edit')) window.openEditCard(art);
     else if(e.target.closest('.act-view')) window.openViewCard(art);
     else window.openCardDetail(art);
+  });
+})();
+
+/* ===== Mis tarjetas: alternar grilla / lista ===== */
+(function(){
+  const toggle=document.getElementById('tarjetasViewToggle');
+  const grid=document.getElementById('tarjetasGrid');
+  const list=document.getElementById('tarjetasList');
+  if(!toggle||!grid||!list) return;
+  function apply(mode){
+    toggle.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.viewMode===mode));
+    grid.hidden=mode!=='grid';
+    list.hidden=mode!=='list';
+  }
+  apply(localStorage.getItem('w2_cards_view')||'grid');
+  toggle.addEventListener('click',e=>{
+    const btn=e.target.closest('button[data-view-mode]'); if(!btn) return;
+    const mode=btn.dataset.viewMode;
+    localStorage.setItem('w2_cards_view',mode);
+    apply(mode);
+  });
+  list.addEventListener('click',e=>{
+    const row=e.target.closest('.tl-row'); if(!row) return;
+    const art=[...grid.querySelectorAll('.loyalty-card')].find(a=>a.dataset.name===row.dataset.name);
+    if(!art) return;
+    if(e.target.closest('.act-edit')) window.openEditCard(art);
+    else if(e.target.closest('.act-view')) window.openViewCard(art);
   });
 })();
 

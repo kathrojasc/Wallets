@@ -340,6 +340,7 @@ tbody tr:last-child td{border-bottom:none}
 
 .loyalty-card{flex:0 0 320px;width:320px;background:#fff;border:1px solid #e9edf2;
   border-radius:20px;padding:20px;cursor:pointer;text-align:left;
+  display:flex;flex-direction:column;
   transition:border-color .15s,box-shadow .15s,transform .15s}
 .loyalty-card:hover{border-color:#e2e8f0;transform:translateY(-2px)}
 .loyalty-card.sel{border-color:transparent;box-shadow:0 0 0 2px var(--blue)}
@@ -438,10 +439,11 @@ tbody tr:last-child td{border-bottom:none}
 .lastcard-list .chev{width:16px;height:16px;color:#cbd5e1;flex:0 0 16px}
 
 /* Mis tarjetas — grid */
-.tarjetas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.tarjetas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;align-items:stretch}
+.tarjetas-grid[hidden]{display:none}
 .tarjetas-grid .loyalty-card,.tarjetas-grid .card-new{flex:none;width:auto}
 .tarjetas-grid .card-new{min-height:230px}
-.lc-actions{display:flex;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft)}
+.lc-actions{display:flex;gap:8px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line-soft)}
 .lc-actions button{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;
   font-family:inherit;font-size:12.5px;font-weight:600;color:#334155;background:#fff;
   border:1px solid #e2e8f0;border-radius:9px;padding:8px;cursor:pointer;transition:.14s}
@@ -567,6 +569,12 @@ tbody tr:last-child td{border-bottom:none}
   font-family:inherit;font-size:12px;font-weight:500;color:#64748b;padding:6px 11px;border-radius:8px;cursor:pointer;transition:.14s}
 .wallet-toggle button svg{width:15px;height:15px}
 .wallet-toggle button.on{background:var(--blue);color:#fff}
+
+.view-toggle{display:inline-flex;background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:3px;gap:2px}
+.view-toggle button{display:inline-flex;align-items:center;justify-content:center;width:32px;height:30px;
+  border:none;background:none;color:#64748b;border-radius:8px;cursor:pointer;transition:.14s}
+.view-toggle button svg{width:16px;height:16px}
+.view-toggle button.on{background:var(--blue);color:#fff}
 
 .prev-stage{flex:1;display:flex;align-items:center;justify-content:center;min-height:300px;padding:8px 0}
 .prev-card{width:100%;max-width:320px;color:var(--ink);background:var(--bg);transition:background .2s,color .2s;
