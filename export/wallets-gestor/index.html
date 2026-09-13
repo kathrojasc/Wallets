@@ -87,6 +87,10 @@
         </div>
       </div>
     </div>
+    <label class="onb-consent" id="onbConsentRow">
+      <input type="checkbox" id="onbConsent">
+      <span>Acepto que Wallets use los datos de mi negocio y de mis clientes para operar el programa de fidelización, según la <a href="#" class="link sm">Política de privacidad</a>.</span>
+    </label>
     <button class="btn-primary auth-submit" id="onbDone">Entrar a Wallets</button>
     <p class="auth-switch"><button id="onbToLogin">← Volver a iniciar sesión</button></p>
   </div>
@@ -2038,7 +2042,8 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
   document.getElementById('billUpgrade')?.addEventListener('click',open);
   pv.querySelectorAll('[data-plclose]').forEach(b=>b.addEventListener('click',()=>go('config')));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pv.classList.contains('active'))go('config');});
-  pv.querySelectorAll('.pc-cta:not([disabled])').forEach(b=>b.addEventListener('click',()=>{
+  pv.querySelectorAll('.pc-cta').forEach(b=>b.addEventListener('click',()=>{
+    if(b.disabled) return;
     const col=b.closest('.plan-col');
     const name=col.querySelector('.pc-name').textContent.trim();
     const price=col.querySelector('.pc-price').textContent.trim().split(' ')[0];
@@ -2054,12 +2059,27 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
   const cv=document.getElementById('checkoutView'); if(!cv) return;
   cv.querySelectorAll('[data-coclose]').forEach(b=>b.addEventListener('click',()=>go('planes')));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&cv.classList.contains('active'))go('planes');});
-  document.getElementById('coPay').addEventListener('click',()=>{
-    const nm=(document.getElementById('coPlanName').textContent||'').toLowerCase();
-    const p=nm.includes('growth')?'growth':(nm.includes('starter')?'starter':'free');
+  function applyPlan(p){
     if(window.__setPlan) window.__setPlan(p);
     go('config');let t=document.querySelector('.in-toast');if(!t){t=document.createElement('div');t.className='in-toast';document.body.appendChild(t);}
     t.textContent='✓ Plan '+(p.charAt(0).toUpperCase()+p.slice(1))+' activado';t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),2200);
+  }
+  document.getElementById('coPay').addEventListener('click',()=>{
+    const nm=(document.getElementById('coPlanName').textContent||'').toLowerCase();
+    const p=nm.includes('growth')?'growth':(nm.includes('starter')?'starter':'free');
+    let current='free'; try{current=localStorage.getItem('w2_plan')||'free';}catch(e){}
+    const nLocales=document.querySelectorAll('#locGrid .loc-card').length;
+    if(current==='growth' && p!=='growth' && nLocales>1 && window.confirmAsk){
+      window.confirmAsk({
+        title:'¿Bajar de plan con varios locales?',
+        text:'Tienes '+nLocales+' locales con sus scanners. No se eliminan, pero solo podrás verlos y gestionarlos si vuelves al plan Growth.',
+        ok:'Bajar de plan igual',
+        danger:true,
+        onOk:()=>applyPlan(p)
+      });
+      return;
+    }
+    applyPlan(p);
   });
 })();
 /* ===== Drill-down: detalle de indicador ===== */
@@ -2262,10 +2282,12 @@ go('inicio');
     const u=document.getElementById('onbUser').value.trim();
     const biz=document.getElementById('onbBiz').value.trim();
     const sec=document.getElementById('onbSector').value;
-    if(!biz||!sec){
+    const consent=document.getElementById('onbConsent').checked;
+    if(!biz||!sec||!consent){
       [['onbBiz',biz],['onbSector',sec]].forEach(([id,v])=>{
         document.getElementById(id).classList.toggle('err',!v);
       });
+      document.getElementById('onbConsentRow').classList.toggle('err',!consent);
       return;
     }
     // propaga a la plataforma
@@ -2281,6 +2303,7 @@ go('inicio');
     if(wm){ setTimeout(()=>{wm.classList.add('open');document.body.style.overflow='hidden';},350); }
   });
   ['onbUser','onbEmail','onbBiz','onbSector'].forEach(id=>document.getElementById(id).addEventListener('input',e=>e.target.classList.remove('err')));
+  document.getElementById('onbConsent').addEventListener('change',()=>document.getElementById('onbConsentRow').classList.remove('err'));
 
   /* modal de bienvenida */
   const wm=document.getElementById('welcomeModal');

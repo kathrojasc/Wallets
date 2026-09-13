@@ -1176,6 +1176,9 @@ select.dr-input{cursor:pointer;-webkit-appearance:none;appearance:none}
 .onb-card{width:100%;max-width:440px;background:#fff;border:1px solid #e9edf2;border-radius:20px;
   padding:36px 34px;box-shadow:0 24px 60px rgba(15,23,42,.16)}
 .onb-card .auth-title{font-size:23px;margin-top:6px}
+.onb-consent{display:flex;align-items:flex-start;gap:9px;margin-top:14px;font-size:12.5px;color:#64748b;cursor:pointer}
+.onb-consent input{margin-top:2px;flex:0 0 auto}
+.onb-consent.err span{color:#e23b3b}
 select.input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%2394a3b8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 8l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:38px}
 
 @media(max-width:860px){
