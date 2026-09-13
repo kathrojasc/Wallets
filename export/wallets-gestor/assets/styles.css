@@ -345,7 +345,8 @@ tbody tr:last-child td{border-bottom:none}
 .loyalty-card:hover{border-color:#e2e8f0;transform:translateY(-2px)}
 .loyalty-card.sel{border-color:transparent;box-shadow:0 0 0 2px var(--blue)}
 
-.mini-card{border-radius:16px;padding:16px 18px;color:#fff;
+.mini-card{border-radius:16px;padding:16px 18px;color:#fff;min-height:141px;
+  display:flex;flex-direction:column;justify-content:space-between;
   background:linear-gradient(150deg,var(--c1),var(--c2));margin-bottom:16px}
 .mini-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .mini-brand{font-size:14px;font-weight:600;letter-spacing:-0.01em}
