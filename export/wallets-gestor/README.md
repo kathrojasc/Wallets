@@ -1,6 +1,6 @@
 # Wallets — Panel del Gestor de Local
 
-Prototipo hi-fi (alta fidelidad) de un panel web para gestores de local que administran un programa de fidelización basado en **tarjetas de sellos** y **membresías de pago** guardadas en la wallet del móvil del cliente.
+Prototipo hi-fi (alta fidelidad) de un panel web para gestores de local que administran un programa de fidelización basado en **tarjetas de sellos / recompensa** (único tipo de tarjeta de esta variante) guardadas en la wallet del móvil del cliente.
 
 > **Importante:** este proyecto es un **prototipo funcional en HTML/CSS/JavaScript vanilla** (sin framework, sin backend). Toda la data es de ejemplo (mock) y vive en el propio `index.html`. Sirve como referencia de diseño e interacción de altísima fidelidad, listo para continuar el desarrollo o migrarlo a un stack de producción.
 

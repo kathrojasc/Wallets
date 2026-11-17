@@ -4,10 +4,9 @@ Este archivo le dice a Claude Code cómo trabajar sobre este repositorio. Léelo
 
 ## Qué es el proyecto
 
-Panel web ("dashboard") para el **gestor de un local** que administra un programa de fidelización. El negocio ofrece a sus clientes dos tipos de tarjeta que se guardan en la wallet del móvil:
+Panel web ("dashboard") para el **gestor de un local** que administra un programa de fidelización. El negocio ofrece a sus clientes **un único tipo de tarjeta**, que se guarda en la wallet del móvil: la **tarjeta de sellos / recompensa** (fidelidad gratuita para el cliente: suma sellos por visita y canjea un premio).
 
-- **Tarjetas de sellos** (fidelidad): el cliente suma sellos por visita y canjea un premio. Gratis para el cliente.
-- **Membresías** de pago: el cliente paga una cuota y obtiene usos o acceso ilimitado por una vigencia.
+> **Variante «solo tarjetas de recompensa».** Esta rama eliminó por completo el tipo «Membresía» (de pago, con usos/vigencia y clientes «Socio») y todo lo que dependía de él. La versión completa con membresías vive en la rama `claude/prototype-review-20ahy1`. No reintroduzcas membresías, socios, niveles ni selector de tipo de tarjeta aquí sin acordarlo (ver «Historial de decisiones» en `PROJECT_CONTEXT.md`).
 
 El panel permite crear tarjetas, ver clientes, enviar notificaciones, gestionar dispositivos de escaneo (staff), ver estadísticas y administrar el plan de suscripción del gestor (Free / Starter / Growth).
 
@@ -16,7 +15,7 @@ Es un **prototipo de alta fidelidad**, no un producto con backend. Data mock, si
 ## Arquitectura
 
 - **SPA sin framework.** Un único `index.html` contiene el HTML de **todas** las vistas y **todo** el JavaScript (inline, en `<script>` al final del body). No hay bundler de módulos ni router.
-- **Vistas:** cada pantalla es `<section class="view" data-view="NOMBRE">`. Se muestran/ocultan con la función global **`go('NOMBRE')`** que alterna la clase `.active`. Vistas existentes: `inicio`, `estadisticas`, `clientes`, `tarjetas`, `crear`, `crearTipo`, `notificaciones`, `scanner`, `config`, `planes`, `checkout`, `locales`, `crearLocal`, `localDetail` (las 3 últimas gateadas a Growth) (+ pantallas de auth/onboarding y varios modales).
+- **Vistas:** cada pantalla es `<section class="view" data-view="NOMBRE">`. Se muestran/ocultan con la función global **`go('NOMBRE')`** que alterna la clase `.active`. Vistas existentes: `inicio`, `estadisticas`, `clientes`, `tarjetas`, `crear`, `notificaciones`, `scanner`, `config`, `planes`, `checkout`, `locales`, `crearLocal`, `localDetail` (las 3 últimas gateadas a Growth) (+ pantallas de auth/onboarding y varios modales).
 - **Navegación:** los items con `data-view` o `data-goto` llaman a `go()`. El sidebar izquierdo (`.nav-item`) cambia de vista.
 - **Estado:** en memoria (arrays JS mock) + `localStorage` para lo persistente:
   - `w2_plan` → plan actual: `free` | `starter` | `growth`.
@@ -107,6 +106,6 @@ Ver `PROJECT_CONTEXT.md` (secciones DONE / IN PROGRESS / TODO / KNOWN ISSUES).
 
 1. ¿El cambio respeta el lenguaje llano y "menos es más" de la UI?
 2. ¿Reutiliza tokens y componentes existentes?
-3. ¿Mantiene la coherencia entre las 3 pestañas de Estadísticas (General/Sellos/Membresías) y el gating por plan?
+3. ¿Mantiene la coherencia entre las 2 pestañas de Estadísticas (General/Sellos) y el gating por plan?
 4. ¿Conserva el mapeo indicador → plan según el Excel de referencia (ver PROJECT_CONTEXT)?
 5. Ante la duda sobre alcance, pregunta antes de rediseñar zonas no solicitadas.

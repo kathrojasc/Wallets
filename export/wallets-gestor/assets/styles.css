@@ -305,7 +305,6 @@ tbody tr:last-child td{border-bottom:none}
 .badge.tend{background:#efe9fb;color:var(--violet)}
 .badge.logro{background:#e7f4ec;color:#168a47}
 .badge.tip{background:#e2f3f0;color:var(--teal)}
-.badge.memb{background:#fdf0e6;color:#b8651e}
 .insight .when{font-size:11px;color:var(--muted-3)}
 .insight h5{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:7px;letter-spacing:-0.01em}
 .insight p{font-size:12.5px;color:var(--slate);line-height:1.5;margin-bottom:12px;white-space:pre-line}
@@ -524,16 +523,6 @@ tbody tr:last-child td{border-bottom:none}
 .icon-opt.sel{border-color:var(--blue);background:#eef1fd;color:var(--blue)}
 .icon-opt svg{width:20px;height:20px}
 
-.radio-card{display:flex;align-items:center;gap:11px;width:100%;border:1px solid #e2e8f0;border-radius:11px;
-  padding:13px 15px;cursor:pointer;margin-bottom:10px;transition:.14s;font-size:13.5px;font-weight:500;
-  color:#334155;background:#fff;font-family:inherit;text-align:left}
-.radio-card:hover{border-color:#cbd5e1}
-.radio-card.sel{border-color:var(--blue);background:#f7f8fe}
-.radio-dot{width:20px;height:20px;flex:0 0 20px;border-radius:50%;border:1.6px solid #cbd5e1;
-  display:flex;align-items:center;justify-content:center;color:#fff;transition:.14s}
-.radio-dot svg{width:11px;height:11px;opacity:0}
-.radio-card.sel .radio-dot{background:var(--blue);border-color:var(--blue)}
-.radio-card.sel .radio-dot svg{opacity:1}
 
 .toggle-row{display:flex;align-items:center;justify-content:space-between;gap:16px;
   border:1px solid #e2e8f0;border-radius:12px;padding:15px 16px;margin-top:6px}
@@ -1096,7 +1085,6 @@ select.dr-input{cursor:pointer;-webkit-appearance:none;appearance:none}
 .cm-icon{width:52px;height:52px;border-radius:14px;margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
 .cm-icon svg{width:26px;height:26px}
 .cm-icon.info{background:#e7ebfd;color:#2f40d6}
-.cm-icon.gift{background:#fdf1e3;color:#d98314}
 .cm-icon.danger{background:#fdeaea;color:#dc2626}
 .confirm-modal h3{font-size:17px;font-weight:600;color:#0f172a;margin-bottom:8px}
 .confirm-modal p{font-size:13.5px;color:#64748b;line-height:1.5;margin-bottom:22px}
@@ -1530,98 +1518,19 @@ body.empty-mode .empty-state{display:flex}
 .staff-add{display:flex;gap:10px}
 .staff-add .input{flex:1}
 
-/* ===================== Tarjetas: tipos (fidelidad / membresía) ===================== */
-/* type chip in header */
+/* ===================== Tarjetas ===================== */
 .ch-title{display:flex;align-items:center;gap:12px;min-width:0}
-.type-chip{font-size:11.5px;font-weight:600;padding:4px 11px;border-radius:9999px;letter-spacing:.01em;white-space:nowrap}
-.type-chip.fid{background:#eef1fd;color:#2f40d6}
-.type-chip.mem{background:#fdf0e6;color:#b8651e}
 
-/* type badge on grid cards */
+/* etiquetas de estado en tarjetas de la grilla */
 .lc-tags{display:flex;align-items:center;gap:7px;flex-shrink:0}
-.lc-type{font-size:11px;font-weight:600;padding:3px 9px;border-radius:9999px;white-space:nowrap}
-.lc-type.fid{background:#eef1fd;color:#2f40d6}
-.lc-type.mem{background:#fdf0e6;color:#b8651e}
 .lc-meta{flex-wrap:wrap}
 
-/* mini-card benefit chips (membresía ilimitada) */
-.mc-benefits{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;min-height:30px}
-.mc-benefits span{font-size:11px;font-weight:500;color:#fff;background:rgba(255,255,255,.16);
-  padding:4px 9px;border-radius:7px;line-height:1}
-
-/* ===== Type picker view ===== */
-.tipo-body{flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;align-items:center;
-  justify-content:center;padding:40px;gap:28px}
-.tipo-head{text-align:center;max-width:560px}
-.tipo-head h3{font-size:22px;font-weight:600;color:#0f172a;letter-spacing:-0.02em;margin-bottom:8px}
-.tipo-head p{font-size:14px;color:#64748b;line-height:1.5}
-.tipo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:640px}
-@media(max-width:720px){.tipo-grid{grid-template-columns:1fr;max-width:420px}}
-.tipo-opt{display:flex;flex-direction:column;align-items:flex-start;gap:12px;text-align:left;
-  background:#fff;border:1.5px solid #e6eaf0;border-radius:18px;padding:26px 24px 22px;cursor:pointer;font-family:inherit;
-  transition:border-color .15s,box-shadow .15s,transform .15s}
-.tipo-opt:hover{border-color:#c7d2fe;transform:translateY(-3px);box-shadow:0 14px 30px rgba(15,23,42,.09)}
-.tipo-ico{flex:none;width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center}
-.tipo-ico svg{width:27px;height:27px}
-.tipo-ico.fid{background:#eef1fd;color:#2f40d6}
-.tipo-ico.mem{background:#fdf0e6;color:#c2701f}
-.tipo-tag{align-self:flex-start;font-size:10.5px;font-weight:600;padding:3px 10px;border-radius:9999px;letter-spacing:.05em;text-transform:uppercase}
-.tipo-tag.fid{background:#eef1fd;color:#2f40d6}
-.tipo-tag.mem{background:#fdf0e6;color:#b8651e}
-.tipo-title{font-size:18px;font-weight:600;color:#0f172a;letter-spacing:-0.01em}
-.tipo-desc{font-size:13px;color:#64748b;line-height:1.5;flex:1}
-.tipo-cta{display:inline-flex;align-items:center;gap:6px;margin-top:6px;font-size:13px;font-weight:600;color:#2f40d6}
-.tipo-cta svg{width:16px;height:16px;transition:transform .15s}
-.tipo-opt:hover .tipo-cta svg{transform:translateX(3px)}
-.tipo-feats{list-style:none;display:flex;flex-direction:column;gap:8px;margin:4px 0 6px;width:100%}
-.tipo-feats li{position:relative;padding-left:22px;font-size:12.5px;color:#475569;line-height:1.4}
-.tipo-feats li::before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border-radius:50%;
-  background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l4 4 10-10'/%3E%3C/svg%3E") center/9px no-repeat}
-.tipo-cta{display:inline-flex;align-items:center;gap:6px;margin-top:auto;font-size:13.5px;font-weight:600;color:#2f40d6}
-.tipo-cta svg{width:16px;height:16px}
-
-/* ===== Create form: membership extras ===== */
-.input-prefix{display:flex;align-items:stretch;border:1px solid #e2e8f0;border-radius:11px;overflow:hidden;transition:.15s}
-.input-prefix:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(39,67,214,.12)}
-.input-prefix>span{display:flex;align-items:center;padding:0 12px;background:#f8fafc;color:#64748b;
-  font-size:13.5px;font-weight:600;border-right:1px solid #e2e8f0}
-.input-prefix .input{border:none;border-radius:0;box-shadow:none}
-.input-prefix .input:focus{box-shadow:none}
-.fld-hint{display:block;font-size:11.5px;color:#94a3b8;margin-top:6px;line-height:1.4}
-
-/* ===== Preview: membership blocks + type toggles ===== */
-.prev-benefits{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-.prev-benefits .pb{position:relative;padding-left:19px;font-size:12.5px;font-weight:500;line-height:1.3}
-.prev-benefits .pb::before{content:"";position:absolute;left:0;top:3px;width:12px;height:12px;border-radius:50%;
-  background:currentColor;opacity:.9;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l4 4 10-10'/%3E%3C/svg%3E") center/9px no-repeat;
-  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l4 4 10-10'/%3E%3C/svg%3E") center/9px no-repeat}
-.prev-benefits .pb.muted{opacity:.6}
-.prev-card.wallet-google .prev-benefits .pb::before{background:var(--bg)}
-
-.prev-card .only-mem{display:none}
-.prev-card .only-ilim{display:none}
-.prev-card.type-membresia .only-mem{display:flex}
-.prev-card.type-membresia.usos-ilimitado .only-ilim{display:flex}
-.prev-card.type-membresia.usos-ilimitado .only-balance{display:none}
-.prev-card.usos-ilimitado .only-stamps{display:none}
-.prev-card .only-mem{margin-top:2px}
-
-/* ===== Detail: membership mini + benefits ===== */
-.cd-mini-benefits{display:flex;flex-direction:column;gap:7px;margin-top:4px}
-.cd-mini-benefits span{position:relative;padding-left:18px;font-size:12px;font-weight:500;line-height:1.3}
-.cd-mini-benefits span::before{content:"";position:absolute;left:0;top:3px;width:11px;height:11px;border-radius:50%;
-  background:rgba(255,255,255,.9);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l4 4 10-10'/%3E%3C/svg%3E") center/8px no-repeat;
-  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l4 4 10-10'/%3E%3C/svg%3E") center/8px no-repeat}
-
-/* Mis clientes: chips de tarjetas (fidelidad / membresía) */
+/* Mis clientes: chips de tarjetas */
 .cli-cards{display:flex;flex-direction:column;gap:6px}
 .cli-chip{display:inline-flex;align-items:center;gap:8px;background:#f8fafc;border:1px solid #eef1f5;
   border-radius:9px;padding:5px 10px;font-size:12.5px;color:#334155;width:fit-content;max-width:340px}
 .cc-dot{width:9px;height:9px;border-radius:50%;flex:0 0 9px}
 .cc-nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cc-tp{font-size:10px;font-weight:600;padding:2px 7px;border-radius:9999px;flex:0 0 auto}
-.cc-tp.fid{background:#eef1fd;color:#2f40d6}
-.cc-tp.mem{background:#fdf0e6;color:#b8651e}
 .cc-pr{margin-left:2px;color:#64748b;font-weight:500;white-space:nowrap;flex:0 0 auto}
 #cdTopClients td{padding:11px 14px}
 #cdTopCard .tbl-head .link{font-size:13px}
@@ -1645,9 +1554,6 @@ body.empty-mode .empty-state{display:flex}
 .dr-waccard:not(.on) .dr-waccard-head:hover{background:#f1f4f9}
 .dr-waccard-head .dr-card-dot{width:10px;height:10px;border-radius:50%;flex:0 0 10px}
 .dr-wacc-nm{font-size:13.5px;font-weight:600;color:#1e293b;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dr-waccard-head .cc-tp{font-size:10px;font-weight:600;padding:2px 7px;border-radius:9999px;flex:0 0 auto}
-.dr-waccard-head .cc-tp.fid{background:#eef1fd;color:#2f40d6}
-.dr-waccard-head .cc-tp.mem{background:#fdf0e6;color:#b8651e}
 .dr-wacc-pr{font-size:11.5px;color:#64748b;font-weight:500;flex:0 0 auto}
 .dr-wacc-chev{flex:0 0 auto;color:#b6c0cd;display:flex;transition:transform .18s}
 .dr-wacc-chev svg{width:18px;height:18px}
@@ -1659,98 +1565,25 @@ body.empty-mode .empty-state{display:flex}
 /* panel de tarjeta activa */
 .dr-prog{height:7px;background:#eef1f5;border-radius:9999px;margin:12px auto 0;max-width:220px;overflow:hidden}
 .dr-prog-fill{height:100%;border-radius:9999px;transition:width .25s}
-.dr-mini-meta{font-size:11.5px;color:#94a3b8;text-align:center;margin-top:10px}
-
-/* validador de vigencia (membresía ilimitada) */
-.dr-access{display:flex;align-items:center;gap:13px;padding:16px;border-radius:13px;margin:4px 0 18px}
-.dr-access.ok{background:#eaf7ef;border:1px solid #c5e8d2}
-.dr-access.expired{background:#fdecec;border:1px solid #f3c9c9}
-.dr-access .da-ico{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 38px}
-.dr-access.ok .da-ico{background:var(--green);color:#fff}
-.dr-access.expired .da-ico{background:#e0544e;color:#fff}
-.dr-access .da-ico svg{width:20px;height:20px}
-.dr-access .da-txt{display:flex;flex-direction:column;gap:2px}
-.dr-access .da-txt b{font-size:14.5px;color:#0f172a}
-.dr-access.ok .da-txt b{color:#157340}
-.dr-access.expired .da-txt b{color:#b3322c}
-.dr-access .da-txt span{font-size:12px;color:#64748b}
 
 /* etiqueta de tarjeta en el historial consolidado */
 .tl-card{display:inline-flex;align-items:center;font-size:10.5px;font-weight:600;color:#475569;
   background:#f1f5f9;border-radius:9999px;padding:1px 8px 1px 16px;margin-left:8px;position:relative;vertical-align:middle}
 .tl-card::before{content:"";position:absolute;left:6px;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--c,#999)}
-.dot.use{background:var(--green)}
 
-/* Estadísticas: realce de widgets de membresía al filtrar por una membresía */
-.stat-focus{box-shadow:0 0 0 1.5px #e7d9c6, 0 6px 18px rgba(184,101,30,.10);border-color:#ecdcc8 !important}
-.mem-levels.stat-focus{box-shadow:0 0 0 1.5px #e3d6f3, 0 8px 22px rgba(124,92,220,.12)}
 .dr-bal-lbl{font-size:11.5px;font-weight:600;color:#94a3b8;text-align:center;margin-bottom:6px}
 
-/* Estadísticas — membresías */
-.mem-tier{font-size:11px;font-weight:600;padding:3px 9px;border-radius:9999px}
-.mem-tier.oro{background:#fbf0d4;color:#a9791b}
-.mem-tier.plata{background:#eceef2;color:#5b6573}
-.mem-tier.bronce{background:#f3e3d6;color:#a05f33}
-.mem-tier.gym{background:#e3f3ea;color:#1f7a4d}
-.mem-tier.cafe{background:#e7e8eb;color:#2a2e36}
-.mem-tier.socio{background:#ede9f8;color:#6b4fc4}
 .dotred{display:inline-block;width:7px;height:7px;border-radius:50%;background:#e0544e;margin-right:6px;vertical-align:middle}
 
-/* benchmark bar */
-.bench{display:flex;align-items:center;gap:10px;margin-top:14px}
-.bench-lbl{font-size:11px;font-weight:600;border:1px solid #dfe4ec;border-radius:7px;padding:3px 9px;color:#475569}
-.bench-vs{font-size:11.5px;color:#94a3b8}
-.benchbar{display:flex;align-items:center;gap:10px;margin-top:10px}
-.benchbar .bk{font-size:12px;color:#64748b;flex:0 0 auto}
-.btrack{position:relative;flex:1;height:8px;background:#eef1f5;border-radius:9999px}
-.bmed{position:absolute;top:-3px;width:2px;height:14px;background:#9aa4b2;transform:translateX(-1px)}
-.bdot{position:absolute;top:-2px;width:12px;height:12px;border-radius:50%;background:#7c5cdc;transform:translateX(-6px);box-shadow:0 0 0 3px rgba(124,92,220,.18)}
-.bp{font-size:12px;font-weight:600;flex:0 0 auto}
-.benchscale{display:flex;justify-content:space-between;font-size:10.5px;color:#aab2bf;margin-top:5px}
-
-/* widget membresías niveles */
-.mem-levels{padding:22px 24px}
-.ml-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-.ml-head h4{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:#0f172a}
-.ml-dot{width:9px;height:9px;border-radius:50%;background:#7c5cdc}
-.ml-meta{font-size:12px;color:#94a3b8}
-.ml-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;gap:0;align-items:start}
-@media(max-width:1080px){.ml-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:680px){.ml-grid{grid-template-columns:1fr}}
-.ml-col-h{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
-  color:#94a3b8;padding-bottom:10px;margin-bottom:2px;border-bottom:1px solid var(--line)}
-.ml-side{display:flex;flex-direction:column;gap:16px;padding-right:28px}
-.ml-donut-row{display:flex;align-items:center;gap:18px}
-.ml-donut{flex:none;width:88px;height:88px;border-radius:50%;
-  background:conic-gradient(#1f9d57 0 calc(var(--m1)*1%),#1c1f26 0 100%)}
-.ml-donut::after{content:"";display:block;width:44px;height:44px;margin:22px;border-radius:50%;background:#fff}
-.ml-legend{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1}
-.ml-legend li{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#475569}
-.ml-legend .lg-name{flex:1;min-width:0}
-.ml-legend li b{margin-left:auto;color:#0f172a;font-weight:600}
-.ml-legend .lg{flex:none;width:11px;height:11px;border-radius:3px}
-.ml-legend .lg.gym{background:#1f9d57}.ml-legend .lg.cafe{background:#1c1f26}
-.ml-side-stats{border-top:1px solid var(--line);padding-top:2px}
-.ml-side-stats .statline{padding:9px 0}
-.ml-side-stats .statline:first-child{border-top:none}
-.ml-col{border-left:1px solid var(--line);padding:0 22px}
-.ml-col .statline{padding:10px 0}
-.ml-col .statline.first{border-top:none;padding-top:12px}
-.ml-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line-soft,#eef1f5);flex-wrap:wrap}
-.ml-bench{flex:1;min-width:280px}
-.ml-actions{display:flex;gap:10px;flex-wrap:wrap}
-
-
-/* ===== Estadísticas: tipos (Sellos / Membresías / General) ===== */
+/* ===== Estadísticas: pestañas por tipo (General / Sellos) ===== */
 .kind-legend{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:0 0 4px;font-size:12px;color:var(--muted-2,#6b7280)}
 .kl-item{display:inline-flex;align-items:center;gap:7px;font-weight:500}
 .kd{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
-.kd.sellos{background:#2f40d6}.kd.memb{background:#d98a2b}.kd.gen{background:#94a0b4}
+.kd.sellos{background:#2f40d6}.kd.gen{background:#94a0b4}
 .kind-tag{display:inline-flex;align-items:center;gap:5px;align-self:flex-start;font-size:10.5px;font-weight:600;
   letter-spacing:.02em;padding:3px 9px;border-radius:9999px;line-height:1.35;white-space:nowrap}
 .kind-tag::before{content:"";width:6px;height:6px;border-radius:50%;flex:0 0 auto}
 .kind-tag.sellos{background:#eef1fd;color:#2f40d6}.kind-tag.sellos::before{background:#2f40d6}
-.kind-tag.memb{background:#fbf0e5;color:#b8651e}.kind-tag.memb::before{background:#d98a2b}
 .kind-tag.gen{background:#eef0f4;color:#5b6474}.kind-tag.gen::before{background:#94a0b4}
 .chart-card>.kind-tag,.vcard>.kind-tag{margin-bottom:10px}
 .sec-label .sec-note{font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0}
@@ -1815,7 +1648,6 @@ body.empty-mode .empty-state{display:flex}
 .lr-txt span{font-size:12px;color:#94a3b8}
 .lockrow .up-badge{flex:0 0 auto;gap:5px}
 .lockrow .up-badge svg{width:11px;height:11px}
-.v2tag{font-size:10px;font-weight:600;color:#8a94a6;background:#eef1f5;padding:2px 7px;border-radius:9999px;margin-left:6px;text-transform:none;letter-spacing:0}
 
 /* tarjetas con drill: afford click en el botón */
 .js-detail{cursor:pointer}

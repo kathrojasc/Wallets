@@ -185,7 +185,6 @@
               <div class="kindseg" id="kindSeg" role="tablist">
                 <button class="on" data-kind="gen">General</button>
                 <button data-kind="fid">Sellos</button>
-                <button data-kind="mem">Membresías</button>
               </div>
             </div>
 
@@ -262,7 +261,6 @@
                   <div class="bignum" style="padding-top:0"><b style="font-size:32px">19</b></div>
                   <div class="subline" style="color:var(--muted)">visitan 2 o más locales</div>
                   <div class="statline"><span class="k">Embajadores de marca</span><span class="v">11</span></div>
-                  <div class="statline"><span class="k">Con membresía en varios</span><span class="v">14</span></div>
                   <button class="link js-detail" data-detail="multi"><span class="dv-open">Ver detalle</span><span class="dv-close">Ocultar detalle</span><svg class="dv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
                 </div>
                 <div class="card chart-card" data-tier="growth">
@@ -270,7 +268,6 @@
                   <div class="statline first"><span class="k">Visitan de mañana</span><span class="v">61%</span></div>
                   <div class="statline"><span class="k">Visitan de tarde</span><span class="v">31%</span></div>
                   <div class="statline"><span class="k">Completan su tarjeta en</span><span class="v">11 días</span></div>
-                  <div class="statline"><span class="k">Subieron de nivel (60 días)</span><span class="v pos">+14</span></div>
                 </div>
                 <div class="card chart-card" data-tier="growth">
                   <h4>Dónde viven tus clientes</h4>
@@ -329,76 +326,6 @@
                 <div class="lp-head"><h4>También disponible en planes superiores</h4><p>Se activan con tus datos reales cuando mejoras tu plan.</p></div>
                 <ul class="lp-list">
                   <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Cerca de ganar su premio</b><span>A quiénes les falta 1 o 2 sellos</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- MEMBRESÍAS -->
-            <div class="kgroup" data-kind="mem" style="display:none">
-              <div class="grid g4">
-                <div class="card kpi" data-tier="free"><div class="t">Membresías activas</div><div class="n">61</div><div class="d pos">+9 nuevas este mes</div></div>
-                <div class="card kpi" data-tier="free"><div class="t">Nuevas este mes</div><div class="n">9</div><div class="d">socios que se sumaron</div></div>
-                <div class="card kpi" data-tier="free"><div class="t">Vencidas sin renovar</div><div class="n"><b style="color:var(--orange,#e08a2b)">6</b></div><div class="d">este mes</div></div>
-              </div>
-              <div class="grid gauto">
-                <div class="card vcard" data-tier="free">
-                  <div class="top"><h4>Membresías por renovar</h4></div>
-                  <div class="bignum"><b style="color:var(--orange,#e08a2b)">6</b></div>
-                  <div class="subline" style="color:var(--muted)">vencidas sin renovar</div>
-                  <div class="rows">
-                    <div class="row"><span class="k">Sin usarse en 30 días</span><span class="v warn">14</span></div>
-                    <div class="row"><span class="k">% del total activo</span><span class="v warn">10%</span></div>
-                  </div>
-                  <button class="link js-detail" data-detail="renew"><span class="dv-open">Ver detalle</span><span class="dv-close">Ocultar detalle</span><svg class="dv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-                </div>
-                <div class="card vcard" data-tier="starter">
-                  <div class="top"><h4>Renovación de membresías</h4></div>
-                  <div class="bignum"><b>74</b><span>%</span></div>
-                  <div class="subline pos">+3 pts vs. mes pasado</div>
-                  <div class="rows">
-                    <div class="row"><span class="k">Renovadas / vencidas</span><span class="v">17 / 23</span></div>
-                    <div class="row"><span class="k">Vencen en 7 días</span><span class="v neg">5</span></div>
-                  </div>
-                  <button class="link js-detail" data-detail="renew"><span class="dv-open">Ver detalle</span><span class="dv-close">Ocultar detalle</span><svg class="dv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-                </div>
-                <div class="card chart-card" data-tier="starter">
-                  <h4>Uso de la membresía</h4>
-                  <div class="statline first"><span class="k">La usan seguido</span><span class="v">2.1 veces/mes</span></div>
-                  <div class="statline"><span class="k">No la usan hace 30 días</span><span class="v warn">14</span></div>
-                  <div class="statline"><span class="k">Vencen en menos de 14 días</span><span class="v neg">5</span></div>
-                  <button class="link js-detail" data-detail="dormant"><span class="dv-open">Ver detalle</span><span class="dv-close">Ocultar detalle</span><svg class="dv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-                </div>
-                <div class="card chart-card" data-tier="starter">
-                  <h4>Niveles de membresía</h4>
-                  <div class="statline first"><span class="k">Suben de nivel (este mes)</span><span class="v pos">+7</span></div>
-                  <div class="statline"><span class="k">Cerca de subir</span><span class="v">9</span></div>
-                  <div class="statline"><span class="k">Gym · 10 Clases</span><span class="v">34</span></div>
-                  <div class="statline"><span class="k">Plan Café Ilimitado</span><span class="v">27</span></div>
-                </div>
-                <div class="card chart-card" data-tier="starter">
-                  <h4>De sellos a membresía</h4>
-                  <div class="bignum" style="padding-top:0"><b style="font-size:32px">21<span style="font-size:20px">%</span></b></div>
-                  <div class="subline" style="color:var(--muted)">de tus clientes de sellos ya son socios</div>
-                  <div class="statline"><span class="k">Habituales sin membresía</span><span class="v warn">48</span></div>
-                  <div class="statline"><span class="k">Tiempo de vida promedio</span><span class="v">8.4 meses</span></div>
-                  <button class="link js-detail" data-detail="convert"><span class="dv-open">Ver detalle</span><span class="dv-close">Ocultar detalle</span><svg class="dv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-                </div>
-                <div class="card chart-card" data-tier="growth">
-                  <h4>Ventas de tus socios <span class="v2tag">requiere caja</span></h4>
-                  <div class="statline first"><span class="k">Gasto promedio por visita</span><span class="v">S/ 24.80</span></div>
-                  <div class="statline"><span class="k">Gastan más que los no-socios</span><span class="v pos">+18%</span></div>
-                  <div class="statline"><span class="k">Producto más pedido</span><span class="v">Latte</span></div>
-                  <div class="statline"><span class="k">Visitas que se escanean</span><span class="v">72%</span></div>
-                </div>
-              </div>
-              <div class="lockpanel" data-kind="mem">
-                <div class="lp-head"><h4>También disponible en planes superiores</h4><p>Se activan con tus datos reales cuando mejoras tu plan.</p></div>
-                <ul class="lp-list">
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Renovación de membresías</b><span>Cuántas se renuevan a tiempo</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Uso de la membresía</b><span>Quién la aprovecha y quién no</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Niveles de membresía</b><span>Quién sube de nivel y quién está cerca</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>De sellos a membresía</b><span>Habituales listos para hacerse socios</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Ventas de tus socios</b><span>Cuánto gastan y qué compran (requiere caja)</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
                 </ul>
               </div>
             </div>
@@ -496,7 +423,7 @@
           <div class="kpi-day"><div class="t">Nuevos clientes hoy</div><div class="n">14</div><div class="d pos">+4 vs. ayer</div></div>
           <div class="kpi-day"><div class="t">Sellos otorgados hoy</div><div class="n">87</div><div class="d">en 3 locales</div></div>
           <div class="kpi-day"><div class="t">Premios canjeados hoy</div><div class="n">6</div><div class="d">S/ 72 entregados</div></div>
-          <div class="kpi-day"><div class="t">Membresías vendidas hoy</div><div class="n">5</div><div class="d pos">S/ 445 cobrados</div></div>
+          <div class="kpi-day"><div class="t">Premios por reclamar</div><div class="n">31</div><div class="d">tarjetas llenas sin canjear</div></div>
         </div>
 
         <!-- ===== Top insights + últimas tarjetas creadas ===== -->
@@ -507,25 +434,24 @@
               <li class="ins-gate" data-tier="starter"><span class="badge alerta">Alerta</span><div class="il-txt"><h4>La tasa de canje bajó 12 pts este mes</h4><p>74 tarjetas completadas y 31 sin canjear — S/372 en premios pendientes.</p></div></li>
               <li class="ins-gate" data-tier="free"><span class="badge oport">Oportunidad</span><div class="il-txt"><h4>20 clientes a 1 sello del premio</h4><p>Suelen volver 3 días después de recibir un push personalizado.</p></div></li>
               <li class="ins-gate" data-tier="starter"><span class="badge tend">Tendencia</span><div class="il-txt"><h4>Los VIP crecieron +18% — 7 nuevos</h4><p>47 VIP vs. 40 el mes pasado; 7 subieron desde Habitual.</p></div></li>
-              <li class="ins-gate" data-tier="starter"><span class="badge memb">Membresías</span><div class="il-txt"><h4>14 membresías vencen esta semana</h4><p>Renueva a tiempo: S/1.246 en cuotas en riesgo si no avisas a los socios.</p></div></li>
             </ul>
           </div>
           <div class="in-card">
             <div class="in-card-head"><h3>Últimas tarjetas creadas</h3><button class="link sm" data-goto="tarjetas">Mis tarjetas →</button></div>
             <ul class="lastcard-list">
               <li data-goto="tarjetas">
-                <span class="lc-swatch" style="--c1:#1f9d57;--c2:#157340"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9v6M17.5 9v6M4 10.5v3M20 10.5v3M6.5 12h11"/></svg></span>
-                <div class="lc-info"><div class="nm">Gym · 10 Clases <span class="lc-type mem">Membresía</span></div><div class="dt">Creada hace 4 días</div></div>
+                <span class="lc-swatch" style="--c1:#0f9b8e;--c2:#0a6f65"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14M7 11V7a5 5 0 0 1 10 0v4M6 11l1 9h10l1-9"/></svg></span>
+                <div class="lc-info"><div class="nm">Tarjeta Almuerzos</div><div class="dt">Creada hace 4 días</div></div>
                 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
               </li>
               <li data-goto="tarjetas">
                 <span class="lc-swatch" style="--c1:#7c5cdc;--c2:#5a3fb0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M6 21v-5a6 6 0 0 1 12 0v5"/><path d="M12 7V4"/></svg></span>
-                <div class="lc-info"><div class="nm">Tarjeta Postres <span class="lc-type fid">Fidelidad</span></div><div class="dt">Creada hace 2 días</div></div>
+                <div class="lc-info"><div class="nm">Tarjeta Postres</div><div class="dt">Creada hace 2 días</div></div>
                 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
               </li>
               <li data-goto="tarjetas">
                 <span class="lc-swatch" style="--c1:#3a4ee8;--c2:#2533b8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></span>
-                <div class="lc-info"><div class="nm">Promoción Verano <span class="lc-type fid">Fidelidad</span></div><div class="dt">Creada hace 1 semana</div></div>
+                <div class="lc-info"><div class="nm">Promoción Verano</div><div class="dt">Creada hace 1 semana</div></div>
                 <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
               </li>
             </ul>
@@ -559,50 +485,31 @@
         <div class="empty-state" data-empty="tarjetas">
           <div class="es-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/></svg></div>
           <h3>Aún no tienes tarjetas</h3>
-          <p>Crea tu primera tarjeta de fidelidad o membresía y empieza a sumar clientes que vuelven.</p>
+          <p>Crea tu primera tarjeta de sellos y empieza a sumar clientes que vuelven.</p>
           <button class="btn-accent es-cta js-create" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear tarjeta</button>
         </div>
         <div class="card tbl-card tarjetas-list sec-data" id="tarjetasList" style="padding:8px 8px 0" hidden>
           <table class="scanner-table">
             <thead><tr>
-              <th>Tarjeta</th><th>Tipo</th><th>Regla</th><th>Clientes</th><th>Estado</th><th></th>
+              <th>Tarjeta</th><th>Regla</th><th>Clientes</th><th>Estado</th><th></th>
             </tr></thead>
             <tbody>
               <tr class="tl-row" data-name="Tarjeta Sellos · Cafés">
                 <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#b8814e;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3v2M11 3v2"/></svg></span><span class="sc-name">Tarjeta Sellos · Cafés</span></div></td>
-                <td><span class="lc-type fid">Fidelidad</span></td>
                 <td class="sct-dev">10 sellos → café gratis</td>
                 <td class="sct-num">156</td>
                 <td><span class="status"><i></i>Activa</span></td>
                 <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
               </tr>
-              <tr class="tl-row" data-name="Gym · 10 Clases">
-                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#1f9d57;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9v6M17.5 9v6M4 10.5v3M20 10.5v3M6.5 12h11"/></svg></span><span class="sc-name">Gym · 10 Clases</span></div></td>
-                <td><span class="lc-type mem">Membresía</span></td>
-                <td class="sct-dev">10 clases incluidas por membresía</td>
-                <td class="sct-num">34</td>
-                <td><span class="status"><i></i>Activa</span></td>
-                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
-              </tr>
               <tr class="tl-row" data-name="Promoción Verano">
                 <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#2f6bff;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"/></svg></span><span class="sc-name">Promoción Verano</span></div></td>
-                <td><span class="lc-type fid">Fidelidad</span></td>
                 <td class="sct-dev">8 sellos → 2x1 bebidas</td>
                 <td class="sct-num">52</td>
                 <td><span class="status"><i></i>Activa</span></td>
                 <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
               </tr>
-              <tr class="tl-row" data-name="Plan Café Ilimitado">
-                <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#1c1f26;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9a3 3 0 1 0 0 6c2 0 3-2 5.5-3s3.5-3 5.5-3a3 3 0 1 1 0 6c-2 0-3-2-5.5-3"/></svg></span><span class="sc-name">Plan Café Ilimitado</span></div></td>
-                <td><span class="lc-type mem">Membresía</span></td>
-                <td class="sct-dev">Membresía ilimitada · vence en 30 días</td>
-                <td class="sct-num">19</td>
-                <td><span class="status"><i></i>Activa</span></td>
-                <td class="sct-actions"><button class="sc-act act-view" title="Ver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg></button><button class="sc-act act-edit" title="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg></button></td>
-              </tr>
               <tr class="tl-row" data-name="Tarjeta Postres">
                 <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#7c5cdc;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M6 21v-5a6 6 0 0 1 12 0v5"/><path d="M12 7V4M9.5 5l5 0"/></svg></span><span class="sc-name">Tarjeta Postres</span></div></td>
-                <td><span class="lc-type fid">Fidelidad</span></td>
                 <td class="sct-dev">6 sellos → postre gratis</td>
                 <td class="sct-num">41</td>
                 <td><span class="status"><i></i>Activa</span></td>
@@ -610,7 +517,6 @@
               </tr>
               <tr class="tl-row" data-name="Tarjeta Almuerzos">
                 <td><div class="sct-id"><span class="lc-swatch flat" style="--bg:#0f9b8e;--ink:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14M7 11V7a5 5 0 0 1 10 0v4M6 11l1 9h10l1-9"/></svg></span><span class="sc-name">Tarjeta Almuerzos</span></div></td>
-                <td><span class="lc-type fid">Fidelidad</span></td>
                 <td class="sct-dev">10 sellos → almuerzo gratis</td>
                 <td class="sct-num">27</td>
                 <td><span class="status"><i></i>Activa</span></td>
@@ -620,58 +526,39 @@
           </table>
         </div>
         <div class="tarjetas-grid sec-data" id="tarjetasGrid">
-          <article class="loyalty-card" data-type="fidelidad" data-name="Tarjeta Sellos · Cafés" data-reward="café gratis" data-stamps="10" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#b8814e" data-ink="#fff" data-bday-on="1" data-bday-chan="whatsapp" data-bday-msg="¡Feliz cumpleaños, {nombre}! 🎉 En Café Luna queremos celebrarte: pasa hoy y disfruta de un café de nuestra parte.">
+          <article class="loyalty-card" data-name="Tarjeta Sellos · Cafés" data-reward="café gratis" data-stamps="10" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#b8814e" data-ink="#fff" data-bday-on="1" data-bday-chan="whatsapp" data-bday-msg="¡Feliz cumpleaños, {nombre}! 🎉 En Café Luna queremos celebrarte: pasa hoy y disfruta de un café de nuestra parte.">
             <div class="mini-card flat" style="--bg:#b8814e;--ink:#fff">
               <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3v2M11 3v2"/></svg></span></div>
               <div class="mini-foot">10 sellos → café gratis</div>
             </div>
-            <div class="lc-meta"><div class="lc-title">Tarjeta Sellos · Cafés</div><div class="lc-tags"><span class="lc-type fid">Fidelidad</span><span class="status"><i></i>Activa</span></div></div>
+            <div class="lc-meta"><div class="lc-title">Tarjeta Sellos · Cafés</div><div class="lc-tags"><span class="status"><i></i>Activa</span></div></div>
             <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>156 clientes con esta tarjeta</div>
             <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>
           </article>
-          <article class="loyalty-card" data-type="membresia" data-uso-mode="limitado" data-name="Gym · 10 Clases" data-reward="clase" data-service="clase" data-stamps="10" data-filled="0" data-price="120" data-member-prefix="GYM-" data-benefits="Acceso a sala de pesas|1 evaluación física inicial" data-expiry="30 días" data-bg="#1f9d57" data-ink="#fff">
-            <div class="mini-card flat" style="--bg:#1f9d57;--ink:#fff">
-              <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9v6M17.5 9v6M4 10.5v3M20 10.5v3M6.5 12h11"/></svg></span></div>
-              <div class="mini-foot">10 clases incluidas por membresía</div>
-            </div>
-            <div class="lc-meta"><div class="lc-title">Gym · 10 Clases</div><div class="lc-tags"><span class="lc-type mem">Membresía</span><span class="status"><i></i>Activa</span></div></div>
-            <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>34 socios activos</div>
-            <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>
-          </article>
-          <article class="loyalty-card" data-type="fidelidad" data-name="Promoción Verano" data-reward="2x1 bebidas" data-stamps="8" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#2f6bff" data-ink="#fff">
+          <article class="loyalty-card" data-name="Promoción Verano" data-reward="2x1 bebidas" data-stamps="8" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#2f6bff" data-ink="#fff">
             <div class="mini-card flat" style="--bg:#2f6bff;--ink:#fff">
               <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5 5l1.8 1.8M17.2 17.2 19 19M19 5l-1.8 1.8M6.8 17.2 5 19"/></svg></span></div>
               <div class="mini-foot">8 sellos → 2x1 bebidas</div>
             </div>
-            <div class="lc-meta"><div class="lc-title">Promoción Verano</div><div class="lc-tags"><span class="lc-type fid">Fidelidad</span><span class="status"><i></i>Activa</span></div></div>
+            <div class="lc-meta"><div class="lc-title">Promoción Verano</div><div class="lc-tags"><span class="status"><i></i>Activa</span></div></div>
             <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>52 clientes con esta tarjeta</div>
             <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>
           </article>
-          <article class="loyalty-card" data-type="membresia" data-uso-mode="ilimitado" data-name="Plan Café Ilimitado" data-reward="café" data-service="café" data-stamps="0" data-filled="0" data-price="89" data-expiry="30 días" data-bg="#1c1f26" data-ink="#fff">
-            <div class="mini-card flat" style="--bg:#1c1f26;--ink:#fff">
-              <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9a3 3 0 1 0 0 6c2 0 3-2 5.5-3s3.5-3 5.5-3a3 3 0 1 1 0 6c-2 0-3-2-5.5-3"/></svg></span></div>
-              <div class="mc-benefits"><span>Acceso ilimitado</span><span>café</span></div>
-              <div class="mini-foot">Membresía ilimitada · vence en 30 días</div>
-            </div>
-            <div class="lc-meta"><div class="lc-title">Plan Café Ilimitado</div><div class="lc-tags"><span class="lc-type mem">Membresía</span><span class="status"><i></i>Activa</span></div></div>
-            <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>19 socios activos</div>
-            <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>
-          </article>
-          <article class="loyalty-card" data-type="fidelidad" data-name="Tarjeta Postres" data-reward="postre gratis" data-stamps="6" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#7c5cdc" data-ink="#fff">
+          <article class="loyalty-card" data-name="Tarjeta Postres" data-reward="postre gratis" data-stamps="6" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#7c5cdc" data-ink="#fff">
             <div class="mini-card flat" style="--bg:#7c5cdc;--ink:#fff">
               <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M6 21v-5a6 6 0 0 1 12 0v5"/><path d="M12 7V4M9.5 5l5 0"/></svg></span></div>
               <div class="mini-foot">6 sellos → postre gratis</div>
             </div>
-            <div class="lc-meta"><div class="lc-title">Tarjeta Postres</div><div class="lc-tags"><span class="lc-type fid">Fidelidad</span><span class="status"><i></i>Activa</span></div></div>
+            <div class="lc-meta"><div class="lc-title">Tarjeta Postres</div><div class="lc-tags"><span class="status"><i></i>Activa</span></div></div>
             <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>41 clientes con esta tarjeta</div>
             <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>
           </article>
-          <article class="loyalty-card" data-type="fidelidad" data-name="Tarjeta Almuerzos" data-reward="almuerzo gratis" data-stamps="10" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#0f9b8e" data-ink="#fff">
+          <article class="loyalty-card" data-name="Tarjeta Almuerzos" data-reward="almuerzo gratis" data-stamps="10" data-filled="0" data-per-visit="1" data-per-day="1" data-bg="#0f9b8e" data-ink="#fff">
             <div class="mini-card flat" style="--bg:#0f9b8e;--ink:#fff">
               <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14M7 11V7a5 5 0 0 1 10 0v4M6 11l1 9h10l1-9"/></svg></span></div>
               <div class="mini-foot">10 sellos → almuerzo gratis</div>
             </div>
-            <div class="lc-meta"><div class="lc-title">Tarjeta Almuerzos</div><div class="lc-tags"><span class="lc-type fid">Fidelidad</span><span class="status"><i></i>Activa</span></div></div>
+            <div class="lc-meta"><div class="lc-title">Tarjeta Almuerzos</div><div class="lc-tags"><span class="status"><i></i>Activa</span></div></div>
             <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>27 clientes con esta tarjeta</div>
             <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>
           </article>
@@ -1068,39 +955,9 @@
 </div>
 
 <!-- ===== Vista: Crear tarjeta ===== -->
-<!-- ===== Vista: Elegir tipo de tarjeta ===== -->
-<section class="view crear-view" data-view="crearTipo" data-screen-label="Tipo de tarjeta" id="tipoView">
-  <header class="crear-head">
-    <h2>Crear nueva tarjeta</h2>
-    <button class="crear-x" data-tipoclose aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  </header>
-  <div class="tipo-body">
-    <div class="tipo-head">
-      <h3>¿Qué quieres crear?</h3>
-      <p>Elige el modelo que mejor se adapte a cómo premias o cobras a tus clientes.</p>
-    </div>
-    <div class="tipo-grid">
-      <button type="button" class="tipo-opt" data-type="fidelidad">
-        <span class="tipo-ico fid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2"/><circle cx="12" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="6" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="18" cy="14" r="2"/></svg></span>
-        <span class="tipo-tag fid">Fidelidad</span>
-        <span class="tipo-title">Tarjeta de sellos</span>
-        <span class="tipo-desc">El cliente suma un sello en cada visita y canjea una recompensa. Gratis para el cliente.</span>
-        <span class="tipo-cta">Elegir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-      </button>
-      <button type="button" class="tipo-opt" data-type="membresia">
-        <span class="tipo-ico mem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 9.5h18"/><path d="M7 14h4"/><circle cx="16.5" cy="14" r="1.3"/></svg></span>
-        <span class="tipo-tag mem">Membresía</span>
-        <span class="tipo-title">Membresía de pago</span>
-        <span class="tipo-desc">El cliente paga una cuota y obtiene usos o acceso ilimitado durante una vigencia.</span>
-        <span class="tipo-cta">Elegir <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></span>
-      </button>
-    </div>
-  </div>
-</section>
-
 <section class="view crear-view" data-view="crear" data-screen-label="Crear tarjeta" id="crearView">
   <header class="crear-head">
-    <div class="ch-title"><h2 id="crearTitle">Crear nueva tarjeta</h2><span class="type-chip fid" id="crearTypeChip">Fidelidad</span></div>
+    <div class="ch-title"><h2 id="crearTitle">Crear nueva tarjeta</h2></div>
     <button class="crear-x" data-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
   </header>
   <div class="crear-body">
@@ -1112,61 +969,24 @@
         <input class="input" id="fName" type="text" placeholder="Ej. Promoción Verano">
       </div>
 
-      <!-- FIDELIDAD: recompensa y sellos -->
-      <div class="type-block" data-fortype="fidelidad">
-        <div class="form-sec">Recompensa y sellos</div>
+      <div class="form-sec">Recompensa y sellos</div>
+      <div class="fld">
+        <label>Recompensa <span class="req">*</span></label>
+        <input class="input" id="fReward" type="text" placeholder="Ej. 6° café gratis">
+      </div>
+      <div class="fld-row">
         <div class="fld">
-          <label>Recompensa <span class="req">*</span></label>
-          <input class="input" id="fReward" type="text" placeholder="Ej. 6° café gratis">
-        </div>
-        <div class="fld-row">
-          <div class="fld">
-            <label>Sellos para canjear <span class="req">*</span></label>
-            <input class="input" id="fStamps" type="number" value="6" min="1" max="20">
-          </div>
-          <div class="fld">
-            <label>Sellos por visita <span class="req">*</span></label>
-            <input class="input" id="fPerVisit" type="number" value="1" min="1">
-          </div>
+          <label>Sellos para canjear <span class="req">*</span></label>
+          <input class="input" id="fStamps" type="number" value="6" min="1" max="20">
         </div>
         <div class="fld">
-          <label>Límite de sellos por día <span class="req">*</span></label>
-          <input class="input" id="fPerDay" type="number" value="1" min="1">
+          <label>Sellos por visita <span class="req">*</span></label>
+          <input class="input" id="fPerVisit" type="number" value="1" min="1">
         </div>
       </div>
-
-      <!-- MEMBRESÍA: precio, socio, beneficios, usos -->
-      <div class="type-block" data-fortype="membresia">
-        <div class="form-sec">Membresía y precio</div>
-        <div class="fld">
-          <label>Precio / cuota <span class="req">*</span></label>
-          <div class="input-prefix"><span>S/</span><input class="input" id="fPrice" type="number" value="100" min="0" placeholder="100"></div>
-        </div>
-
-        <div class="form-sec">Usos de la membresía</div>
-        <div class="fld">
-          <label>¿Cuántos usos incluye la membresía?</label>
-          <div id="usosMode">
-            <button type="button" class="radio-card sel" data-val="limitado"><span class="radio-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Limitada — se marca un sello por cada uso</button>
-            <button type="button" class="radio-card" data-val="ilimitado"><span class="radio-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></span>Ilimitada — accesos sin límite durante la vigencia</button>
-          </div>
-        </div>
-        <div class="fld">
-          <label>Servicio / producto <span class="req">*</span></label>
-          <input class="input" id="fService" type="text" placeholder="Ej. capuccino, clase, manicure">
-        </div>
-        <div class="type-block" data-formode="limitado">
-          <div class="fld">
-            <label>Número de usos <span class="req">*</span></label>
-            <input class="input" id="fUsos" type="number" value="10" min="1" max="30">
-          </div>
-        </div>
-        <div class="type-block" data-formode="ilimitado">
-          <div class="fld">
-            <label>Cantidad de días de validez de la tarjeta desde el registro del cliente</label>
-            <input class="input" id="fValidDaysMem" type="number" placeholder="0 = sin caducidad" min="0">
-          </div>
-        </div>
+      <div class="fld">
+        <label>Límite de sellos por día <span class="req">*</span></label>
+        <input class="input" id="fPerDay" type="number" value="1" min="1">
       </div>
 
       <div class="form-sec">Diseño de la tarjeta</div>
@@ -1203,12 +1023,10 @@
         </div>
       </div>
 
-      <div class="type-block" data-fortype="fidelidad">
-        <div class="form-sec">Vigencia</div>
-        <div class="fld">
-          <label>Cantidad de días de validez de la tarjeta desde el registro del cliente</label>
-          <input class="input" id="fValidDays" type="number" placeholder="0 = sin caducidad" min="0">
-        </div>
+      <div class="form-sec">Vigencia</div>
+      <div class="fld">
+        <label>Cantidad de días de validez de la tarjeta desde el registro del cliente</label>
+        <input class="input" id="fValidDays" type="number" placeholder="0 = sin caducidad" min="0">
       </div>
 
       <div class="form-sec">Saludo de cumpleaños</div>
@@ -1269,17 +1087,14 @@
               <span class="prev-brandcaps" id="prevBrandCaps">CAFÉ LUNA</span>
             </div>
             <div class="prev-name" id="prevName">Nombre de la tarjeta</div>
-            <div class="prev-fields only-balance">
-              <div class="pf"><span class="pf-lbl" id="prevF1Lbl">Recompensa</span><span class="pf-val" id="prevReward">Recompensa</span></div>
-              <div class="pf right"><span class="pf-lbl" id="prevF2Lbl">Sellos</span><span class="pf-val" id="prevBalance">0 de 10</span></div>
+            <div class="prev-fields">
+              <div class="pf"><span class="pf-lbl">Recompensa</span><span class="pf-val" id="prevReward">Recompensa</span></div>
+              <div class="pf right"><span class="pf-lbl">Sellos</span><span class="pf-val" id="prevBalance">0 de 10</span></div>
             </div>
-            <div class="prev-fields only-mem">
-              <div class="pf"><span class="pf-lbl">Vence</span><span class="pf-val" id="prevExpiry">—</span></div>
-            </div>
-            <div class="prev-stamps only-stamps" id="prevStamps"></div>
+            <div class="prev-stamps" id="prevStamps"></div>
             <div class="prev-qrwrap">
               <div class="prev-qr" id="prevQR"></div>
-              <div class="prev-qr-cap" id="prevQRCap">Escanea para sumar tu sello</div>
+              <div class="prev-qr-cap">Escanea para sumar tu sello</div>
             </div>
           </div>
         </div>
@@ -1350,7 +1165,7 @@
           <a href="#" class="link sm" id="cdSeeAll">Ver todo →</a>
         </div>
         <table class="cli-table">
-          <thead><tr><th style="width:44px">#</th><th>Cliente</th><th>Perfil</th><th class="num" id="cdTopProgHead">Sellos</th><th>Última visita</th></tr></thead>
+          <thead><tr><th style="width:44px">#</th><th>Cliente</th><th>Perfil</th><th class="num">Sellos</th><th>Última visita</th></tr></thead>
           <tbody id="cdTopClients"></tbody>
         </table>
       </div>
@@ -1675,7 +1490,7 @@
         <div class="pc-price">$0 <span>/ mes</span></div>
         <button class="btn-ghost pc-cta" disabled>Tu plan actual</button>
         <ul class="pc-feats">
-          <li>Tarjetas de sellos y membresías ilimitadas</li>
+          <li>Tarjetas de sellos ilimitadas</li>
           <li>Registro de visitas en tiempo real desde caja</li>
           <li>Monitoreo de canjes y premios entregados</li>
           <li>Reporte básico de clientes Nuevos vs. Recurrentes</li>
@@ -1693,13 +1508,11 @@
         <ul class="pc-feats">
           <li>Alertas de clientes que se están alejando (+21 días sin venir)</li>
           <li>Retención mensual y clientes que vuelven</li>
-          <li>Renovación de membresías y avisos de vencimiento</li>
           <li>Aviso «¡Estás a 1-2 sellos de tu premio!»</li>
           <li>Tipos de cliente automáticos: Casual, Habitual y VIP</li>
           <li>Edad y sexo de tus clientes</li>
           <li>Días y horas con más visitas + campañas por horario</li>
           <li>Tus 10 mejores clientes</li>
-          <li>Niveles de membresía y conversión de sellos a socios</li>
         </ul>
       </div>
       <div class="plan-col">
@@ -1713,7 +1526,6 @@
           <li>Clientes que visitan varios locales y embajadores de marca</li>
           <li>Mapa de clientes por distrito</li>
           <li>Perfiles avanzados: horario, patrón y velocidad de visita</li>
-          <li>Ventas por socio con integración a tu caja (POS)</li>
           <li>Multi-sede con roles de staff y soporte prioritario</li>
         </ul>
       </div>
@@ -1950,37 +1762,6 @@
 </div>
 
 <script>
-/* ===== Top 10 table ===== */
-const topRows=[
-  [1,'Ana R.','8.2','VIP','2d','','3 locales','cafe'],
-  [2,'Carlos M.','7.4','VIP','1d','','2 locales','gym'],
-  [3,'Lucía V.','6.9','VIP','3d','','1 local','cafe'],
-  [4,'Marco T.','6.1','VIP','5d','','1 local',''],
-  [5,'Sofía P.','5.8','VIP','12d','warn','1 local','gym'],
-  [6,'Diego F.','5.2','VIP','4d','','1 local','cafe'],
-  [7,'Paula N.','4.9','Habitual','6d','','2 locales','gym'],
-  [8,'José C.','4.6','Habitual','3d','','1 local',''],
-  [9,'María L.','4.2','Habitual','28d ⚠','neg','1 local','gym'],
-  [10,'Rodrigo S.','4.0','Habitual','7d','','1 local',''],
-];
-const _topbody=document.getElementById('topbody');
-if(_topbody) _topbody.innerHTML=topRows.map(r=>{
-  const pillCls=r[3]==='VIP'?'pill':'pill hab';
-  const lvCls=r[5]?(' class="'+r[5]+'" style="font-weight:600"'):'';
-  const memMap={gym:'Gym · 10 Clases',cafe:'Plan Café Ilimitado'};
-  const memv=r[7]||'';
-  const memCell=!memv?'<span style="color:var(--muted-2)">—</span>':('<span class="mem-tier '+memv+'">'+memMap[memv]+'</span>');
-  return `<tr>
-    <td class="idx">${r[0]}</td>
-    <td style="font-weight:500">${r[1]}</td>
-    <td class="num" style="font-weight:600">${r[2]}</td>
-    <td><span class="${pillCls}">${r[3]}</span></td>
-    <td><span${lvCls}>${r[4]}</span></td>
-    <td>${memCell}</td>
-    <td style="color:var(--muted-2)">${r[6]}</td>
-  </tr>`;
-}).join('');
-
 /* ===== Week bars ===== */
 const week=[52,72,88,100,80,55,32];
 const wmax=Math.max(...week);
@@ -2089,22 +1870,13 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
   const DATA={
     risk:{title:'Clientes que se están alejando',sub:'38 clientes sin venir hace más de 21 días · ordenados por urgencia',action:'Enviar recordatorio a los 38',
       cols:['Cliente','Días sin venir','Antes era','Tarjeta'],
-      rows:[['María León','28 días',pill('VIP','vip'),'Gym · 10 Clases'],['Jorge Ramírez','26 días',pill('Habitual','hab'),'Tarjeta Café'],['Elena Díaz','24 días',pill('Habitual','hab'),'Tarjeta Café'],['Pablo Soto','23 días',pill('VIP','vip'),'Plan Café Ilimitado'],['Rosa Chávez','22 días',pill('Habitual','hab'),'Tarjeta Postres'],['Luis Ferrer','21 días',pill('Casual','cas'),'Tarjeta Café']]},
+      rows:[['María León','28 días',pill('VIP','vip'),'Tarjeta Almuerzos'],['Jorge Ramírez','26 días',pill('Habitual','hab'),'Tarjeta Café'],['Elena Díaz','24 días',pill('Habitual','hab'),'Tarjeta Café'],['Pablo Soto','23 días',pill('VIP','vip'),'Promoción Verano'],['Rosa Chávez','22 días',pill('Habitual','hab'),'Tarjeta Postres'],['Luis Ferrer','21 días',pill('Casual','cas'),'Tarjeta Café']]},
     near:{title:'Clientes cerca de ganar su premio',sub:'20 clientes a 1 o 2 sellos · suelen volver 3 días después del aviso',action:'Enviar aviso a los 20',
       cols:['Cliente','Sellos','Le falta','Tarjeta'],
       rows:[['Ana Rojas','5 / 6','1 sello','Tarjeta Café'],['Carlos Mendoza','5 / 6','1 sello','Tarjeta Café'],['Sofía Paredes','4 / 6','2 sellos','Tarjeta Postres'],['Diego Flores','5 / 6','1 sello','Tarjeta Café'],['Paula Núñez','4 / 6','2 sellos','Tarjeta Café']]},
     top:{title:'Tus 10 mejores clientes',sub:'Los que más visitan en los últimos 90 días',action:'Enviar beneficio VIP',
       cols:['#','Cliente','Visitas/mes','Tipo'],
       rows:[['1','Ana Rojas','8',pill('VIP','vip')],['2','Carlos Mendoza','7',pill('VIP','vip')],['3','Diego Flores','6',pill('VIP','vip')],['4','Lucía Vargas','4',pill('Habitual','hab')],['5','María León','4',pill('En riesgo','risk')],['6','Sofía Paredes','4',pill('Habitual','hab')]]},
-    dormant:{title:'Socios que no usan su membresía',sub:'14 miembros sin escanear en los últimos 30 días',action:'Recordarles su beneficio',
-      cols:['Socio','Membresía','Sin usar','Vence en'],
-      rows:[['Pablo Soto','Plan Café Ilimitado','31 días','9 días'],['Rosa Chávez','Gym · 10 Clases','30 días','12 días'],['Jorge Ramírez','Gym · 10 Clases','34 días','21 días'],['Elena Díaz','Plan Café Ilimitado','28 días','25 días']]},
-    renew:{title:'Membresías por renovar',sub:'6 vencidas y 5 que vencen esta semana',action:'Enviar recordatorio de renovación',
-      cols:['Socio','Membresía','Estado'],
-      rows:[['Pablo Soto','Plan Café Ilimitado',pill('Vence en 3 días','risk')],['Rosa Chávez','Gym · 10 Clases',pill('Vence en 5 días','risk')],['Jorge Ramírez','Gym · 10 Clases',pill('Vencida','risk')],['Elena Díaz','Plan Café Ilimitado',pill('Vencida','risk')]]},
-    convert:{title:'Habituales listos para hacerse socios',sub:'48 clientes que ya vienen seguido y aún no tienen membresía',action:'Invitar a la membresía',
-      cols:['Cliente','Visitas/mes','Tipo'],
-      rows:[['Lucía Vargas','4',pill('Habitual','hab')],['Sofía Paredes','4',pill('Habitual','hab')],['Paula Núñez','3',pill('Habitual','hab')],['Marco Torres','3',pill('Habitual','hab')]]},
     canjes:{title:'Premios y canjes',sub:'31 clientes completaron su tarjeta y aún no reclaman su premio',action:'Avisar a los que no reclaman',
       cols:['Cliente','Estado','Tarjeta'],
       rows:[['Ana Rojas',pill('Reclamado','vip'),'Tarjeta Café'],['Marco Torres',pill('Sin reclamar','risk'),'Tarjeta Café'],['Paula Núñez',pill('Sin reclamar','risk'),'Tarjeta Postres'],['Diego Flores',pill('Reclamado','vip'),'Tarjeta Café']]},
@@ -2115,11 +1887,11 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
       cols:['Tipo','Cuántos','Qué son'],
       rows:[[pill('Casual','cas'),'79','1 visita o menos al mes'],[pill('Habitual','hab'),'106','2 a 4 visitas al mes'],[pill('VIP','vip'),'36','5+ visitas al mes'],[pill('En riesgo','risk'),'19','antes venían y se alejaron']]},
     locales:{title:'Comparar tus locales',sub:'Cómo va cada local del negocio',action:'Ver guía de buenas prácticas',
-      cols:['Local','Vuelven','Canje','Socios'],
-      rows:[['Miraflores',pill('71%','vip'),'64%','28'],['San Isidro',pill('68%','hab'),'55%','22'],['Barranco',pill('51%','risk'),'52%','11']]},
+      cols:['Local','Vuelven','Canje'],
+      rows:[['Miraflores',pill('71%','vip'),'64%'],['San Isidro',pill('68%','hab'),'55%'],['Barranco',pill('51%','risk'),'52%']]},
     multi:{title:'Clientes de varios locales',sub:'19 clientes visitan 2 o más de tus locales',action:'Enviar reconocimiento',
-      cols:['Cliente','Locales','Membresía'],
-      rows:[['Ana Rojas','3 locales',pill('Sí','vip')],['Carlos Mendoza','2 locales',pill('Sí','vip')],['Diego Flores','2 locales',pill('No','cas')]]}
+      cols:['Cliente','Locales','Tarjetas'],
+      rows:[['Ana Rojas','3 locales','2 tarjetas'],['Carlos Mendoza','2 locales','1 tarjeta'],['Diego Flores','2 locales','1 tarjeta']]}
   };
   function tableHTML(d){
     return '<div class="cd-sub">'+d.sub+'</div>'+
@@ -2540,7 +2312,7 @@ function downloadQRpng(seed){
 (function(){
   const view=document.getElementById('crearView');
   if(!view) return;
-  document.querySelectorAll('.card-new, .js-create').forEach(b=>b.addEventListener('click',()=>{go('crear');setTimeout(()=>fName.focus(),120);}));
+  document.querySelectorAll('.card-new, .js-create').forEach(b=>b.addEventListener('click',()=>window.openCreateCard()));
   view.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>go(editTarget&&editOrigin==='detail'?'cardDetail':'tarjetas')));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&view.classList.contains('active'))go(editTarget&&editOrigin==='detail'?'cardDetail':'tarjetas');});
 
@@ -2557,67 +2329,24 @@ function downloadQRpng(seed){
   const fStamps=document.getElementById('fStamps');
   const fPerVisit=document.getElementById('fPerVisit');
   const fPerDay=document.getElementById('fPerDay');
-  const fPrice=document.getElementById('fPrice');
-  const fService=document.getElementById('fService');
-  const fUsos=document.getElementById('fUsos');
   const fValidDays=document.getElementById('fValidDays');
-  const fValidDaysMem=document.getElementById('fValidDaysMem');
-  const typeChip=document.getElementById('crearTypeChip');
-  const pExpiry=document.getElementById('prevExpiry');
-  const pF1Lbl=document.getElementById('prevF1Lbl');
-  const pF2Lbl=document.getElementById('prevF2Lbl');
-  const pQRCap=document.getElementById('prevQRCap');
   const create=document.getElementById('btnCreate');
 
   let state={bg:'#7c5cdc',ink:'#fff',iconSVG:pLogo.querySelector('svg').outerHTML,wallet:'apple'};
   let editTarget=null, editOrigin='tarjetas';
-  let curType='fidelidad', usoMode='limitado';
 
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function stampCount(){
-    if(curType==='membresia'){
-      if(usoMode==='ilimitado') return 0;
-      let n=parseInt(fUsos.value,10);if(isNaN(n)||n<1)n=1;if(n>30)n=30;return n;
-    }
     let n=parseInt(fStamps.value,10);if(isNaN(n)||n<1)n=1;if(n>20)n=20;return n;
   }
-  function clampStamps(){return stampCount();}
-  function validDays(){let n=parseInt(fValidDaysMem.value,10);return isNaN(n)?0:n;}
-  function expiryLabel(){const n=validDays();return n>0?(n+' días'):'Sin caducidad';}
   function stampHTML(total,filled){return Array.from({length:total}).map((_,i)=>'<i class="'+(i<filled?'on':'')+'">'+state.iconSVG+'</i>').join('');}
   function renderStamps(){pStamps.innerHTML=stampHTML(stampCount(),0);}
-  function renderReward(){
-    if(curType==='membresia'){pReward.textContent=(fService.value||'').trim()||'Servicio';}
-    else{pReward.textContent=(fReward.value||'').trim()||'Recompensa';}
-  }
-  function renderBalance(){pBalance.textContent=(curType==='membresia'&&usoMode==='ilimitado')?'Ilimitado':('0 de '+stampCount());}
-  function renderMember(){pExpiry.textContent=expiryLabel();}
-  function renderFieldLabels(){
-    if(curType==='membresia'){pF1Lbl.textContent='Servicio';pF2Lbl.textContent='Usos';pQRCap.textContent='Escanea para registrar tu uso';}
-    else{pF1Lbl.textContent='Recompensa';pF2Lbl.textContent='Sellos';pQRCap.textContent='Escanea para sumar tu sello';}
-  }
+  function renderReward(){pReward.textContent=(fReward.value||'').trim()||'Recompensa';}
+  function renderBalance(){pBalance.textContent='0 de '+stampCount();}
   function renderName(){pName.textContent=(fName.value||'').trim()||'Nombre de la tarjeta';renderQR();}
   function renderQR(){pQR.innerHTML=qrSVG((fName.value||'wallet').trim()||'wallet',120,'#15171a','#ffffff');}
   function applyColor(){card.style.setProperty('--bg',state.bg);card.style.setProperty('--ink',state.ink);}
   function applyIcon(){pLogo.innerHTML=state.iconSVG;pLogo2.innerHTML=state.iconSVG;renderStamps();}
-  function applyUsoModeUI(){
-    const lim=view.querySelector('.type-block[data-formode="limitado"]');
-    const ilim=view.querySelector('.type-block[data-formode="ilimitado"]');
-    if(lim) lim.style.display=(usoMode==='limitado')?'':'none';
-    if(ilim) ilim.style.display=(usoMode==='ilimitado')?'':'none';
-  }
-  function applyTypeUI(){
-    typeChip.textContent=curType==='membresia'?'Membresía':'Fidelidad';
-    typeChip.className='type-chip '+(curType==='membresia'?'mem':'fid');
-    view.querySelectorAll('.type-block[data-fortype]').forEach(b=>{b.style.display=(b.dataset.fortype===curType)?'':'none';});
-    card.classList.toggle('type-membresia',curType==='membresia');
-    card.classList.toggle('type-fidelidad',curType!=='membresia');
-    card.classList.toggle('usos-ilimitado',curType==='membresia'&&usoMode==='ilimitado');
-    card.classList.toggle('usos-limitado',curType==='membresia'&&usoMode==='limitado');
-    applyUsoModeUI();
-    renderFieldLabels();renderReward();renderBalance();renderStamps();renderMember();
-  }
-
   function single(sel,cb){
     const items=view.querySelectorAll(sel+' > *');
     items.forEach(it=>it.addEventListener('click',()=>{items.forEach(x=>x.classList.remove('sel'));it.classList.add('sel');if(cb)cb(it);}));
@@ -2653,38 +2382,20 @@ function downloadQRpng(seed){
     });
   });
 
-  // usos mode (membresía)
-  view.querySelectorAll('#usosMode .radio-card').forEach(b=>b.addEventListener('click',()=>{
-    view.querySelectorAll('#usosMode .radio-card').forEach(x=>x.classList.remove('sel'));
-    b.classList.add('sel');usoMode=b.dataset.val;applyTypeUI();validate();
-  }));
-
-  [fName,fReward,fStamps,fPerVisit,fPerDay,fPrice,fService,fUsos].forEach(el=>el&&el.addEventListener('input',validate));
+  [fName,fReward,fStamps,fPerVisit,fPerDay].forEach(el=>el.addEventListener('input',validate));
   fName.addEventListener('input',renderName);
   fReward.addEventListener('input',()=>{renderReward();renderBalance();});
   fStamps.addEventListener('input',()=>{renderStamps();renderBalance();});
-  fService.addEventListener('input',renderReward);
-  fUsos.addEventListener('input',()=>{renderStamps();renderBalance();});
-  fValidDaysMem.addEventListener('input',renderMember);
 
-  function reqOk(el){return el && (''+el.value).trim()!=='' && !(el.type==='number' && (isNaN(parseInt(el.value,10))||parseInt(el.value,10)<1));}
-  function priceOk(){return fPrice && (''+fPrice.value).trim()!=='' && !isNaN(parseInt(fPrice.value,10)) && parseInt(fPrice.value,10)>=0;}
-  function reqList(){
-    if(curType==='membresia'){
-      const l=[fName,fPrice,fService];
-      if(usoMode==='limitado'){l.push(fUsos);}
-      return l;
-    }
-    return [fName,fReward,fStamps,fPerVisit,fPerDay];
-  }
-  function fieldOk(el){return el===fPrice?priceOk():reqOk(el);}
+  function reqOk(el){return (''+el.value).trim()!=='' && !(el.type==='number' && (isNaN(parseInt(el.value,10))||parseInt(el.value,10)<1));}
+  const reqList=[fName,fReward,fStamps,fPerVisit,fPerDay];
   function validate(){
-    const ok=reqList().every(fieldOk);
+    const ok=reqList.every(reqOk);
     create.disabled=!ok;
     return ok;
   }
   function markErrors(){
-    reqList().forEach(el=>el.classList.toggle('err',!fieldOk(el)));
+    reqList.forEach(el=>el.classList.toggle('err',!reqOk(el)));
   }
 
   const sw=document.getElementById('activarSwitch');
@@ -2706,11 +2417,8 @@ function downloadQRpng(seed){
   countBday();
 
   function resetForm(){
-    [fName,fReward,fService].forEach(el=>el&&(el.value=''));
-    fStamps.value='6';fPerVisit.value='1';fPerDay.value='1';
-    fPrice.value='100';fUsos.value='10';fValidDays.value='';fValidDaysMem.value='';
-    usoMode='limitado';
-    view.querySelectorAll('#usosMode .radio-card').forEach((x,i)=>x.classList.toggle('sel',i===0));
+    [fName,fReward].forEach(el=>(el.value=''));
+    fStamps.value='6';fPerVisit.value='1';fPerDay.value='1';fValidDays.value='';
     view.querySelectorAll('.input').forEach(i=>i.classList.remove('err'));
     view.querySelectorAll('.textarea').forEach(t=>t.value='');
     state.bg='#7c5cdc';state.ink='#fff';
@@ -2720,7 +2428,7 @@ function downloadQRpng(seed){
     if(bdaySw) bdaySw.classList.remove('on');
     if(bdayMsg) bdayMsg.value=BDAY_DEFAULT;
     setBdayChan('whatsapp'); syncBday(); countBday();
-    applyColor();applyIcon();renderName();applyTypeUI();validate();
+    applyColor();applyIcon();renderName();renderReward();renderBalance();validate();
   }
 
   function pickColor(bg,ink){
@@ -2736,18 +2444,9 @@ function downloadQRpng(seed){
     editTarget=article;
     editOrigin=(typeof origin==='string')?origin:'tarjetas';
     const d=readCardData(article);
-    curType=d.type||'fidelidad';
-    usoMode=d.usoMode||'limitado';
     fName.value=d.name;
-    if(curType==='membresia'){
-      fPrice.value=d.price||'';
-      fService.value=d.service||d.reward||'';fUsos.value=d.stamps||10;
-      fValidDaysMem.value=(d.expiry&&/\d/.test(d.expiry))?parseInt(d.expiry,10):'';
-    }else{
-      fReward.value=d.reward;fStamps.value=d.stamps;
-      fPerVisit.value=d.perVisit||1;fPerDay.value=d.perDay||1;
-    }
-    view.querySelectorAll('#usosMode .radio-card').forEach(x=>x.classList.toggle('sel',x.dataset.val===usoMode));
+    fReward.value=d.reward;fStamps.value=d.stamps;
+    fPerVisit.value=d.perVisit||1;fPerDay.value=d.perDay||1;
     state.iconSVG=d.iconSVG||state.iconSVG; applyIcon();
     pickColor(d.bg,d.ink);
     if(bdaySw) bdaySw.classList.toggle('on',!!d.bdayOn);
@@ -2755,40 +2454,24 @@ function downloadQRpng(seed){
     setBdayChan(d.bdayChan||'whatsapp'); syncBday(); countBday();
     document.getElementById('crearTitle').textContent='Edición de tarjeta';
     create.textContent='Guardar cambios';
-    renderName();applyTypeUI();validate();
+    renderName();renderReward();renderBalance();validate();
     go('crear');
   };
-  window.openTypePicker=function(){go('crearTipo');};
-  window.openCreateCard=function(type){
+  window.openCreateCard=function(){
     editTarget=null;
-    curType=(type==='membresia')?'membresia':'fidelidad';
     document.getElementById('crearTitle').textContent='Crear nueva tarjeta';
     create.textContent='Crear tarjeta';
     resetForm();
     go('crear'); setTimeout(()=>fName.focus(),120);
   };
 
-  // type picker → form
-  document.querySelectorAll('#tipoView .tipo-opt').forEach(b=>b.addEventListener('click',()=>window.openCreateCard(b.dataset.type)));
-  document.querySelectorAll('#tipoView [data-tipoclose]').forEach(b=>b.addEventListener('click',()=>go('tarjetas')));
-
   create.addEventListener('click',()=>{
     if(!validate()){markErrors();showToast('Completa los campos obligatorios');
-      const first=reqList().find(el=>!fieldOk(el));if(first)first.focus();return;}
-    let d;
-    if(curType==='membresia'){
-      d={type:'membresia',usoMode:usoMode,name:(fName.value||'').trim(),
-        price:(fPrice.value||'').trim(),memberPrefix:'SOC-',
-        benefits:[],service:(fService.value||'').trim(),expiry:expiryLabel(),
-        stamps:usoMode==='ilimitado'?0:stampCount(),reward:(fService.value||'').trim(),
-        perVisit:1,perDay:1,bg:state.bg,ink:state.ink,iconSVG:state.iconSVG,
-        bdayOn:bdaySw&&bdaySw.classList.contains('on'),bdayMsg:(bdayMsg&&bdayMsg.value||'').trim(),bdayChan:bdayChan};
-    }else{
-      d={type:'fidelidad',usoMode:'limitado',name:(fName.value||'').trim(),reward:(fReward.value||'').trim(),
-        stamps:stampCount(),perVisit:parseInt(fPerVisit.value,10)||1,perDay:parseInt(fPerDay.value,10)||1,
-        benefits:[],bg:state.bg,ink:state.ink,iconSVG:state.iconSVG,
-        bdayOn:bdaySw&&bdaySw.classList.contains('on'),bdayMsg:(bdayMsg&&bdayMsg.value||'').trim(),bdayChan:bdayChan};
-    }
+      const first=reqList.find(el=>!reqOk(el));if(first)first.focus();return;}
+    const d={name:(fName.value||'').trim(),reward:(fReward.value||'').trim(),
+      stamps:stampCount(),perVisit:parseInt(fPerVisit.value,10)||1,perDay:parseInt(fPerDay.value,10)||1,
+      bg:state.bg,ink:state.ink,iconSVG:state.iconSVG,
+      bdayOn:bdaySw&&bdaySw.classList.contains('on'),bdayMsg:(bdayMsg&&bdayMsg.value||'').trim(),bdayChan:bdayChan};
     if(editTarget){
       const tgt=editTarget, origin=editOrigin;
       window.confirmAsk({title:'Guardar cambios',text:'Se aplicarán los cambios a la tarjeta "'+d.name+'".',ok:'Guardar cambios',onOk:()=>{
@@ -2802,63 +2485,35 @@ function downloadQRpng(seed){
     editTarget=null;
   });
 
-  // openers → primero elegir tipo
-  document.querySelectorAll('.card-new, .js-create').forEach(b=>b.addEventListener('click',e=>{e.stopImmediatePropagation();window.openTypePicker();},true));
-
   // init
   // si el negocio ya tiene logo, ocultar "Importar logo"
   if(window.__bizHasLogo!==false){const lf=document.getElementById('logoUploadFld');if(lf)lf.style.display='none';}
-  applyColor();applyIcon();renderName();applyTypeUI();validate();
+  applyColor();applyIcon();renderName();renderReward();renderBalance();validate();
 })();
 
 /* ===== Propaga la tarjeta nueva a Mis tarjetas + Inicio ===== */
 function cardArticleHTML(d){
-  const type=d.type||'fidelidad';
-  const typeTag=type==='membresia'
-    ? '<span class="lc-type mem">Membresía</span>'
-    : '<span class="lc-type fid">Fidelidad</span>';
-  let mid, foot;
-  if(type==='membresia' && (d.usoMode||'limitado')==='ilimitado'){
-    mid='<div class="mc-benefits"><span>Acceso ilimitado</span>'+(d.service?'<span>'+d.service+'</span>':'')+'</div>';
-    const exp=d.expiry||'Sin caducidad';
-    foot='Membresía ilimitada · '+(/sin/i.test(exp)?'sin caducidad':'vence en '+exp);
-  } else {
-    mid='';
-    foot= type==='membresia'
-      ? ((d.stamps||0)+' usos incluidos por membresía')
-      : ((d.stamps||0)+' sellos → '+(d.reward||''));
-  }
-  const statLabel=type==='membresia'?'socios activos':'clientes con esta tarjeta';
+  const foot=(d.stamps||0)+' sellos → '+(d.reward||'');
   const n=d.clientCount||0;
   return `
       <div class="mini-card flat" style="--bg:${d.bg};--ink:${d.ink}">
         <div class="mini-top"><span class="mini-brand">Café Luna</span><span class="mini-logo">${d.iconSVG}</span></div>
-        ${mid}
         <div class="mini-foot">${foot}</div>
       </div>
-      <div class="lc-meta"><div class="lc-title">${d.name}</div><div class="lc-tags">${typeTag}<span class="status"><i></i>Activa</span></div></div>
-      <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>${n} ${statLabel}</div>
+      <div class="lc-meta"><div class="lc-title">${d.name}</div><div class="lc-tags"><span class="status"><i></i>Activa</span></div></div>
+      <div class="lc-stat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>${n} clientes con esta tarjeta</div>
       <div class="lc-actions"><button class="act-view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="2.6"/></svg>Ver</button><button class="act-edit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16z"/></svg>Editar</button></div>`;
 }
 function setCardData(art,d){
-  art.dataset.type=d.type||'fidelidad';
   art.dataset.name=d.name;art.dataset.reward=d.reward||'';art.dataset.stamps=d.stamps||0;
   art.dataset.filled=d.filled||0;art.dataset.bg=d.bg;art.dataset.ink=d.ink;
-  art.dataset.usoMode=d.usoMode||'limitado';
   art.dataset.bdayOn=d.bdayOn?'1':'0';
   if(d.bdayMsg) art.dataset.bdayMsg=d.bdayMsg; else art.removeAttribute('data-bday-msg');
   art.dataset.bdayChan=d.bdayChan||'whatsapp';
   if(d.perVisit) art.dataset.perVisit=d.perVisit; if(d.perDay) art.dataset.perDay=d.perDay;
-  if((d.type||'fidelidad')==='membresia'){
-    art.dataset.price=d.price||'';art.dataset.memberPrefix=d.memberPrefix||'SOC-';
-    art.dataset.benefits=(d.benefits||[]).join('|');art.dataset.service=d.service||'';
-    art.dataset.expiry=d.expiry||'';
-  }
 }
 function readCardData(art){
   return {
-    type: art.dataset.type||'fidelidad',
-    usoMode: art.dataset.usoMode||'limitado',
     bdayOn: art.dataset.bdayOn==='1',
     bdayMsg: art.dataset.bdayMsg||'',
     bdayChan: art.dataset.bdayChan||'whatsapp',
@@ -2868,11 +2523,6 @@ function readCardData(art){
     filled: parseInt(art.dataset.filled||'0',10),
     perVisit: parseInt(art.dataset.perVisit||'1',10),
     perDay: parseInt(art.dataset.perDay||'1',10),
-    price: art.dataset.price||'',
-    memberPrefix: art.dataset.memberPrefix||'SOC-',
-    benefits: (art.dataset.benefits||'').split('|').map(s=>s.trim()).filter(Boolean),
-    service: art.dataset.service||art.dataset.reward||'',
-    expiry: art.dataset.expiry||'',
     bg: art.dataset.bg||'#7c5cdc', ink: art.dataset.ink||'#fff',
     iconSVG: (art.querySelector('.mini-logo svg')||{}).outerHTML || '',
     clientCount: parseInt(((art.querySelector('.lc-stat')||{}).textContent||'').match(/\d+/)||0,10)||0
@@ -2897,7 +2547,7 @@ function addCardEverywhere(d){
     li.setAttribute('data-goto','tarjetas');
     li.innerHTML=`
       <span class="lc-swatch flat" style="--bg:${d.bg};--ink:${d.ink}">${d.iconSVG}</span>
-      <div class="lc-info"><div class="nm">${d.name} <span class="lc-type ${d.type==='membresia'?'mem':'fid'}">${d.type==='membresia'?'Membresía':'Fidelidad'}</span></div><div class="dt">Creada recién</div></div>
+      <div class="lc-info"><div class="nm">${d.name}</div><div class="dt">Creada recién</div></div>
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
     li.addEventListener('click',()=>go('tarjetas'));
     list.insertBefore(li, list.firstElementChild);
@@ -2958,8 +2608,6 @@ function updateCardEverywhere(art,d){
   function open(){view.classList.add('active');document.querySelectorAll('.view').forEach(v=>{if(v!==view)v.classList.remove('active')});window.scrollTo(0,0);}
   window.openCardDetail=function(art){
     curArt=art; const d=readCardData(art);
-    const mem=d.type==='membresia';
-    const ilim=mem&&d.usoMode==='ilimitado';
     document.getElementById('cdTitle').textContent=d.name;
     // mini preview
     const mini=document.getElementById('cdMini');
@@ -2968,92 +2616,38 @@ function updateCardEverywhere(art,d){
       document.getElementById('cdMiniLogo').innerHTML=d.iconSVG||'';
       document.getElementById('cdMiniName').textContent=d.name;
       const ms=document.getElementById('cdMiniStamps');
-      if(ilim){
-        mini.classList.add('mini-ilim');
-        ms.className='cd-mini-benefits';
-        ms.innerHTML='<span>Acceso ilimitado</span>'+(d.service?'<span>'+d.service+'</span>':'');
-      }else{
-        mini.classList.remove('mini-ilim');
-        ms.className='cd-mini-stamps';
-        ms.innerHTML=Array.from({length:Math.min(d.stamps,10)}).map((_,i)=>'<i class="'+(i<(d.filled||0)?'on':'')+'"></i>').join('');
-      }
+      ms.innerHTML=Array.from({length:Math.min(d.stamps,10)}).map((_,i)=>'<i class="'+(i<(d.filled||0)?'on':'')+'"></i>').join('');
     }
     // insight
-    const it=document.getElementById('cdInsightTitle'), ip=document.getElementById('cdInsightText');
-    if(mem){
-      it.textContent=ilim?'Renueva las membresías que vencen pronto':'Socios con pocos usos disponibles';
-      ip.textContent=ilim?'Avisa a quienes vencen este mes para renovar antes de perder el beneficio.':'Recuérdales aprovechar sus usos restantes antes de que caduque la membresía.';
-    }else{
-      it.textContent='12 clientes están a 1 sello del premio';
-      ip.textContent='Envíales un recordatorio hoy: suelen volver dentro de 3 días tras recibirlo.';
-    }
+    document.getElementById('cdInsightTitle').textContent='12 clientes están a 1 sello del premio';
+    document.getElementById('cdInsightText').textContent='Envíales un recordatorio hoy: suelen volver dentro de 3 días tras recibirlo.';
     // KPIs
-    const kpis=document.getElementById('cdKpis');
-    if(mem){
-      const socios=68, ingresos=(parseInt(d.price||'0',10)||0)*socios;
-      kpis.innerHTML=
-        '<div class="card kpi"><div class="t">Socios activos</div><div class="n">'+socios+'</div><div class="d pos">+9 este mes</div></div>'+
-        '<div class="card kpi"><div class="t">Ingresos estimados</div><div class="n">S/'+ingresos.toLocaleString('es-PE')+'</div><div class="d">cuota S/'+(d.price||'0')+'</div></div>'+
-        (ilim
-          ? '<div class="card kpi"><div class="t">Accesos registrados</div><div class="n">1.204</div><div class="d">este mes</div></div>'
-          : '<div class="card kpi"><div class="t">Usos registrados</div><div class="n">412</div><div class="d">de '+(socios*d.stamps)+' disponibles</div></div>')+
-        '<div class="card kpi"><div class="t">Vencen este mes</div><div class="n">14</div><div class="d">por renovar</div></div>';
-    }else{
-      kpis.innerHTML=
-        '<div class="card kpi"><div class="t">Tarjetas emitidas</div><div class="n">142</div><div class="d pos">+18 este mes</div></div>'+
-        '<div class="card kpi"><div class="t">Activos 30d</div><div class="n">98</div><div class="d">69% del total</div></div>'+
-        '<div class="card kpi"><div class="t">Sellos otorgados</div><div class="n">874</div><div class="d">total histórico</div></div>'+
-        '<div class="card kpi"><div class="t">Premios canjeados</div><div class="n">31</div><div class="d">tasa 58%</div></div>';
-    }
+    document.getElementById('cdKpis').innerHTML=
+      '<div class="card kpi"><div class="t">Tarjetas emitidas</div><div class="n">142</div><div class="d pos">+18 este mes</div></div>'+
+      '<div class="card kpi"><div class="t">Activos 30d</div><div class="n">98</div><div class="d">69% del total</div></div>'+
+      '<div class="card kpi"><div class="t">Sellos otorgados</div><div class="n">874</div><div class="d">total histórico</div></div>'+
+      '<div class="card kpi"><div class="t">Premios canjeados</div><div class="n">31</div><div class="d">tasa 58%</div></div>';
     // left chart card
-    const chart=document.getElementById('cdChartCard');
-    if(mem && !ilim){
-      chart.innerHTML='<h4>Usos de la membresía</h4>'+
-        '<div class="barline"><span class="k">0–3 usos</span><div class="track"><div class="fill" style="width:30%;background:#9fb0f2"></div></div><span class="v">22</span></div>'+
-        '<div class="barline"><span class="k">4–7 usos</span><div class="track"><div class="fill" style="width:48%;background:#5e74ec"></div></div><span class="v">31</span></div>'+
-        '<div class="barline"><span class="k">8+ usos</span><div class="track"><div class="fill" style="width:22%;background:#2f40d6"></div></div><span class="v">15</span></div>'+
-        '<div class="statline" style="margin-top:6px"><span class="k">Sin usos en 30 días</span><span class="v warn">9 socios</span></div>';
-    }else if(mem && ilim){
-      chart.innerHTML='<h4>Vencimientos próximos</h4>'+
-        '<div class="barline"><span class="k">Esta semana</span><div class="track"><div class="fill" style="width:20%;background:#f0a35e"></div></div><span class="v">4</span></div>'+
-        '<div class="barline"><span class="k">Este mes</span><div class="track"><div class="fill" style="width:55%;background:#5e74ec"></div></div><span class="v">14</span></div>'+
-        '<div class="barline"><span class="k">Próximo mes</span><div class="track"><div class="fill" style="width:35%;background:#2f40d6"></div></div><span class="v">21</span></div>'+
-        '<div class="statline" style="margin-top:6px"><span class="k">Renovaciones del mes</span><span class="v pos">+22</span></div>';
-    }else{
-      chart.innerHTML='<h4>Avance de los clientes</h4>'+
-        '<div class="barline"><span class="k">0–2 sellos</span><div class="track"><div class="fill" style="width:42%;background:#9fb0f2"></div></div><span class="v">60</span></div>'+
-        '<div class="barline"><span class="k">3–5 sellos</span><div class="track"><div class="fill" style="width:35%;background:#5e74ec"></div></div><span class="v">50</span></div>'+
-        '<div class="barline"><span class="k">6+ sellos</span><div class="track"><div class="fill" style="width:22%;background:#2f40d6"></div></div><span class="v">32</span></div>'+
-        '<div class="statline" style="margin-top:6px"><span class="k">A 1 sello del premio</span><span class="v warn">12 clientes</span></div>';
-    }
+    document.getElementById('cdChartCard').innerHTML='<h4>Avance de los clientes</h4>'+
+      '<div class="barline"><span class="k">0–2 sellos</span><div class="track"><div class="fill" style="width:42%;background:#9fb0f2"></div></div><span class="v">60</span></div>'+
+      '<div class="barline"><span class="k">3–5 sellos</span><div class="track"><div class="fill" style="width:35%;background:#5e74ec"></div></div><span class="v">50</span></div>'+
+      '<div class="barline"><span class="k">6+ sellos</span><div class="track"><div class="fill" style="width:22%;background:#2f40d6"></div></div><span class="v">32</span></div>'+
+      '<div class="statline" style="margin-top:6px"><span class="k">A 1 sello del premio</span><span class="v warn">12 clientes</span></div>';
     // right data card
-    const data=document.getElementById('cdDataCard');
     const bdayChanLbl={whatsapp:'WhatsApp',sms:'SMS'}[d.bdayChan]||'WhatsApp';
     const bdayRow=d.bdayOn
       ? '<div class="statline"><span class="k">Saludo de cumpleaños</span><span class="v pos">Activo · '+bdayChanLbl+'</span></div>'
       : '<div class="statline"><span class="k">Saludo de cumpleaños</span><span class="v">Desactivado</span></div>';
-    if(mem){
-      const usos=ilim?'Ilimitados':d.stamps+' usos';
-      data.innerHTML='<h4>Datos de la membresía</h4>'+
-        '<div class="statline" style="border-top:none;padding-top:6px"><span class="k">Precio / cuota</span><span class="v">S/'+(d.price||'0')+'</span></div>'+
-        '<div class="statline"><span class="k">Servicio</span><span class="v">'+(d.service||'—')+'</span></div>'+
-        '<div class="statline"><span class="k">Usos incluidos</span><span class="v">'+usos+'</span></div>'+
-        '<div class="statline"><span class="k">Vigencia</span><span class="v">'+(d.expiry||'Sin caducidad')+'</span></div>'+
-        bdayRow+
-        '<div class="statline"><span class="k">Estado</span><span class="v pos">Activa</span></div>';
-    }else{
-      data.innerHTML='<h4>Datos de la tarjeta</h4>'+
-        '<div class="statline" style="border-top:none;padding-top:6px"><span class="k">Recompensa</span><span class="v">'+(d.reward||'—')+'</span></div>'+
-        '<div class="statline"><span class="k">Sellos para canjear</span><span class="v">'+d.stamps+'</span></div>'+
-        '<div class="statline"><span class="k">Locales activos</span><span class="v">3</span></div>'+
-        '<div class="statline"><span class="k">Creada</span><span class="v">12 feb 2026</span></div>'+
-        bdayRow+
-        '<div class="statline"><span class="k">Estado</span><span class="v pos">Activa</span></div>';
-    }
+    document.getElementById('cdDataCard').innerHTML='<h4>Datos de la tarjeta</h4>'+
+      '<div class="statline" style="border-top:none;padding-top:6px"><span class="k">Recompensa</span><span class="v">'+(d.reward||'—')+'</span></div>'+
+      '<div class="statline"><span class="k">Sellos para canjear</span><span class="v">'+d.stamps+'</span></div>'+
+      '<div class="statline"><span class="k">Locales activos</span><span class="v">3</span></div>'+
+      '<div class="statline"><span class="k">Creada</span><span class="v">12 feb 2026</span></div>'+
+      bdayRow+
+      '<div class="statline"><span class="k">Estado</span><span class="v pos">Activa</span></div>';
     document.getElementById('cdQR').innerHTML=qrSVG(d.name,150,'#15171a','#ffffff');
     document.getElementById('cdLink').value='https://wlt.app/r/'+(d.name||'card').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
     // top clientes de la tarjeta + ver todo
-    document.getElementById('cdTopProgHead').textContent=mem?(ilim?'Estado':'Usos'):'Sellos';
     if(window.renderCardTopClients) window.renderCardTopClients(d);
     const seeAll=document.getElementById('cdSeeAll');
     if(seeAll) seeAll.onclick=function(e){e.preventDefault(); if(window.cliFilterByCard) window.cliFilterByCard(d.name);};
@@ -3126,7 +2720,7 @@ function updateCardEverywhere(art,d){
     poster.style.setProperty('--pink', light?'#15171a':'#ffffff');
     document.getElementById('posterLogo').innerHTML=d.iconSVG;
     document.getElementById('posterBrand').textContent='Café Luna';
-    document.getElementById('posterTitle').textContent=(d.type==='membresia')?'Adquiere nuestra membresía aquí':'Descarga nuestra tarjeta de fidelidad aquí';
+    document.getElementById('posterTitle').textContent='Descarga nuestra tarjeta de fidelidad aquí';
     document.getElementById('posterQR').innerHTML=qrSVG(d.name,300,'#15171a','#ffffff');
     document.body.classList.add('printing-poster');
     const after=()=>{document.body.classList.remove('printing-poster');window.removeEventListener('afterprint',after);};
@@ -3411,8 +3005,7 @@ function updateCardEverywhere(art,d){
       const val=opt.textContent.trim();
       curBtn.querySelector('.val').textContent=val;
       if(curBtn.dataset.dd==='tarjeta'){
-        if(curBtn.closest('.view[data-view="estadisticas"]') && window.renderEstadisticas) window.renderEstadisticas(val);
-        else if(curBtn.closest('.view[data-view="clientes"]') && window.cliFilterByCard) window.cliFilterByCard(val==='Todas'?'__all__':val);
+        if(curBtn.closest('.view[data-view="clientes"]') && window.cliFilterByCard) window.cliFilterByCard(val==='Todas'?'__all__':val);
       }
       close();return;
     }
@@ -3438,35 +3031,30 @@ document.querySelectorAll('#range button').forEach(b=>{
 (function(){
   const body=document.getElementById('cliBody'); if(!body) return;
   const cards={
-    cafes:{name:'Tarjeta Sellos · Cafés',type:'fid',max:10,unit:'sellos',bg:'#b8814e',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3v2M11 3v2"/></svg>'},
-    verano:{name:'Promoción Verano',type:'fid',max:8,unit:'sellos',bg:'#2f6bff',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>'},
-    postres:{name:'Tarjeta Postres',type:'fid',max:6,unit:'sellos',bg:'#7c5cdc',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M6 21v-5a6 6 0 0 1 12 0v5"/><path d="M12 7V4"/></svg>'},
-    gym:{name:'Gym · 10 Clases',type:'mem',max:10,unit:'usos',bg:'#1f9d57',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9v6M17.5 9v6M4 10.5v3M20 10.5v3M6.5 12h11"/></svg>'},
-    cafeplus:{name:'Plan Café Ilimitado',type:'mem',max:0,unit:'ilimitado',bg:'#1c1f26',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 9a3 3 0 1 0 0 6c2 0 3-2 5.5-3s3.5-3 5.5-3a3 3 0 1 1 0 6c-2 0-3-2-5.5-3"/></svg>'}
+    cafes:{name:'Tarjeta Sellos · Cafés',max:10,bg:'#b8814e',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M16 10h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3v2M11 3v2"/></svg>'},
+    verano:{name:'Promoción Verano',max:8,bg:'#2f6bff',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>'},
+    postres:{name:'Tarjeta Postres',max:6,bg:'#7c5cdc',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14M6 21v-5a6 6 0 0 1 12 0v5"/><path d="M12 7V4"/></svg>'},
+    almuerzos:{name:'Tarjeta Almuerzos',max:10,bg:'#0f9b8e',ink:'#fff',icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11h14M7 11V7a5 5 0 0 1 10 0v4M6 11l1 9h10l1-9"/></svg>'}
   };
   const clients=[
-    {n:'Ana Rojas',cards:[{key:'cafes',v:6},{key:'gym',v:4}],profile:'VIP',last:'hace 2 días',local:'Miraflores',email:'ana.rojas@gmail.com',phone:'+51 987 654 321',bday:'14 de marzo',gender:'Femenino',staff:'Lucía',since:'12 feb 2026'},
+    {n:'Ana Rojas',cards:[{key:'cafes',v:6},{key:'almuerzos',v:4}],profile:'VIP',last:'hace 2 días',local:'Miraflores',email:'ana.rojas@gmail.com',phone:'+51 987 654 321',bday:'14 de marzo',gender:'Femenino',staff:'Lucía',since:'12 feb 2026'},
     {n:'Carlos Mendoza',cards:[{key:'verano',v:5}],profile:'VIP',last:'ayer',local:'San Isidro',email:'carlos.m@outlook.com',phone:'+51 991 223 344',bday:'2 de julio',gender:'Masculino',staff:'Diego',since:'20 feb 2026'},
-    {n:'Lucía Vargas',cards:[{key:'postres',v:5},{key:'cafeplus',v:0}],profile:'Habitual',last:'hace 3 días',local:'Miraflores',email:'lucia.v@gmail.com',phone:'+51 955 667 788',bday:'30 de noviembre',gender:'Femenino',staff:'Lucía',since:'1 mar 2026'},
+    {n:'Lucía Vargas',cards:[{key:'postres',v:5},{key:'cafes',v:2}],profile:'Habitual',last:'hace 3 días',local:'Miraflores',email:'lucia.v@gmail.com',phone:'+51 955 667 788',bday:'30 de noviembre',gender:'Femenino',staff:'Lucía',since:'1 mar 2026'},
     {n:'Marco Torres',cards:[{key:'cafes',v:3}],profile:'Habitual',last:'hace 5 días',local:'Barranco',email:'marco.t@gmail.com',phone:'+51 944 556 677',bday:'8 de enero',gender:'Masculino',staff:'Sofía',since:'5 mar 2026'},
-    {n:'Sofía Paredes',cards:[{key:'gym',v:7}],profile:'Habitual',last:'hace 2 días',local:'San Isidro',email:'sofia.p@hotmail.com',phone:'+51 933 445 566',bday:'19 de septiembre',gender:'Femenino',staff:'Diego',since:'8 mar 2026'},
-    {n:'Diego Flores',cards:[{key:'cafeplus',v:0}],profile:'VIP',last:'hace 1 día',local:'Miraflores',email:'diego.f@gmail.com',phone:'+51 922 334 455',bday:'25 de mayo',gender:'Masculino',staff:'Lucía',since:'10 mar 2026'},
+    {n:'Sofía Paredes',cards:[{key:'almuerzos',v:7}],profile:'Habitual',last:'hace 2 días',local:'San Isidro',email:'sofia.p@hotmail.com',phone:'+51 933 445 566',bday:'19 de septiembre',gender:'Femenino',staff:'Diego',since:'8 mar 2026'},
+    {n:'Diego Flores',cards:[{key:'cafes',v:8}],profile:'VIP',last:'hace 1 día',local:'Miraflores',email:'diego.f@gmail.com',phone:'+51 922 334 455',bday:'25 de mayo',gender:'Masculino',staff:'Lucía',since:'10 mar 2026'},
     {n:'Paula Núñez',cards:[{key:'postres',v:1}],profile:'Casual',last:'hace 6 días',local:'Barranco',email:'paula.n@gmail.com',phone:'+51 911 223 344',bday:'3 de abril',gender:'Femenino',staff:'Sofía',since:'15 mar 2026'},
-    {n:'María León',cards:[{key:'cafes',v:4},{key:'gym',v:2}],profile:'En riesgo',last:'hace 28 días',local:'Miraflores',email:'maria.l@gmail.com',phone:'+51 900 112 233',bday:'21 de octubre',gender:'Femenino',staff:'Lucía',since:'18 feb 2026'}
+    {n:'María León',cards:[{key:'cafes',v:4},{key:'almuerzos',v:2}],profile:'En riesgo',last:'hace 28 días',local:'Miraflores',email:'maria.l@gmail.com',phone:'+51 900 112 233',bday:'21 de octubre',gender:'Femenino',staff:'Lucía',since:'18 feb 2026'}
   ];
   clients.forEach((c,i)=>{
     c.id=i;
     // normaliza cada tarjeta poseída → fuente de verdad por-cliente
     c.cards.forEach(cc=>{
       const cd=cards[cc.key];
-      if(cc.max==null) cc.max=cd.max;                 // sellos meta / usos contratados
-      if(cd.type==='mem' && cc.daysLeft==null)
-        cc.daysLeft=(cd.unit==='ilimitado'?18:24);    // vigencia (días) demo
-      if(cd.type==='mem' && cd.unit==='ilimitado' && cc.checkins==null)
-        cc.checkins=9;                                // historial de accesos (ingresos al local)
+      if(cc.max==null) cc.max=cd.max;                 // sellos para el premio
     });
     // compat con código legado que aún lee c.card / c.stamps
-    const prim=c.cards.find(x=>cards[x.key].type==='fid')||c.cards[0];
+    const prim=c.cards[0];
     c.card=prim.key; c.stamps=prim.v;
     c.history=buildHistory(c);
   });
@@ -3491,23 +3079,19 @@ document.querySelectorAll('#range button').forEach(b=>{
   function buildHistory(c){
     const h=[{card:c.cards[0].key,t:'Cliente registrado',d:c.since,by:c.staff,role:'staff'}];
     c.cards.forEach(cc=>{
-      const cd=cards[cc.key];
-      h.push({card:cc.key,t:'Alta de '+(cd.type==='mem'?'membresía':'tarjeta'),d:c.since,by:c.staff,role:'staff'});
-      if(cd.type==='fid'){ for(let s=0;s<cc.v;s++) h.push({card:cc.key,t:'Sello otorgado',d:'',by:c.staff,role:'staff'}); }
-      else if(cd.unit==='usos'){ for(let s=0;s<cc.v;s++) h.push({card:cc.key,t:'Uso validado',d:'',by:c.staff,role:'staff'}); }
-      else { for(let s=0;s<(cc.checkins||0);s++) h.push({card:cc.key,t:'Ingreso validado',d:'',by:c.staff,role:'staff'}); }
+      h.push({card:cc.key,t:'Alta de tarjeta',d:c.since,by:c.staff,role:'staff'});
+      for(let s=0;s<cc.v;s++) h.push({card:cc.key,t:'Sello otorgado',d:'',by:c.staff,role:'staff'});
     });
     return h;
   }
   function pillClass(p){return p==='VIP'?'pill':(p==='En riesgo'?'pill risk':(p==='Casual'?'pill cas':'pill hab'));}
   function initials(n){return n.split(' ').map(w=>w[0]).slice(0,2).join('').toUpperCase();}
-  function progText(cd,v){return cd.unit==='ilimitado'?'Ilimitada':(v+'/'+cd.max+' '+cd.unit);}
+  function progText(cd,v){return v+'/'+cd.max+' sellos';}
   function cardChips(c){
     return '<div class="cli-cards">'+c.cards.map(cc=>{
       const cd=cards[cc.key];
       return '<span class="cli-chip" title="'+cd.name+'"><span class="cc-dot" style="background:'+cd.bg+'"></span>'+
         '<span class="cc-nm">'+cd.name+'</span>'+
-        '<span class="cc-tp '+cd.type+'">'+(cd.type==='mem'?'Membresía':'Fidelidad')+'</span>'+
         '<span class="cc-pr">'+progText(cd,cc.v)+'</span></span>';
     }).join('')+'</div>';
   }
@@ -3616,64 +3200,13 @@ document.querySelectorAll('#range button').forEach(b=>{
     const cd=key?cards[key]:null;
     if(!list.length){tb.innerHTML='<tr><td colspan="5" style="text-align:center;color:#94a3b8;padding:18px">Aún no hay clientes con esta tarjeta</td></tr>';return;}
     tb.innerHTML=list.map((o,i)=>{
-      const prog=cd.unit==='ilimitado'?'<span class="pill hab">Socio activo</span>':(o.v+'/'+cd.max);
+      const prog=o.v+'/'+cd.max;
       return '<tr><td style="color:#94a3b8;font-weight:600">'+(i+1)+'</td>'+
         '<td>'+o.c.n+'</td>'+
         '<td><span class="'+pillClass(o.c.profile)+'">'+o.c.profile+'</span></td>'+
         '<td class="num" style="font-weight:600">'+prog+'</td>'+
         '<td style="color:var(--ink-soft)">'+o.c.last+'</td></tr>';
     }).join('');
-  };
-
-  // ===== Reactividad de Estadísticas según la tarjeta del selector superior =====
-  const _estView=document.querySelector('.view[data-view="estadisticas"]');
-  const _t10Body=document.getElementById('topbody');
-  const _t10Th=_t10Body?_t10Body.closest('table').querySelectorAll('thead th')[2]:null;
-  const _t10Title=_t10Body?_t10Body.closest('.tbl-card').querySelector('.tbl-head h4'):null;
-  const _t10HTML0=_t10Body?_t10Body.innerHTML:'';
-  const _t10Label0=_t10Th?_t10Th.textContent:'Visitas/mes';
-  const _t10Title0=_t10Title?_t10Title.textContent:'';
-  function cardTypeByName(name){
-    const key=keyByName(name);
-    if(name==='Todas'||!key) return {t:'all'};
-    return {t:cards[key].type==='mem'?'mem':'fid', key};
-  }
-  window.renderEstadisticas=function(name){
-    if(!_estView) return;
-    const {t,key}=cardTypeByName(name);
-    // 1) visibilidad de bloques exclusivos por tipo
-    _estView.querySelectorAll('[data-only]').forEach(el=>{
-      const only=el.dataset.only;
-      const hide=(t==='fid'&&only==='mem')||(t==='mem'&&only==='fid');
-      el.style.display=hide?'none':'';
-      el.classList.toggle('stat-focus', t==='mem'&&only==='mem');
-    });
-    // 2) Top 10: adapta columna de progreso y reconstruye desde clientes reales
-    if(_t10Body&&_t10Th){
-      if(t==='mem'){
-        const cd=cards[key], ilim=cd.unit==='ilimitado';
-        _t10Th.textContent=ilim?'Estado':'Usos';
-        const owners=clients.filter(c=>c.cards.some(x=>x.key===key))
-          .map(c=>({c,cc:c.cards.find(x=>x.key===key)}))
-          .sort((a,b)=>b.cc.v-a.cc.v).slice(0,10);
-        _t10Body.innerHTML=owners.length?owners.map((o,i)=>{
-          const prog=ilim?'<span class="pill hab">Socio activo</span>':(o.cc.v+'/'+o.cc.max);
-          const ml=o.c.cards.length>1?'<span class="pos" style="font-weight:600">Híbrido</span>':'1 tarjeta';
-          return '<tr><td class="idx">'+(i+1)+'</td>'+
-            '<td style="font-weight:500">'+o.c.n+'</td>'+
-            '<td class="num" style="font-weight:600">'+prog+'</td>'+
-            '<td><span class="'+pillClass(o.c.profile)+'">'+o.c.profile+'</span></td>'+
-            '<td>'+o.c.last+'</td>'+
-            '<td><span class="mem-tier socio">Socio</span></td>'+
-            '<td>'+ml+'</td></tr>';
-        }).join(''):'<tr><td colspan="7" style="text-align:center;color:#94a3b8;padding:18px">Sin clientes en esta membresía aún</td></tr>';
-        if(_t10Title) _t10Title.textContent='Top 10 socios — '+cd.name;
-      } else {
-        _t10Th.textContent=_t10Label0;
-        _t10Body.innerHTML=_t10HTML0;
-        if(_t10Title) _t10Title.textContent=_t10Title0;
-      }
-    }
   };
 
   // toast helper
@@ -3721,7 +3254,7 @@ document.querySelectorAll('#range button').forEach(b=>{
     const tl=document.getElementById('drTimeline');
     tl.innerHTML=c.history.slice().reverse().map(h=>{
       const cd=cards[h.card];
-      const cls=/\+/.test(h.t)?'add':((/−/.test(h.t)||/^-/.test(h.t))?'rem':(/Check-in|Uso/.test(h.t)?'use':(/Renov|Premio|agotada/.test(h.t)?'gift':'reg')));
+      const cls=/\+/.test(h.t)?'add':((/−/.test(h.t)||/^-/.test(h.t))?'rem':(/Premio/.test(h.t)?'gift':'reg'));
       const tag=cd?'<span class="tl-card" style="--c:'+cd.bg+'">'+cd.name+'</span>':'';
       return `<li><span class="dot ${cls}"></span><div class="tl-txt"><div class="tl-t">${h.t}${tag}</div><div class="tl-d">${h.by?('por '+h.by):''}${h.d?(' · '+h.d):''}</div></div></li>`;
     }).join('');
@@ -3768,12 +3301,7 @@ document.querySelectorAll('#range button').forEach(b=>{
   function setEditing(v){dataBlock.classList.toggle('editing',v);}
 
   // ----- Billetera: selector de tarjetas del cliente (híbrido) -----
-  function cardProgLabel(cc){
-    const cd=cards[cc.key];
-    if(cd.type==='fid') return cc.v+'/'+cc.max+' sellos';
-    if(cd.unit==='usos') return (cc.max-cc.v)+' usos rest.';
-    return cc.daysLeft>0?('Vence en '+cc.daysLeft+'d'):'Vencida';
-  }
+  function cardProgLabel(cc){return cc.v+'/'+cc.max+' sellos';}
   function renderWallet(c){
     const wrap=document.getElementById('drWallet');
     const n=c.cards.length;
@@ -3786,7 +3314,6 @@ document.querySelectorAll('#range button').forEach(b=>{
           '<button type="button" class="dr-waccard-head" data-key="'+cc.key+'" aria-expanded="'+on+'">'+
             '<span class="dr-card-dot" style="background:'+cd.bg+'"></span>'+
             '<span class="dr-wacc-nm">'+cd.name+'</span>'+
-            '<span class="cc-tp '+cd.type+'">'+(cd.type==='mem'?'Membresía':'Fidelidad')+'</span>'+
             (on?'':'<span class="dr-wacc-pr">'+cardProgLabel(cc)+'</span>')+
             '<span class="dr-wacc-chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>'+
           '</button>'+
@@ -3799,35 +3326,13 @@ document.querySelectorAll('#range button').forEach(b=>{
   function renderActive(c){ /* el panel ahora se renderiza dentro del acordeón (renderWallet) */ }
   function activeCardHTML(c,key){
     const cc=ownedOf(c,key), cd=cards[key];
-    if(cd.type==='fid'){
-      const pct=Math.round(cc.v/cc.max*100);
-      return '<div class="dr-balance"><div class="dr-bal-lbl">Sellos acumulados</div>'+
-          '<div class="dr-bignum"><b>'+cc.v+'</b><span>/</span><i>'+cc.max+'</i></div>'+
-          '<div class="dr-prog"><div class="dr-prog-fill" style="width:'+pct+'%;background:'+cd.bg+'"></div></div></div>'+
-        '<div class="dr-stamp-controls">'+
-          '<button type="button" class="dr-stamp-btn" data-act="rem"'+(cc.v<=0?' disabled':'')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>Quitar sello</button>'+
-          '<button type="button" class="dr-stamp-btn primary" data-act="add"'+(cc.v>=cc.max?' disabled':'')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Sumar sello</button></div>';
-    } else if(cd.unit==='usos'){
-      const rem=cc.max-cc.v, pct=Math.round(cc.v/cc.max*100);
-      return '<div class="dr-balance"><div class="dr-bal-lbl">Usos restantes</div>'+
-          '<div class="dr-bignum"><b>'+rem+'</b><span>de</span><i>'+cc.max+'</i></div>'+
-          '<div class="dr-prog"><div class="dr-prog-fill" style="width:'+pct+'%;background:'+cd.bg+'"></div></div>'+
-          '<div class="dr-mini-meta">Vence en '+cc.daysLeft+' días · '+cc.v+' usos consumidos</div></div>'+
-        '<div class="dr-stamp-controls">'+
-          '<button type="button" class="dr-stamp-btn" data-act="addusos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Añadir usos</button>'+
-          '<button type="button" class="dr-stamp-btn primary" data-act="use"'+(rem<=0?' disabled':'')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Registrar uso</button></div>';
-    } else { // ilimitado: validador de vigencia, sin sellos/usos
-      const ok=cc.daysLeft>0;
-      return '<div class="dr-access '+(ok?'ok':'expired')+'">'+
-          '<span class="da-ico">'+(ok
-            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>'
-            : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v5M12 16v.5"/><circle cx="12" cy="12" r="9"/></svg>')+'</span>'+
-          '<div class="da-txt"><b>'+(ok?'Acceso permitido':'Membresía vencida')+'</b>'+
-          '<span>'+(ok?('vence en '+cc.daysLeft+' días'):'sin vigencia')+'</span></div></div>'+
-        '<div class="dr-stamp-controls">'+
-          '<button type="button" class="dr-stamp-btn primary" data-act="checkin"'+(ok?'':' disabled')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Registrar check-in</button>'+
-          '<button type="button" class="dr-stamp-btn" data-act="renew"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/></svg>Renovar membresía</button></div>';
-    }
+    const pct=Math.round(cc.v/cc.max*100);
+    return '<div class="dr-balance"><div class="dr-bal-lbl">Sellos acumulados</div>'+
+        '<div class="dr-bignum"><b>'+cc.v+'</b><span>/</span><i>'+cc.max+'</i></div>'+
+        '<div class="dr-prog"><div class="dr-prog-fill" style="width:'+pct+'%;background:'+cd.bg+'"></div></div></div>'+
+      '<div class="dr-stamp-controls">'+
+        '<button type="button" class="dr-stamp-btn" data-act="rem"'+(cc.v<=0?' disabled':'')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>Quitar sello</button>'+
+        '<button type="button" class="dr-stamp-btn primary" data-act="add"'+(cc.v>=cc.max?' disabled':'')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Sumar sello</button></div>';
   }
 
   // ----- Controladores de mutación: ÚNICA fuente de verdad por tarjeta -----
@@ -3836,24 +3341,12 @@ document.querySelectorAll('#range button').forEach(b=>{
     renderWallet(cur); renderActive(cur); renderTimeline(cur); applyFilters();
   }
   function actAddStamp(){const cc=ownedOf(cur,activeKey),cd=cards[activeKey];if(cc.v>=cc.max)return;
-    confirmAsk({title:'Sumar 1 sello',text:'Confirmas una visita válida de '+cur.n+' en '+cd.name+'. Quedará '+(cc.v+1)+'/'+cc.max+'.',ok:'Sumar sello',icon:'stamp',
+    confirmAsk({title:'Sumar 1 sello',text:'Confirmas una visita válida de '+cur.n+' en '+cd.name+'. Quedará '+(cc.v+1)+'/'+cc.max+'.',ok:'Sumar sello',
       onOk:()=>{cc.v++;pushHist(cur,activeKey,'+1 sello');if(cc.v>=cc.max)pushHist(cur,activeKey,'Premio disponible para canje');repaint();toast('Sello sumado a '+cur.n);}});}
   function actRemStamp(){const cc=ownedOf(cur,activeKey),cd=cards[activeKey];if(cc.v<=0)return;
     confirmAsk({title:'Quitar 1 sello',text:'Se restará un sello a '+cur.n+' en '+cd.name+'. Quedará '+(cc.v-1)+'/'+cc.max+'.',ok:'Quitar sello',danger:true,
       onOk:()=>{cc.v--;pushHist(cur,activeKey,'−1 sello');repaint();}});}
-  function actUse(){const cc=ownedOf(cur,activeKey),cd=cards[activeKey];if(cc.max-cc.v<=0)return;
-    confirmAsk({title:'Registrar uso',text:'Se descontará 1 uso de la membresía '+cd.name+' de '+cur.n+'. Quedarán '+(cc.max-cc.v-1)+' usos.',ok:'Registrar uso',icon:'stamp',
-      onOk:()=>{cc.v++;pushHist(cur,activeKey,'Uso registrado');if(cc.max-cc.v<=0)pushHist(cur,activeKey,'Membresía agotada');repaint();toast('Uso registrado · '+cur.n);}});}
-  function actAddUses(){const cc=ownedOf(cur,activeKey),cd=cards[activeKey];
-    confirmAsk({title:'Añadir usos',text:'Se añadirán 5 usos a la membresía '+cd.name+' de '+cur.n+'.',ok:'Añadir 5 usos',
-      onOk:()=>{cc.max+=5;pushHist(cur,activeKey,'+5 usos añadidos');repaint();toast('5 usos añadidos · '+cur.n);}});}
-  function actCheckin(){const cc=ownedOf(cur,activeKey),cd=cards[activeKey];if(cc.daysLeft<=0)return;
-    pushHist(cur,activeKey,'Check-in');renderTimeline(cur);toast('Check-in registrado · '+cur.n);}
-  function actRenew(){const cc=ownedOf(cur,activeKey),cd=cards[activeKey];
-    confirmAsk({title:'Renovar membresía',text:'Se renovará '+cd.name+' de '+cur.n+' por 30 días más.',ok:'Renovar',icon:'gift',
-      onOk:()=>{cc.daysLeft=30;pushHist(cur,activeKey,'Membresía renovada · +30 días');repaint();toast('Membresía renovada · '+cur.n);}});}
-
-  const ACT={add:actAddStamp,rem:actRemStamp,use:actUse,addusos:actAddUses,checkin:actCheckin,renew:actRenew};
+  const ACT={add:actAddStamp,rem:actRemStamp};
   document.getElementById('drActive').addEventListener('click',e=>{
     const b=e.target.closest('[data-act]'); if(!b||!cur||b.disabled) return;
     const fn=ACT[b.dataset.act]; if(fn) fn();
@@ -3910,17 +3403,15 @@ document.querySelectorAll('#range button').forEach(b=>{
   // modal de confirmación genérico
   const cm=document.getElementById('confirmModal');
   let cmCb=null;
-  function confirmAsk({title,text,ok,danger,icon,onOk}){
+  function confirmAsk({title,text,ok,danger,onOk}){
     document.getElementById('cmTitle').textContent=title;
     document.getElementById('cmText').textContent=text;
     const okBtn=document.getElementById('cmOk');
     okBtn.textContent=ok||'Confirmar';
     okBtn.classList.toggle('danger',!!danger);
     const ic=document.getElementById('cmIcon');
-    ic.className='cm-icon '+(danger?'danger':(icon==='gift'?'gift':'info'));
-    ic.innerHTML = icon==='gift'
-      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S10.5 3 8.2 3a2 2 0 0 0 0 4zM12 7s1.5-4 3.8-4a2 2 0 0 1 0 4z"/></svg>'
-      : (danger ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17v.5"/></svg>'
+    ic.className='cm-icon '+(danger?'danger':'info');
+    ic.innerHTML = (danger ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17v.5"/></svg>'
                 : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>');
     cmCb=onOk; cm.classList.add('open');
   }
