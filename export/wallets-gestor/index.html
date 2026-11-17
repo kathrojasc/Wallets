@@ -132,9 +132,9 @@
         <span class="ico"><svg class="ic-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><svg class="ic-fill" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a6 6 0 0 0-6 6c0 6.5-2.7 8.6-2.9 8.8A1 1 0 0 0 4 19h16a1 1 0 0 0 .9-1.2C20.7 16.6 18 14.5 18 8a6 6 0 0 0-6-6Z"/><path d="M9.8 20a2.4 2.4 0 0 0 4.4 0z"/></svg></span>
         <span class="label">Notificaciones</span>
       </button>
-      <button class="nav-item" data-view="scanner" title="App scanner">
+      <button class="nav-item" data-view="scanner" title="App de caja">
         <span class="ico"><svg class="ic-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6.5A2.5 2.5 0 0 1 6.5 4H8M16 4h1.5A2.5 2.5 0 0 1 20 6.5V8M20 16v1.5a2.5 2.5 0 0 1-2.5 2.5H16M8 20H6.5A2.5 2.5 0 0 1 4 17.5V16"/><path d="M4 12h16"/></svg><svg class="ic-fill" viewBox="0 0 24 24" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M6.5 3H9v2H6.5A1.5 1.5 0 0 0 5 6.5V9H3V6.5A3.5 3.5 0 0 1 6.5 3Zm11 0A3.5 3.5 0 0 1 21 6.5V9h-2V6.5A1.5 1.5 0 0 0 17.5 5H15V3h2.5ZM2 11h20v2H2v-2Zm1 4h2v2.5A1.5 1.5 0 0 0 6.5 19H9v2H6.5A3.5 3.5 0 0 1 3 17.5V15Zm18 0v2.5a3.5 3.5 0 0 1-3.5 3.5H15v-2h2.5a1.5 1.5 0 0 0 1.5-1.5V15h2Z"/></svg></span>
-        <span class="label">App scanner</span>
+        <span class="label">App de caja</span>
       </button>
     </nav>
     <div class="side-foot">
@@ -168,7 +168,7 @@
     <section class="view" data-view="estadisticas" data-screen-label="Estadísticas">
       <div class="topbar" style="margin: 2px 0px 0px"><h1>Estadísticas</h1></div>
       <div class="filterbar">
-        <button class="dropdown js-dd" data-dd="local" style="background-color: rgb(250, 250, 250)"><span class="lbl">Local:</span><span class="val">Todos los locales</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="dropdown js-dd ins-gate" data-tier="growth" data-dd="local" style="background-color: rgb(250, 250, 250)"><span class="lbl">Local:</span><span class="val">Todos los locales</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="spacer"></div>
         <div class="range" id="range">
           <button class="on">Este mes</button>
@@ -181,18 +181,11 @@
 
         <div class="est-layout">
           <div class="est-main">
-            <div class="kindbar">
-              <div class="kindseg" id="kindSeg" role="tablist">
-                <button class="on" data-kind="gen">General</button>
-                <button data-kind="fid">Sellos</button>
-              </div>
-            </div>
-
-            <!-- GENERAL -->
-            <div class="kgroup" data-kind="gen">
+            <div class="kgroup">
+              <div class="sec-label" style="margin-top:4px">Tus clientes</div>
               <div class="grid g4">
                 <div class="card kpi" data-tier="free"><div class="t">Clientes activos</div><div class="n">221</div><div class="d">escanearon en los últimos 30 días</div></div>
-                <div class="card kpi" data-tier="free"><div class="t">Clientes nuevos</div><div class="n">73</div><div class="d pos">+18% que el mes pasado</div></div>
+                <div class="card kpi" data-tier="free"><div class="t">Clientes nuevos</div><div class="n">84</div><div class="d pos">+18% que el mes pasado</div></div>
                 <div class="card kpi" data-tier="free"><div class="t">Vienen en promedio</div><div class="n">2.4<span style="font-size:15px;font-weight:600"> /mes</span></div><div class="d">veces al mes por cliente</div></div>
                 <div class="card kpi" data-tier="starter"><div class="t">Clientes que vuelven</div><div class="n">67<span style="font-size:16px">%</span></div><div class="d pos">+5 pts vs. mes pasado</div></div>
               </div>
@@ -277,29 +270,11 @@
                   <div class="statline"><span class="k">Otros distritos</span><span class="v">24%</span></div>
                 </div>
               </div>
-              <div class="lockpanel" data-kind="gen">
-                <div class="lp-head"><h4>También disponible en planes superiores</h4><p>Se activan con tus datos reales cuando mejoras tu plan.</p></div>
-                <ul class="lp-list">
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Clientes que vuelven (retención)</b><span>Cuántos regresan mes a mes</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Clientes que se están alejando</b><span>Quiénes llevan semanas sin venir</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Días y horas con más visitas</b><span>El mejor momento para escribirles</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Tipos de cliente</b><span>Casual, Habitual y VIP</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Edad y sexo de tus clientes</b><span>Para adaptar tu comunicación</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Tus 10 mejores clientes</b><span>A quiénes cuidar primero</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
-                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Comparar tus locales</b><span>Cuál va mejor y cuál necesita ayuda</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
-                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Clientes de varios locales</b><span>Tus clientes más fieles de la red</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
-                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Perfiles avanzados</b><span>Horario, patrón y velocidad de visita</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
-                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Dónde viven tus clientes</b><span>Distrito para decidir dónde publicitar</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- SELLOS -->
-            <div class="kgroup" data-kind="fid" style="display:none">
+              <div class="sec-label" style="margin-top:28px">Tus tarjetas y premios</div>
               <div class="grid g4">
-                <div class="card kpi" data-tier="free"><div class="t">Tarjetas entregadas</div><div class="n">284</div><div class="d pos">+31 este mes</div></div>
+                <div class="card kpi" data-tier="free"><div class="t">Tarjetas entregadas</div><div class="n">284</div><div class="d pos">+84 este mes</div></div>
                 <div class="card kpi" data-tier="free"><div class="t">Premios entregados</div><div class="n">43</div><div class="d">de 74 tarjetas llenas</div></div>
-                <div class="card kpi" data-tier="free"><div class="t">Altas menos bajas</div><div class="n">+23</div><div class="d">31 nuevas · 8 borradas</div></div>
+                <div class="card kpi" data-tier="free"><div class="t">Tarjetas nuevas (neto)</div><div class="n">+76</div><div class="d">84 nuevas · 8 borradas</div></div>
               </div>
               <div class="grid gauto">
                 <div class="card chart-card" data-tier="free">
@@ -322,10 +297,20 @@
                   <button class="link js-detail" data-detail="near"><span class="dv-open">Ver detalle</span><span class="dv-close">Ocultar detalle</span><svg class="dv-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
                 </div>
               </div>
-              <div class="lockpanel" data-kind="fid">
+              <div class="lockpanel">
                 <div class="lp-head"><h4>También disponible en planes superiores</h4><p>Se activan con tus datos reales cuando mejoras tu plan.</p></div>
                 <ul class="lp-list">
+                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Clientes que vuelven (retención)</b><span>Cuántos regresan mes a mes</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
+                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Clientes que se están alejando</b><span>Quiénes llevan semanas sin venir</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
+                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Días y horas con más visitas</b><span>El mejor momento para escribirles</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
+                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Tipos de cliente</b><span>Casual, Habitual y VIP</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
+                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Edad y sexo de tus clientes</b><span>Para adaptar tu comunicación</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
+                  <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Tus 10 mejores clientes</b><span>A quiénes cuidar primero</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
                   <li class="lockrow" data-tier="starter"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Cerca de ganar su premio</b><span>A quiénes les falta 1 o 2 sellos</span></div><span class="up-badge starter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Starter</span></li>
+                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Comparar tus locales</b><span>Cuál va mejor y cuál necesita ayuda</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
+                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Clientes de varios locales</b><span>Tus clientes más fieles de la red</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
+                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Perfiles avanzados</b><span>Horario, patrón y velocidad de visita</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
+                  <li class="lockrow" data-tier="growth"><span class="lr-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span><div class="lr-txt"><b>Dónde viven tus clientes</b><span>Distrito para decidir dónde publicitar</span></div><span class="up-badge growth"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>Growth</span></li>
                 </ul>
               </div>
             </div>
@@ -337,7 +322,7 @@
               <ul class="si-list">
                 <li class="si-item"><span class="si-badge alerta">Atención</span><h5>Algunos clientes se están alejando</h5><p>38 no vienen hace +3 semanas. Un mensaje hoy suele traerlos de vuelta.</p></li>
                 <li class="si-item"><span class="si-badge oport">Oportunidad</span><h5>20 clientes por ganar su premio</h5><p>Les falta 1 o 2 sellos. Vuelven ~3 días después del aviso.</p></li>
-                <li class="si-item"><span class="si-badge logro">Buena noticia</span><h5>Sumas clientes más rápido</h5><p>73 tarjetas nuevas este mes vs. 58 de tu promedio.</p></li>
+                <li class="si-item"><span class="si-badge logro">Buena noticia</span><h5>Sumas clientes más rápido</h5><p>84 clientes nuevos este mes vs. 71 de tu promedio.</p></li>
                 <li class="si-item"><span class="si-badge tip">Consejo</span><h5>Escribe los jueves 8–10 am</h5><p>Ahí ocurre 1 de cada 3 visitas. Tus campañas ya vienen con ese horario.</p></li>
               </ul>
             </div>
@@ -351,19 +336,19 @@
     <section class="view active" data-view="inicio" data-screen-label="Inicio">
       <div class="topbar head">
         <h1>Hola, Katherine</h1>
-        <button class="dropdown"><span class="lbl">Local:</span><span class="val">Todos los locales</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="dropdown ins-gate" data-tier="growth"><span class="lbl">Local:</span><span class="val">Todos los locales</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
       </div>
       <div class="in-body">
 
-        <!-- ===== Banner hero: insight del día ===== -->
+        <!-- ===== Banner hero: sugerencia del día ===== -->
         <div class="hero" id="hero">
           <div class="hero-content">
-            <span class="hero-kicker"><span class="hero-dot"></span>Insight del día · Hoy</span>
-            <h2 class="hero-title">20 clientes están a 1 sello de ganar su premio</h2>
-            <p class="hero-desc">Históricamente vuelven dentro de 3 días tras un recordatorio. Envíales un push hoy y podrías cerrar <strong>~14 canjes</strong> esta semana.</p>
+            <span class="hero-kicker"><span class="hero-dot"></span>Sugerencia del día · Hoy</span>
+            <h2 class="hero-title">12 clientes están a 1 sello de ganar su premio</h2>
+            <p class="hero-desc">Suelen volver dentro de 3 días tras un recordatorio. Avísales hoy por WhatsApp y podrías cerrar <strong>~8 premios</strong> esta semana.</p>
             <div class="hero-actions">
-              <button class="hero-cta" data-goto="estadisticas">Activar push ahora<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-              <button class="hero-ghost" data-goto="estadisticas">Ver todos los insights</button>
+              <button class="hero-cta js-new-notif">Avisarles ahora<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              <button class="hero-ghost" data-goto="estadisticas">Ver estadísticas</button>
             </div>
           </div>
           <div class="hero-art" aria-hidden="true">
@@ -429,11 +414,11 @@
         <!-- ===== Top insights + últimas tarjetas creadas ===== -->
         <div class="in-grid2">
           <div class="in-card">
-            <div class="in-card-head"><h3>Top insights</h3><button class="link sm" data-goto="estadisticas">Ver todos</button></div>
+            <div class="in-card-head"><h3>Lo más importante</h3><button class="link sm" data-goto="estadisticas">Ver todos</button></div>
             <ul class="insight-list">
               <li class="ins-gate" data-tier="starter"><span class="badge alerta">Alerta</span><div class="il-txt"><h4>La tasa de canje bajó 12 pts este mes</h4><p>74 tarjetas completadas y 31 sin canjear — S/372 en premios pendientes.</p></div></li>
-              <li class="ins-gate" data-tier="free"><span class="badge oport">Oportunidad</span><div class="il-txt"><h4>20 clientes a 1 sello del premio</h4><p>Suelen volver 3 días después de recibir un push personalizado.</p></div></li>
-              <li class="ins-gate" data-tier="starter"><span class="badge tend">Tendencia</span><div class="il-txt"><h4>Los VIP crecieron +18% — 7 nuevos</h4><p>47 VIP vs. 40 el mes pasado; 7 subieron desde Habitual.</p></div></li>
+              <li class="ins-gate" data-tier="free"><span class="badge oport">Oportunidad</span><div class="il-txt"><h4>12 clientes a 1 sello del premio</h4><p>Suelen volver 3 días después de recibir un aviso personalizado.</p></div></li>
+              <li class="ins-gate" data-tier="starter"><span class="badge tend">Tendencia</span><div class="il-txt"><h4>Los VIP crecieron +20% — 6 nuevos</h4><p>36 VIP vs. 30 el mes pasado; 6 subieron desde Habitual.</p></div></li>
             </ul>
           </div>
           <div class="in-card">
@@ -577,7 +562,7 @@
       <div class="wrap">
         <div class="loc-insight ins-gate" data-tier="growth">
           <div class="ci-txt">
-            <span class="ci-kicker"><span class="hero-dot"></span>Insight detectado</span>
+            <span class="ci-kicker"><span class="hero-dot"></span>Dato detectado</span>
             <h4>Barranco tiene 20 pts menos de retención que Miraflores</h4>
             <p><strong>Acción recomendada:</strong> revisa la operación del staff de Barranco esta semana y refuerza el flujo de sellado en caja.</p>
             <button class="nt-insight-cta" data-goto="estadisticas">Ver comparativa en Estadísticas →</button>
@@ -623,7 +608,7 @@
       <div class="topbar head"><h1>Mis clientes</h1></div>
       <div class="filterbar sec-data">
         <button class="dropdown js-dd" data-dd="tarjeta"><span class="lbl">Tarjeta:</span><span class="val">Todas</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-        <button class="dropdown js-dd" data-dd="local"><span class="lbl">Local:</span><span class="val">Todos los locales</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="dropdown js-dd ins-gate" data-tier="growth" data-dd="local"><span class="lbl">Local:</span><span class="val">Todos los locales</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <button class="dropdown"><span class="lbl">Perfil:</span><span class="val">Todos</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
         <div class="spacer"></div>
         <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input id="cliSearch" type="text" placeholder="Buscar cliente…"></div>
@@ -638,9 +623,9 @@
         <div class="cli-widgets sec-data">
           <div class="cli-insight ins-gate" data-tier="free">
             <div class="ci-txt">
-              <span class="ci-kicker"><span class="hero-dot"></span>Insight de comportamiento</span>
+              <span class="ci-kicker"><span class="hero-dot"></span>Cómo vuelven tus clientes</span>
               <h4>Tus clientes del programa visitan más seguido</h4>
-              <p>Frecuencia promedio: 2.8 visitas/mes este período vs. 2.3 hace 60 días — un +22%. <strong>Sugerencia:</strong> identifica a los 5 clientes con mayor salto de frecuencia y envíales un sello extra de agradecimiento.</p>
+              <p>Frecuencia promedio: 2.4 visitas/mes este período vs. 2.0 hace 60 días — un +20%. <strong>Sugerencia:</strong> identifica a los 5 clientes con mayor salto de frecuencia y envíales un sello extra de agradecimiento.</p>
             </div>
             <div class="ci-art" aria-hidden="true">
               <svg viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -659,7 +644,7 @@
             </div>
           </div>
           <div class="cli-kpis">
-            <div class="card kpi"><div class="t">Clientes registrados</div><div class="n">284</div><div class="d pos">+31 este mes</div></div>
+            <div class="card kpi"><div class="t">Clientes registrados</div><div class="n">284</div><div class="d pos">+84 este mes</div></div>
             <div class="cli-slot"></div>
             <div class="cli-slot"></div>
           </div>
@@ -747,9 +732,9 @@
         <div class="nt-widgets sec-data" style="margin-bottom:24px">
           <div class="nt-insight ins-gate" data-tier="free">
             <div class="ci-txt">
-              <span class="ci-kicker"><span class="hero-dot"></span>Insight detectado</span>
+              <span class="ci-kicker"><span class="hero-dot"></span>Dato detectado</span>
               <h4>38 clientes llevan +21 días sin volver</h4>
-              <p><strong>Sugerencia:</strong> envía un push de reactivación con un beneficio. Suelen recuperar el 22% en 7 días.</p>
+              <p><strong>Sugerencia:</strong> envía un aviso de reactivación con un beneficio. Suelen recuperar el 22% en 7 días.</p>
               <button class="nt-insight-cta js-new-notif">Crear notificación de reactivación →</button>
             </div>
             <div class="ci-art" aria-hidden="true">
@@ -798,46 +783,46 @@
     <!-- ====== APP SCANNER ====== -->
     <section class="view" data-view="scanner" data-screen-label="App scanner">
       <div class="topbar head">
-        <h1>App scanner</h1>
-        <button class="btn-accent js-new-scanner" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear scanner</button>
+        <h1>App de caja</h1>
+        <button class="btn-accent js-new-scanner" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear cuenta</button>
       </div>
       <div class="wrap">
         <div class="empty-state" data-empty="scanner">
           <div class="es-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6.5A2.5 2.5 0 0 1 6.5 4H8M16 4h1.5A2.5 2.5 0 0 1 20 6.5V8M20 16v1.5a2.5 2.5 0 0 1-2.5 2.5H16M8 20H6.5A2.5 2.5 0 0 1 4 17.5V16"/><path d="M4 12h16"/></svg></div>
-          <h3>Aún no tienes scanners</h3>
-          <p>Crea una cuenta de scanner (usuario y contraseña) y dásela a tu staff. Con ella inician sesión en la app para escanear QR, dar sellos y registrar nuevos clientes.</p>
-          <button class="btn-accent es-cta js-new-scanner" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear scanner</button>
+          <h3>Aún no tienes cuentas para tu staff</h3>
+          <p>La app de caja es la que usa tu staff en el celular para escanear el QR del cliente y darle su sello. Crea una cuenta (usuario y contraseña) para cada persona o caja.</p>
+          <button class="btn-accent es-cta js-new-scanner" style="margin-left:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>Crear cuenta</button>
         </div>
         <div class="scan-insight-wrap sec-data" id="scanInsightWrap">
           <div class="cli-insight" id="scanInsightFull">
             <div class="ci-txt">
-              <span class="ci-kicker"><span class="hero-dot"></span>Insight de tu staff</span>
+              <span class="ci-kicker"><span class="hero-dot"></span>Aviso sobre tu staff</span>
               <h4 id="scanInsightTitle">Barranco lleva 2 días sin registrar actividad</h4>
-              <p id="scanInsightText"><strong>Acción recomendada:</strong> su scanner está offline y no ha dado sellos ni registrado clientes. Contacta al staff o regenera su contraseña para reactivar el acceso.</p>
+              <p id="scanInsightText"><strong>Acción recomendada:</strong> su app de caja está sin conexión y no ha dado sellos ni registrado clientes. Contacta al staff o regenera su contraseña para reactivar el acceso.</p>
               <button class="nt-insight-cta" id="scanInsightCta">Regenerar acceso de Barranco →</button>
             </div>
             <div class="ci-art" aria-hidden="true">
               <svg viewBox="0 0 110 92" fill="none"><rect x="30" y="14" width="50" height="64" rx="9" fill="#fff" stroke="#2f5bc4" stroke-width="2"/><path d="M46 70h18" stroke="#2f5bc4" stroke-width="2" stroke-linecap="round"/><path d="M40 30h30M40 40h30M40 50h20" stroke="#c7d6ff" stroke-width="3" stroke-linecap="round"/><circle cx="80" cy="24" r="12" fill="#e2483d"/><path d="M80 19v6M80 29v.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
             </div>
-            <button class="ci-close" id="scanInsightClose" type="button" aria-label="Minimizar insight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
+            <button class="ci-close" id="scanInsightClose" type="button" aria-label="Minimizar aviso"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/></svg></button>
           </div>
           <button class="scan-insight-min" id="scanInsightMin" type="button" hidden>
             <span class="hero-dot"></span>
-            <span class="sim-txt"><b>Insight de tu staff</b><span id="scanInsightMinTxt">Barranco lleva 2 días sin actividad</span></span>
+            <span class="sim-txt"><b>Aviso sobre tu staff</b><span id="scanInsightMinTxt">Barranco lleva 2 días sin actividad</span></span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
           </button>
         </div>
 
         <div class="grid g2 sec-data" style="margin-bottom:16px">
-          <div class="card kpi"><div class="t">Sellos dados este mes</div><div class="n" id="ssStamps">0</div><div class="d">en <span id="ssCount">0</span> scanners activos</div></div>
+          <div class="card kpi"><div class="t">Sellos dados este mes</div><div class="n" id="ssStamps">0</div><div class="d">en <span id="ssCount">0</span> cuentas activas</div></div>
           <div class="card kpi"><div class="t">Clientes nuevos registrados</div><div class="n" id="ssClients">0</div><div class="d pos">+18% vs. mes pasado</div></div>
         </div>
 
-        <div class="sec-label sec-data" style="margin-top:28px">Scanners creados</div>
+        <div class="sec-label sec-data" style="margin-top:28px">Cuentas de tu staff</div>
         <div class="card tbl-card sec-data" style="padding:8px 8px 0">
           <table class="scanner-table">
             <thead><tr>
-              <th>Scanner</th><th>Estado</th><th>Última actividad</th>
+              <th>Cuenta</th><th>Estado</th><th>Última actividad</th>
               <th style="text-align:right">Sellos</th><th style="text-align:right">Nuevos</th><th style="text-align:right">Acciones</th>
             </tr></thead>
             <tbody id="scannerBody"></tbody>
@@ -864,7 +849,7 @@
           </div>
 
           <div class="cfg-card">
-            <div class="cfg-card-head"><h3>Datos del negocio</h3><p>Aparecen en tus tarjetas y pósters de fidelidad.</p></div>
+            <div class="cfg-card-head"><h3>Datos del negocio</h3><p>Aparecen en tus tarjetas y pósters.</p></div>
             <div class="fld">
               <label>Logo del negocio</label>
               <div class="logo-field">
@@ -967,6 +952,7 @@
       <div class="fld">
         <label>Nombre de la tarjeta <span class="req">*</span></label>
         <input class="input" id="fName" type="text" placeholder="Ej. Promoción Verano">
+        <span class="fld-hint">Crea una tarjeta por promoción (por ejemplo, una para cafés y otra para postres).</span>
       </div>
 
       <div class="form-sec">Recompensa y sellos</div>
@@ -978,15 +964,18 @@
         <div class="fld">
           <label>Sellos para canjear <span class="req">*</span></label>
           <input class="input" id="fStamps" type="number" value="6" min="1" max="20">
+          <span class="fld-hint">Cuántos sellos junta el cliente para ganar el premio.</span>
         </div>
         <div class="fld">
           <label>Sellos por visita <span class="req">*</span></label>
           <input class="input" id="fPerVisit" type="number" value="1" min="1">
+          <span class="fld-hint">Sellos que recibe cada vez que lo escaneas.</span>
         </div>
       </div>
       <div class="fld">
         <label>Límite de sellos por día <span class="req">*</span></label>
         <input class="input" id="fPerDay" type="number" value="1" min="1">
+        <span class="fld-hint">Evita que un cliente junte varios sellos en el mismo día.</span>
       </div>
 
       <div class="form-sec">Diseño de la tarjeta</div>
@@ -1027,6 +1016,7 @@
       <div class="fld">
         <label>Cantidad de días de validez de la tarjeta desde el registro del cliente</label>
         <input class="input" id="fValidDays" type="number" placeholder="0 = sin caducidad" min="0">
+        <span class="fld-hint">Pasado ese tiempo la tarjeta deja de sumar sellos. Déjalo en 0 si no quieres que caduque.</span>
       </div>
 
       <div class="form-sec">Saludo de cumpleaños</div>
@@ -1244,11 +1234,11 @@
     <aside class="co-summary">
       <div class="cos-card">
         <div class="cos-title">Resumen</div>
-        <div class="cos-plan"><span id="coPlanName">Plan Starter</span><span id="coPlanPrice">$25</span></div>
+        <div class="cos-plan"><span id="coPlanName">Plan Starter</span><span id="coPlanPrice">S/ 89</span></div>
         <div class="cos-row"><span>Facturación</span><span>Mensual</span></div>
         <div class="cos-row"><span>Sedes incluidas</span><span>Todas</span></div>
         <div class="cos-divider"></div>
-        <div class="cos-total"><span>Total hoy</span><span id="coTotal">$25.00</span></div>
+        <div class="cos-total"><span>Total hoy</span><span id="coTotal">S/ 89.00</span></div>
         <div class="cos-note">Se renueva automáticamente cada mes. Puedes cancelar cuando quieras.</div>
         <button class="btn-accent cos-pay" id="coPay" style="margin-left:0">Pagar y activar</button>
         <div class="cos-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Pago seguro y encriptado</div>
@@ -1271,7 +1261,7 @@
     <div class="cd-top">
       <div class="cd-insight ins-gate" data-tier="growth">
         <div class="ci-txt">
-          <span class="ci-kicker"><span class="hero-dot"></span>Insight del local</span>
+          <span class="ci-kicker"><span class="hero-dot"></span>Dato del local</span>
           <h4 id="locdInsightTitle">La retención está por debajo del promedio de la red</h4>
           <p id="locdInsightText"><strong>Acción recomendada:</strong> refuerza el sellado en caja en las horas pico y activa una campaña de reactivación local.</p>
           <button class="nt-insight-cta" data-goto="notificaciones">Crear notificación para este local →</button>
@@ -1438,7 +1428,7 @@
       <div class="promo-hero-txt">
         <span class="promo-badge">Comparte tu tarjeta</span>
         <h2 class="promo-title" id="vmTitle">Tarjeta</h2>
-        <p class="promo-sub">y haz que vuelvan por más</p>
+        <p class="promo-sub" id="vmSub">y haz que vuelvan por más</p>
       </div>
       <div class="promo-art" aria-hidden="true"><div class="promo-blob"></div><svg class="promo-spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5l2.3 6.4 6.7.3-5.2 4.2 1.8 6.5L12 15.9 6.4 19.2l1.8-6.5L3 8.5l6.7-.3z"/></svg></div>
     </div>
@@ -1487,7 +1477,7 @@
       <div class="plan-col">
         <div class="pc-name">Free</div>
         <p class="pc-desc">Lo esencial para digitalizar tu caja y empezar a fidelizar a tus clientes recurrentes sin costo.</p>
-        <div class="pc-price">$0 <span>/ mes</span></div>
+        <div class="pc-price" data-price="S/ 0">S/ 0 <span>/ mes</span></div>
         <button class="btn-ghost pc-cta" disabled>Tu plan actual</button>
         <ul class="pc-feats">
           <li>Tarjetas de sellos ilimitadas</li>
@@ -1501,7 +1491,7 @@
         <div class="pc-tag">Recomendado</div>
         <div class="pc-name">Starter</div>
         <p class="pc-desc">Diseñado para negocios en crecimiento que quieren automatizar campañas y recuperar clientes en piloto automático.</p>
-        <div class="pc-price">$25 <span>/ mes</span></div>
+        <div class="pc-price" data-price="S/ 89">S/ 89 <span>/ mes</span></div>
         <div class="pc-sub">compartido entre todas tus sedes locales</div>
         <button class="btn-accent pc-cta" style="margin-left:0">Mejorar a Starter</button>
         <div class="pc-feats-label">Todo lo de Free, más:</div>
@@ -1518,7 +1508,7 @@
       <div class="plan-col">
         <div class="pc-name">Growth</div>
         <p class="pc-desc">Controles avanzados e inteligencia geográfica para marcas con múltiples locales o franquicias.</p>
-        <div class="pc-price">$50 <span>/ mes</span></div>
+        <div class="pc-price" data-price="S/ 149">S/ 149 <span>/ mes</span></div>
         <button class="btn-ghost pc-cta">Mejorar a Growth</button>
         <div class="pc-feats-label">Todo lo de Starter, más:</div>
         <ul class="pc-feats">
@@ -1569,7 +1559,7 @@
   <div class="poster" id="poster" style="--pbg:#7c5cdc;--pink:#fff">
     <div class="poster-logo" id="posterLogo"></div>
     <div class="poster-brand" id="posterBrand">Café Luna</div>
-    <h1 class="poster-title" id="posterTitle">Descarga nuestra tarjeta de fidelidad aquí</h1>
+    <h1 class="poster-title" id="posterTitle">Descarga nuestra tarjeta de sellos aquí</h1>
     <p class="poster-sub">Sin app · se guarda en tu wallet</p>
     <div class="poster-scan">
       <div class="poster-qr" id="posterQR"></div>
@@ -1655,11 +1645,11 @@
     <div class="sm-pane" id="scmForm">
       <div class="sm-head">
         <div class="sm-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6.5A2.5 2.5 0 0 1 6.5 4H8M16 4h1.5A2.5 2.5 0 0 1 20 6.5V8M20 16v1.5a2.5 2.5 0 0 1-2.5 2.5H16M8 20H6.5A2.5 2.5 0 0 1 4 17.5V16"/><path d="M4 12h16"/></svg></div>
-        <h3>Crear scanner</h3>
-        <p>Genera un usuario y contraseña para tu staff. Con estos datos inician sesión en la app scanner.</p>
+        <h3>Crear cuenta de caja</h3>
+        <p>Genera un usuario y contraseña para tu staff. Con estos datos inician sesión en la app de caja.</p>
       </div>
       <div class="sm-fld">
-        <label>Nombre del scanner</label>
+        <label>Nombre de la cuenta</label>
         <input class="input" type="text" id="scmLabel" placeholder="Ej. Caja Miraflores" autocomplete="off">
         <span class="sm-hint">Para identificarlo en tu lista. No lo ve el cliente.</span>
       </div>
@@ -1687,7 +1677,7 @@
       </div>
       <div class="sm-actions">
         <button class="btn-cancel" id="scmCancel" type="button">Cancelar</button>
-        <button class="btn-primary" id="scmCreate" type="button">Crear scanner</button>
+        <button class="btn-primary" id="scmCreate" type="button">Crear cuenta</button>
       </div>
     </div>
 
@@ -1695,7 +1685,7 @@
     <div class="sm-pane" id="scmDone" hidden>
       <div class="sm-head">
         <div class="sm-ico ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3 id="scmDoneTitle">Scanner creado</h3>
+        <h3 id="scmDoneTitle">Cuenta creada</h3>
         <p>Comparte estos datos con tu staff. La contraseña solo se muestra aquí — guárdala o regenérala si la pierdes.</p>
       </div>
       <div class="cred-box">
@@ -1827,7 +1817,7 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
     if(b.disabled) return;
     const col=b.closest('.plan-col');
     const name=col.querySelector('.pc-name').textContent.trim();
-    const price=col.querySelector('.pc-price').textContent.trim().split(' ')[0];
+    const price=col.querySelector('.pc-price').dataset.price;
     document.getElementById('coPlanName').textContent='Plan '+name;
     document.getElementById('coPlanPrice').textContent=price;
     document.getElementById('coTotal').textContent=price+'.00';
@@ -1853,7 +1843,7 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
     if(current==='growth' && p!=='growth' && nLocales>1 && window.confirmAsk){
       window.confirmAsk({
         title:'¿Bajar de plan con varios locales?',
-        text:'Tienes '+nLocales+' locales con sus scanners. No se eliminan, pero solo podrás verlos y gestionarlos si vuelves al plan Growth.',
+        text:'Tienes '+nLocales+' locales con sus cuentas de caja. No se eliminan, pero solo podrás verlos y gestionarlos si vuelves al plan Growth.',
         ok:'Bajar de plan igual',
         danger:true,
         onOk:()=>applyPlan(p)
@@ -1883,9 +1873,9 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
     newret:{title:'Clientes nuevos y que vuelven',sub:'84 llegaron por primera vez este mes · 137 ya te conocían',action:'Dar la bienvenida a los nuevos',
       cols:['Cliente','Primera visita','Tipo'],
       rows:[['Valeria Ríos','hace 3 días',pill('Nuevo','cas')],['Andrés Gil','hace 5 días',pill('Nuevo','cas')],['Lucía Vargas','hace 2 meses',pill('Habitual','hab')],['Ana Rojas','hace 8 meses',pill('VIP','vip')]]},
-    tipos:{title:'Tipos de cliente',sub:'Cómo se reparten tus 221 clientes activos',action:'Crear campaña por tipo',
+    tipos:{title:'Tipos de cliente',sub:'Cómo se reparten tus 221 clientes activos · según tus reglas de perfil',action:'Crear campaña por tipo',
       cols:['Tipo','Cuántos','Qué son'],
-      rows:[[pill('Casual','cas'),'79','1 visita o menos al mes'],[pill('Habitual','hab'),'106','2 a 4 visitas al mes'],[pill('VIP','vip'),'36','5+ visitas al mes'],[pill('En riesgo','risk'),'19','antes venían y se alejaron']]},
+      rows:[[pill('Casual','cas'),'79','1 a 2 visitas al mes'],[pill('Habitual','hab'),'106','3 a 5 visitas al mes'],[pill('VIP','vip'),'36','6 o más visitas al mes'],[pill('En riesgo','risk'),'19','antes venían y se alejaron']]},
     locales:{title:'Comparar tus locales',sub:'Cómo va cada local del negocio',action:'Ver guía de buenas prácticas',
       cols:['Local','Vuelven','Canje'],
       rows:[['Miraflores',pill('71%','vip'),'64%'],['San Isidro',pill('68%','hab'),'55%'],['Barranco',pill('51%','risk'),'52%']]},
@@ -1921,19 +1911,16 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
     }
   });
 })();
-/* ===== Estadísticas: plan + selector de tipo ===== */
+/* ===== Estadísticas: gating por plan ===== */
 (function(){
   const est=document.querySelector('.view[data-view="estadisticas"]'); if(!est) return;
   const RANK={free:0,starter:1,growth:2};
   const NAME={free:'Free',starter:'Starter',growth:'Growth'};
   let PLAN='free'; try{PLAN=localStorage.getItem('w2_plan')||'free';}catch(e){}
   if(!(PLAN in RANK)) PLAN='free';
-  let kind='gen';
-  const seg=document.getElementById('kindSeg');
   function renderStats(){
     const pr=RANK[PLAN];
-    est.querySelectorAll('.kgroup').forEach(g=>{ g.style.display=(g.dataset.kind===kind)?'':'none'; });
-    const g=est.querySelector('.kgroup[data-kind="'+kind+'"]'); if(!g) return;
+    const g=est.querySelector('.kgroup'); if(!g) return;
     g.querySelectorAll('[data-tier]').forEach(c=>{
       if(c.classList.contains('lockrow')) return;
       c.style.display=(RANK[c.dataset.tier||'free']<=pr)?'':'none';
@@ -1960,7 +1947,6 @@ document.querySelector('.upgrade-cta')?.addEventListener('click',()=>go('planes'
     });
   }
   window.__setPlan=function(p){ if(!(p in RANK))return; PLAN=p; try{localStorage.setItem('w2_plan',p);}catch(e){} reflectPlan(); renderStats(); };
-  if(seg) seg.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;kind=b.dataset.kind;[...seg.children].forEach(x=>x.classList.toggle('on',x===b));renderStats();});
   reflectPlan(); renderStats();
 })();
 /* ===== Gating por plan fuera de Estadísticas: nav "Locales" + Insights ===== */
@@ -2140,7 +2126,7 @@ go('inicio');
         '<td><div class="sct-actions">'+
           '<button class="sc-act" data-act="creds" title="Ver credenciales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></button>'+
           '<button class="sc-act" data-act="regen" title="Regenerar contraseña"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16M3 21v-5h5"/></svg></button>'+
-          '<button class="sc-act danger" data-act="del" title="Eliminar scanner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></button>'+
+          '<button class="sc-act danger" data-act="del" title="Eliminar cuenta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/></svg></button>'+
         '</div></td>'+
       '</tr>';
     }).join('');
@@ -2161,7 +2147,7 @@ go('inicio');
     if(off){
       const m=String(off.last).match(/(\d+)\s*d/); const dtxt=m?(m[1]+(m[1]==='1'?' día':' días')):'varios días';
       t.textContent=off.label+' lleva '+dtxt+' sin registrar actividad';
-      p.innerHTML='<strong>Acción recomendada:</strong> su scanner está offline y no está dando sellos ni registrando clientes. Contacta al staff o regenera su contraseña para reactivar el acceso.';
+      p.innerHTML='<strong>Acción recomendada:</strong> su app de caja está sin conexión y no está dando sellos ni registrando clientes. Contacta al staff o regenera su contraseña para reactivar el acceso.';
       cta.textContent='Regenerar acceso de '+off.label+' →'; cta.dataset.target=off.id; cta.style.display='';
       setMinTxt(off.label+' lleva '+dtxt+' sin actividad');
     } else if(conv && conv.r<0.09){
@@ -2174,7 +2160,7 @@ go('inicio');
       const top=[...scanners].sort((a,b)=>b.stamps-a.stamps)[0];
       const tot=scanners.reduce((a,x)=>a+x.stamps,0)||1;
       t.textContent=top.label+' concentra el '+Math.round(top.stamps/tot*100)+'% de tus sellos';
-      p.innerHTML='<strong>Acción recomendada:</strong> es tu scanner más activo. Replica sus buenas prácticas de sellado y registro en tus demás locales.';
+      p.innerHTML='<strong>Acción recomendada:</strong> es tu cuenta de caja más activa. Replica sus buenas prácticas de sellado y registro en tus demás locales.';
       cta.textContent='Ver actividad de '+top.label+' →'; cta.dataset.target=top.id; cta.style.display='';
     }
   }
@@ -2230,13 +2216,13 @@ go('inicio');
 
   document.getElementById('scmCreate').addEventListener('click',()=>{
     const label=elLabel.value.trim(); let user=slug(elUser.value||elLabel.value);
-    if(!label){elLabel.classList.add('err');elLabel.focus();toast('Ponle un nombre al scanner');return;}
+    if(!label){elLabel.classList.add('err');elLabel.focus();toast('Ponle un nombre a la cuenta');return;}
     elLabel.classList.remove('err');
     if(!user){user='scanner-'+seq;}
     if(scanners.some(s=>s.user===user)){user=user+'-'+seq;}
     const s={id:seq++,label,user,pass:elPass.value||genPass(),local:elLocal.value,device:'Pendiente de inicio de sesión',online:false,last:'nunca conectado',stamps:0,clients:0};
     scanners.push(s); render();
-    showDone(s,true); toast('Scanner «'+label+'» creado');
+    showDone(s,true); toast('Cuenta «'+label+'» creada');
   });
 
   // copiar credenciales
@@ -2259,8 +2245,8 @@ go('inicio');
       }});
     }
     else if(act==='del'){
-      window.confirmAsk({title:'Eliminar scanner',text:'Se eliminará «'+s.label+'» y sus credenciales dejarán de funcionar. El historial de sellos y clientes ya registrados se conserva.',ok:'Eliminar',danger:true,onOk:()=>{
-        scanners=scanners.filter(x=>x.id!==s.id); render(); toast('Scanner eliminado');
+      window.confirmAsk({title:'Eliminar cuenta',text:'Se eliminará «'+s.label+'» y sus credenciales dejarán de funcionar. El historial de sellos y clientes ya registrados se conserva.',ok:'Eliminar',danger:true,onOk:()=>{
+        scanners=scanners.filter(x=>x.id!==s.id); render(); toast('Cuenta eliminada');
       }});
     }
   });
@@ -2389,10 +2375,10 @@ function downloadQRpng(seed){
 
   function reqOk(el){return (''+el.value).trim()!=='' && !(el.type==='number' && (isNaN(parseInt(el.value,10))||parseInt(el.value,10)<1));}
   const reqList=[fName,fReward,fStamps,fPerVisit,fPerDay];
+  const reqNames=new Map([[fName,'nombre'],[fReward,'recompensa'],[fStamps,'sellos para canjear'],[fPerVisit,'sellos por visita'],[fPerDay,'límite por día']]);
   function validate(){
-    const ok=reqList.every(reqOk);
-    create.disabled=!ok;
-    return ok;
+    reqList.forEach(el=>{if(reqOk(el))el.classList.remove('err');});
+    return reqList.every(reqOk);
   }
   function markErrors(){
     reqList.forEach(el=>el.classList.toggle('err',!reqOk(el)));
@@ -2466,8 +2452,10 @@ function downloadQRpng(seed){
   };
 
   create.addEventListener('click',()=>{
-    if(!validate()){markErrors();showToast('Completa los campos obligatorios');
-      const first=reqList.find(el=>!reqOk(el));if(first)first.focus();return;}
+    if(!validate()){markErrors();
+      const missing=reqList.filter(el=>!reqOk(el));
+      showToast('Falta completar: '+missing.map(el=>reqNames.get(el)).join(', '));
+      missing[0].focus();return;}
     const d={name:(fName.value||'').trim(),reward:(fReward.value||'').trim(),
       stamps:stampCount(),perVisit:parseInt(fPerVisit.value,10)||1,perDay:parseInt(fPerDay.value,10)||1,
       bg:state.bg,ink:state.ink,iconSVG:state.iconSVG,
@@ -2481,8 +2469,9 @@ function downloadQRpng(seed){
       }});
       return;
     }
-    addCardEverywhere(d); go('tarjetas'); showToast('✓ Tarjeta creada');
+    const art=addCardEverywhere(d); go('tarjetas'); showToast('✓ Tarjeta creada');
     editTarget=null;
+    if(art&&window.openViewCard) setTimeout(()=>window.openViewCard(art,true),300);
   });
 
   // init
@@ -2511,6 +2500,7 @@ function setCardData(art,d){
   if(d.bdayMsg) art.dataset.bdayMsg=d.bdayMsg; else art.removeAttribute('data-bday-msg');
   art.dataset.bdayChan=d.bdayChan||'whatsapp';
   if(d.perVisit) art.dataset.perVisit=d.perVisit; if(d.perDay) art.dataset.perDay=d.perDay;
+  if(d.created) art.dataset.created=d.created;
 }
 function readCardData(art){
   return {
@@ -2523,6 +2513,7 @@ function readCardData(art){
     filled: parseInt(art.dataset.filled||'0',10),
     perVisit: parseInt(art.dataset.perVisit||'1',10),
     perDay: parseInt(art.dataset.perDay||'1',10),
+    created: art.dataset.created||'',
     bg: art.dataset.bg||'#7c5cdc', ink: art.dataset.ink||'#fff',
     iconSVG: (art.querySelector('.mini-logo svg')||{}).outerHTML || '',
     clientCount: parseInt(((art.querySelector('.lc-stat')||{}).textContent||'').match(/\d+/)||0,10)||0
@@ -2531,6 +2522,8 @@ function readCardData(art){
 function addCardEverywhere(d){
   d.filled=0;
   d.clientCount=0;
+  d.created='Hoy';
+  let created=null;
   document.body.classList.remove('empty-mode');
   const grid=document.querySelector('.tarjetas-grid');
   if(grid){
@@ -2539,6 +2532,7 @@ function addCardEverywhere(d){
     setCardData(art,d);
     art.innerHTML=cardArticleHTML(d);
     grid.insertBefore(art, grid.firstElementChild);
+    created=art;
   }
   // Inicio: últimas tarjetas creadas
   const list=document.querySelector('.lastcard-list');
@@ -2554,11 +2548,13 @@ function addCardEverywhere(d){
     const extra=list.querySelectorAll('li');
     if(extra.length>3) list.removeChild(extra[extra.length-1]);
   }
+  return created;
 }
 function updateCardEverywhere(art,d){
   const prev=readCardData(art);
   d.filled=prev.filled||0;
   d.clientCount=prev.clientCount||0;
+  d.created=prev.created;
   setCardData(art,d);
   art.innerHTML=cardArticleHTML(d);
 }
@@ -2618,21 +2614,32 @@ function updateCardEverywhere(art,d){
       const ms=document.getElementById('cdMiniStamps');
       ms.innerHTML=Array.from({length:Math.min(d.stamps,10)}).map((_,i)=>'<i class="'+(i<(d.filled||0)?'on':'')+'"></i>').join('');
     }
-    // insight
-    document.getElementById('cdInsightTitle').textContent='12 clientes están a 1 sello del premio';
-    document.getElementById('cdInsightText').textContent='Envíales un recordatorio hoy: suelen volver dentro de 3 días tras recibirlo.';
-    // KPIs
+    // métricas derivadas de los clientes de esta tarjeta (mock proporcional)
+    const n=d.clientCount||0;
+    const act=Math.round(n*.8), full=Math.round(n*.27), won=Math.round(full*.58);
+    const b1=Math.round(n*.42), b2=Math.round(n*.35), b3=Math.max(0,n-b1-b2);
+    const one=n?Math.max(1,Math.round(n*.043)):0;
+    const pct=v=>n?Math.round(v/n*100):0;
+    const cta=view.querySelector('.cd-insight .nt-insight-cta');
+    if(n===0){
+      document.getElementById('cdInsightTitle').textContent='Aún no hay clientes con esta tarjeta';
+      document.getElementById('cdInsightText').textContent='Descarga el QR o el póster de esta tarjeta y ponlo en tu mostrador para que tus clientes la instalen.';
+      if(cta) cta.style.display='none';
+    }else{
+      document.getElementById('cdInsightTitle').textContent=one+(one===1?' cliente está':' clientes están')+' a 1 sello del premio';
+      document.getElementById('cdInsightText').textContent='Envíales un recordatorio hoy: suelen volver dentro de 3 días tras recibirlo.';
+      if(cta) cta.style.display='';
+    }
     document.getElementById('cdKpis').innerHTML=
-      '<div class="card kpi"><div class="t">Tarjetas emitidas</div><div class="n">142</div><div class="d pos">+18 este mes</div></div>'+
-      '<div class="card kpi"><div class="t">Activos 30d</div><div class="n">98</div><div class="d">69% del total</div></div>'+
-      '<div class="card kpi"><div class="t">Sellos otorgados</div><div class="n">874</div><div class="d">total histórico</div></div>'+
-      '<div class="card kpi"><div class="t">Premios canjeados</div><div class="n">31</div><div class="d">tasa 58%</div></div>';
-    // left chart card
+      '<div class="card kpi"><div class="t">Clientes con la tarjeta</div><div class="n">'+n+'</div><div class="d">instalada en su wallet</div></div>'+
+      '<div class="card kpi"><div class="t">Activos 30d</div><div class="n">'+act+'</div><div class="d">'+pct(act)+'% del total</div></div>'+
+      '<div class="card kpi"><div class="t">Tarjetas llenas</div><div class="n">'+full+'</div><div class="d">listas para canjear</div></div>'+
+      '<div class="card kpi"><div class="t">Premios canjeados</div><div class="n">'+won+'</div><div class="d">de '+full+' tarjetas llenas</div></div>';
     document.getElementById('cdChartCard').innerHTML='<h4>Avance de los clientes</h4>'+
-      '<div class="barline"><span class="k">0–2 sellos</span><div class="track"><div class="fill" style="width:42%;background:#9fb0f2"></div></div><span class="v">60</span></div>'+
-      '<div class="barline"><span class="k">3–5 sellos</span><div class="track"><div class="fill" style="width:35%;background:#5e74ec"></div></div><span class="v">50</span></div>'+
-      '<div class="barline"><span class="k">6+ sellos</span><div class="track"><div class="fill" style="width:22%;background:#2f40d6"></div></div><span class="v">32</span></div>'+
-      '<div class="statline" style="margin-top:6px"><span class="k">A 1 sello del premio</span><span class="v warn">12 clientes</span></div>';
+      '<div class="barline"><span class="k">0–2 sellos</span><div class="track"><div class="fill" style="width:'+pct(b1)+'%;background:#9fb0f2"></div></div><span class="v">'+b1+'</span></div>'+
+      '<div class="barline"><span class="k">3–5 sellos</span><div class="track"><div class="fill" style="width:'+pct(b2)+'%;background:#5e74ec"></div></div><span class="v">'+b2+'</span></div>'+
+      '<div class="barline"><span class="k">6+ sellos</span><div class="track"><div class="fill" style="width:'+pct(b3)+'%;background:#2f40d6"></div></div><span class="v">'+b3+'</span></div>'+
+      '<div class="statline" style="margin-top:6px"><span class="k">A 1 sello del premio</span><span class="v warn">'+one+(one===1?' cliente':' clientes')+'</span></div>';
     // right data card
     const bdayChanLbl={whatsapp:'WhatsApp',sms:'SMS'}[d.bdayChan]||'WhatsApp';
     const bdayRow=d.bdayOn
@@ -2641,8 +2648,8 @@ function updateCardEverywhere(art,d){
     document.getElementById('cdDataCard').innerHTML='<h4>Datos de la tarjeta</h4>'+
       '<div class="statline" style="border-top:none;padding-top:6px"><span class="k">Recompensa</span><span class="v">'+(d.reward||'—')+'</span></div>'+
       '<div class="statline"><span class="k">Sellos para canjear</span><span class="v">'+d.stamps+'</span></div>'+
-      '<div class="statline"><span class="k">Locales activos</span><span class="v">3</span></div>'+
-      '<div class="statline"><span class="k">Creada</span><span class="v">12 feb 2026</span></div>'+
+      '<div class="statline"><span class="k">Sellos por visita</span><span class="v">'+d.perVisit+'</span></div>'+
+      '<div class="statline"><span class="k">Creada</span><span class="v">'+(d.created||'12 feb 2026')+'</span></div>'+
       bdayRow+
       '<div class="statline"><span class="k">Estado</span><span class="v pos">Activa</span></div>';
     document.getElementById('cdQR').innerHTML=qrSVG(d.name,150,'#15171a','#ffffff');
@@ -2682,8 +2689,9 @@ function updateCardEverywhere(art,d){
   modal.addEventListener('mousedown',e=>{if(e.target===modal)close();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))close();});
 
-  window.openViewCard=function(art){
+  window.openViewCard=function(art,justCreated){
     const d=readCardData(art); current=d;
+    document.getElementById('vmSub').textContent=justCreated?'Imprime el póster y ponlo en tu mostrador para que tus clientes la instalen':'y haz que vuelvan por más';
     vmCard.style.setProperty('--bg',d.bg);vmCard.style.setProperty('--ink',d.ink);
     vmName.textContent=d.name;
     vmReward.textContent=d.reward||'—';
@@ -2720,7 +2728,7 @@ function updateCardEverywhere(art,d){
     poster.style.setProperty('--pink', light?'#15171a':'#ffffff');
     document.getElementById('posterLogo').innerHTML=d.iconSVG;
     document.getElementById('posterBrand').textContent='Café Luna';
-    document.getElementById('posterTitle').textContent='Descarga nuestra tarjeta de fidelidad aquí';
+    document.getElementById('posterTitle').textContent='Descarga nuestra tarjeta de sellos aquí';
     document.getElementById('posterQR').innerHTML=qrSVG(d.name,300,'#15171a','#ffffff');
     document.body.classList.add('printing-poster');
     const after=()=>{document.body.classList.remove('printing-poster');window.removeEventListener('afterprint',after);};
@@ -3347,7 +3355,7 @@ document.querySelectorAll('#range button').forEach(b=>{
     confirmAsk({title:'Quitar 1 sello',text:'Se restará un sello a '+cur.n+' en '+cd.name+'. Quedará '+(cc.v-1)+'/'+cc.max+'.',ok:'Quitar sello',danger:true,
       onOk:()=>{cc.v--;pushHist(cur,activeKey,'−1 sello');repaint();}});}
   const ACT={add:actAddStamp,rem:actRemStamp};
-  document.getElementById('drActive').addEventListener('click',e=>{
+  document.getElementById('drWallet').addEventListener('click',e=>{
     const b=e.target.closest('[data-act]'); if(!b||!cur||b.disabled) return;
     const fn=ACT[b.dataset.act]; if(fn) fn();
   });

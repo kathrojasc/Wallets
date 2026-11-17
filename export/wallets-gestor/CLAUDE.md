@@ -20,7 +20,7 @@ Es un **prototipo de alta fidelidad**, no un producto con backend. Data mock, si
 - **Estado:** en memoria (arrays JS mock) + `localStorage` para lo persistente:
   - `w2_plan` → plan actual: `free` | `starter` | `growth`.
   - `w2_prof_rules` → reglas de perfilado de clientes (VIP/Habitual/Casual/En riesgo) configuradas en "Mis clientes".
-  - `w2_scan_insight_min` → si el insight de App Scanner está minimizado.
+  - `w2_scan_insight_min` → si el aviso de la App de caja (antes «App Scanner») está minimizado.
   - `w2_cards_view` → vista de "Mis tarjetas": `grid` | `list`.
 - **Estilos:** `assets/styles.css`. Tokens de diseño en `:root` (colores, radio, sombra, ancho máx.). Todos los íconos son **SVG inline** o `data:` URIs en el CSS; no hay librería de íconos.
 
@@ -63,7 +63,7 @@ Reutiliza estos patrones en vez de inventar nuevos:
 - `.grid.g4` / `.g3` / `.g2` / `.gauto` — rejillas (gauto = `auto-fit minmax(250px,1fr)`).
 - `.pill` (+ `.hab` / `.cas` / `.risk`) — etiquetas de perfil de cliente.
 - `.badge` (+ `.alerta` / `.oport` / `.logro` / `.tip` / `.tend`) — etiquetas de insight.
-- `.kindseg` — selector segmentado (tabs) de Estadísticas.
+- Estadísticas es una sola vista con dos secciones (`.sec-label` «Tus clientes» y «Tus tarjetas y premios»); no hay tabs (`.kindseg` se eliminó al quedar un único tipo de tarjeta).
 - `.lockpanel` / `.lockrow` / `.up-badge` — bloques "disponible en plan superior".
 - `.js-detail` + `.card-detail` — patrón de **detalle inline expandible** dentro de una tarjeta (drill-down sin modal).
 - Modales: `.modal-overlay` + `.modal` con clase `.open`; cerrar con Escape / click en overlay / botón `.sm-close`.
@@ -83,7 +83,7 @@ Ver `PROJECT_CONTEXT.md` → sección "Sistema de diseño" para colores HEX, tip
 
 ## Componentes que deben reutilizarse
 
-`.card`, `.kpi`, `.chart-card`, `.vcard`, `.pill`, `.badge`, `.kindseg`, `.lockpanel`, `.js-detail`/`.card-detail`, modales `.modal-overlay/.modal`, toast `.in-toast`. Antes de crear uno nuevo, busca si ya existe.
+`.card`, `.kpi`, `.chart-card`, `.vcard`, `.pill`, `.badge`, `.lockpanel`, `.js-detail`/`.card-detail`, modales `.modal-overlay/.modal`, toast `.in-toast`. Antes de crear uno nuevo, busca si ya existe.
 
 ## Archivos que NO se deben modificar innecesariamente
 
@@ -106,6 +106,6 @@ Ver `PROJECT_CONTEXT.md` (secciones DONE / IN PROGRESS / TODO / KNOWN ISSUES).
 
 1. ¿El cambio respeta el lenguaje llano y "menos es más" de la UI?
 2. ¿Reutiliza tokens y componentes existentes?
-3. ¿Mantiene la coherencia entre las 2 pestañas de Estadísticas (General/Sellos) y el gating por plan?
+3. ¿Mantiene la coherencia de Estadísticas (una vista, dos secciones) y el gating por plan? ¿Las cifras mock coinciden entre pantallas (Inicio, Estadísticas, Mis clientes, detalle de tarjeta)? Ver «Coherencia de cifras mock» en `PROJECT_CONTEXT.md`.
 4. ¿Conserva el mapeo indicador → plan según el Excel de referencia (ver PROJECT_CONTEXT)?
 5. Ante la duda sobre alcance, pregunta antes de rediseñar zonas no solicitadas.

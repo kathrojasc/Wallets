@@ -20,7 +20,7 @@ Gestores de local en Perú (cafeterías, restaurantes, gimnasios, spas, retail d
 - **Crear tarjeta:** el botón «Crear nueva tarjeta» abre directo el formulario (ya no hay selector de tipo: solo existe la tarjeta de sellos) con vista previa de la tarjeta wallet, QR y póster imprimible.
 - **Mis clientes:** tabla de clientes con columna **Perfil** (VIP / Habitual / Casual / En riesgo); buscador y filtros; **panel de reglas de perfil** configurable por el gestor (por frecuencia de visitas/mes y recencia), persistido en `localStorage` (`w2_prof_rules`); drawer de detalle de cliente con su "billetera" (acordeón de sus tarjetas) y datos editables.
 - **Notificaciones:** crear campañas por segmento; sin opciones de cumpleaños (se movieron a la config de la tarjeta).
-- **App Scanner:** cuentas de scanner para el staff (usuario + contraseña) en **formato tabla**; modal de creación con credenciales; estado en línea, sellos dados y clientes nuevos por scanner; **insight con IA** minimizable (`w2_scan_insight_min`); resumen (KPIs) e insight arriba.
+- **App de caja** (antes «App Scanner»; la vista sigue llamándose `scanner`): cuentas para el staff (usuario + contraseña) en **formato tabla**; modal de creación con credenciales; estado en línea, sellos dados y clientes nuevos por scanner; **insight con IA** minimizable (`w2_scan_insight_min`); resumen (KPIs) e insight arriba.
 - **Estadísticas** (foco principal de las últimas iteraciones): ver más abajo.
 - **Configuración:** datos del negocio; **Plan y facturación** (movido aquí desde el menú); reglas; eliminar cuenta.
 - **Planes y checkout:** Free / Starter / Growth; el checkout activa el plan y actualiza toda la app (`window.__setPlan`, `localStorage w2_plan`).
@@ -34,12 +34,12 @@ Gestores de local en Perú (cafeterías, restaurantes, gimnasios, spas, retail d
 
 | Insight | Pantalla | Ficha | Plan |
 |---|---|---|---|
-| "20 clientes a 1 sello del premio" | Inicio (hero + top insights) | #5 | Free |
+| "12 clientes a 1 sello del premio" | Inicio (hero + lo más importante) | #5 | Free |
 | "12 clientes están a 1 sello del premio" | Detalle de tarjeta | #5 | Free |
 | "Tus clientes del programa visitan más seguido" | Mis clientes | #2 | Free |
 | "38 clientes llevan +21 días sin volver" | Notificaciones | #3 | Free |
 | "La tasa de canje bajó 12 pts" | Inicio | #8 | Starter |
-| "Los VIP crecieron +18%" | Inicio | #13 | Starter |
+| "Los VIP crecieron +20%" (36 vs. 30) | Inicio | #13 | Starter |
 | "Barranco tiene 20 pts menos de retención" | Locales | #16 | Growth |
 | Insight dinámico de retención | Detalle de local | #16 | Growth |
 
@@ -47,24 +47,24 @@ Mecanismo: cada bloque de insight lleva `class="ins-gate" data-tier="free|starte
 
 ### Estadísticas (detalle)
 
-- **2 pestañas** (`.kindseg`): **General · Sellos** (por defecto General). No hay pestaña "Todos".
+- **Una sola vista** con dos secciones: «Tus clientes» y «Tus tarjetas y premios». Ya no hay pestañas (con un único tipo de tarjeta General/Sellos no separaban nada).
 - Cada indicador es una tarjeta con `data-tier` = `free` | `starter` | `growth`. El **plan actual** decide qué se ve; al mejorar el plan, los indicadores de ese nivel aparecen con datos en su lugar.
 - **Detalle inline:** las tarjetas que lo ameritan tienen "Ver detalle" (`.js-detail`) que **expande dentro de la misma tarjeta** (`.card-detail`, a todo el ancho) una tabla con la lista real (clientes que se alejan, cerca del premio, top 10, premios sin reclamar, etc.). **No se usan modales** para esto.
-- **Panel lateral derecho "Ideas para hoy"** fijo y consistente en las 2 pestañas (sugerencias del asistente).
-- **Panel "También disponible en planes superiores"** por pestaña (`.lockpanel` / `.lockrow`): lista informativa de lo que se desbloquea; **sin botón de "Ver planes"** (el upgrade vive en el sidebar "Mejora tu plan").
+- **Panel lateral derecho "Ideas para hoy"** fijo y consistente (sugerencias del asistente).
+- **Panel "También disponible en planes superiores"** único al final (`.lockpanel` / `.lockrow`): lista informativa de lo que se desbloquea; **sin botón de "Ver planes"** (el upgrade vive en el sidebar "Mejora tu plan").
 
 ## Flujos de usuario principales
 
 1. **Onboarding → crear primera tarjeta:** bienvenida → "Crear tarjeta" → elegir tipo → diseñar → compartir QR/póster.
 2. **Registro de visita (conceptual):** el staff inicia sesión en la app scanner con el usuario/contraseña que le da el gestor; al escanear, se suma sello / uso y, si el cliente se registra, se atribuye a ese scanner.
-3. **Entender el negocio:** Estadísticas → elegir pestaña (General/Sellos) → leer KPIs → "Ver detalle" para ver la lista de clientes detrás del número → actuar (aviso/campaña).
+3. **Entender el negocio:** Estadísticas → recorrer las dos secciones → leer KPIs → "Ver detalle" para ver la lista de clientes detrás del número → actuar (aviso/campaña).
 4. **Actuar sobre clientes en riesgo:** Estadísticas o Ideas → "Ver clientes" → enviar recordatorio.
 5. **Mejorar de plan:** sidebar "Mejora tu plan" → Planes → Checkout → se activa y aparecen los indicadores del nuevo plan.
 
 ## Decisiones UX/UI importantes (con motivo)
 
 - **Lenguaje llano en toda la UI.** Motivo: público con poca formación técnica. Ej.: "Premios entregados" (no "tasa de canje"), "Clientes que vuelven" (no "retención"), "Clientes que se están alejando" (no "en riesgo de abandono").
-- **Estadísticas por pestañas (General / Sellos).** Motivo: antes los indicadores de sellos, membresías y generales estaban mezclados y desordenados (en esta variante la pestaña Membresías ya no existe); el usuario pidió un selector claro. Se descartó la pestaña "Todos" por redundante.
+- **Estadísticas en una sola vista con dos secciones.** Motivo: antes los indicadores de sellos, membresías y generales estaban mezclados y el usuario pidió un selector; al quedar un único tipo de tarjeta, las pestañas General/Sellos no separaban nada y «General» tenía 14 tarjetas contra 5 de «Sellos»; el usuario pidió un selector claro. Se descartó la pestaña "Todos" por redundante.
 - **Detalle inline (no modal).** Motivo: el usuario pidió explícitamente "vista interna en el widget" y rechazó los modales.
 - **Ideas en panel lateral derecho.** Motivo: antes se repetían en cada pestaña; el usuario lo marcó como redundante.
 - **Gating por plan con paneles informativos (no muros de tarjetas borrosas).** Motivo: la versión con ~15 tarjetas bloqueadas/borrosas saturaba al usuario Free. Se consolidó en un panel por pestaña + revelado real al mejorar el plan.
@@ -81,7 +81,7 @@ Mecanismo: cada bloque de insight lleva `class="ins-gate" data-tier="free|starte
 
 ## Casos de uso, estados vacíos y de error
 
-- **Estados vacíos:** "Mis tarjetas" y "Mis clientes" tienen empty-state con ilustración + CTA (p. ej. "Ir a Mis tarjetas"). App Scanner tiene su empty-state ("Aún no tienes scanners").
+- **Estados vacíos:** "Mis tarjetas" y "Mis clientes" tienen empty-state con ilustración + CTA (p. ej. "Ir a Mis tarjetas"). La App de caja tiene su empty-state ("Aún no tienes cuentas para tu staff").
 - **Validación:** el modal de crear scanner valida nombre obligatorio y unicidad de usuario; el panel de reglas de perfil valida que los umbrales vayan de mayor a menor.
 - **Estados de error:** al ser prototipo mock no hay errores de red; las acciones muestran un **toast** de confirmación (`.in-toast`).
 - **Feedback:** toasts para acciones (crear scanner, aplicar reglas, activar plan, "acción enviada" en los detalles).
@@ -91,7 +91,7 @@ Mecanismo: cada bloque de insight lleva `class="ins-gate" data-tier="free|starte
 - Layout de app con sidebar + main (`.app` flex). El sidebar puede colapsar (`.side.collapsed`).
 - Rejillas responsivas: `.gauto` = `repeat(auto-fit, minmax(250px,1fr))`.
 - Estadísticas usa layout de 2 columnas (contenido + panel lateral de Ideas); **por debajo de 1100px** el panel de Ideas pasa a apilarse (`@media(max-width:1100px)`).
-- Otros breakpoints en el CSS: `860px` (planes/onboarding), `820px`, `720px`, `640px` (pestañas de Estadísticas a ancho completo).
+- Otros breakpoints en el CSS: `860px` (planes/onboarding), `820px`, `720px`, `640px`.
 - Diseñado para escritorio primero (es un panel de gestión); usable en tablet.
 
 ## Restricciones
@@ -163,7 +163,7 @@ Colores de acento adicionales usados en componentes (no en `:root`): tipos de cl
 ### Espaciado
 
 - Rejillas: `gap:16px` base (`.grid`). Padding de tarjeta típico 20–24px.
-- Layout de Estadísticas: `gap:20px` entre contenido y panel lateral; `16px` entre filas de tarjetas dentro de una pestaña (`.kgroup .grid + .grid{margin-top:16px}`).
+- Layout de Estadísticas: `gap:20px` entre contenido y panel lateral; `16px` entre filas de tarjetas de Estadísticas (`.kgroup .grid + .grid{margin-top:16px}`).
 
 ### Border radius
 
@@ -181,7 +181,7 @@ Colores de acento adicionales usados en componentes (no en `:root`): tipos de cl
 
 ### Breakpoints
 
-`1100px` (panel de Ideas se apila), `860px` (planes/onboarding), `820px`, `720px`, `640px` (pestañas de Estadísticas full-width).
+`1100px` (panel de Ideas se apila), `860px` (planes/onboarding), `820px`, `720px`, `640px`.
 
 ### Componentes, variantes y estados
 
@@ -201,7 +201,7 @@ Escritorio primero; el panel de gestión colapsa el sidebar y apila el panel lat
 
 Base para el gating de Estadísticas. **No cambiar sin revisar el Excel.**
 
-- **FREE:** Tarjetas entregadas, Clientes activos (30 días), Frecuencia de visita, Clientes nuevos vs. que vuelven, Premios y canjes (canjes + tasa de canje), Altas menos bajas de tarjetas. *(Los indicadores FREE de membresías —activas, nuevas, vencidas sin renovar— no existen en la variante «solo tarjetas de recompensa».)*
+- **FREE:** Tarjetas entregadas, Clientes activos (30 días), Frecuencia de visita, Clientes nuevos vs. que vuelven, Premios y canjes (canjes + tasa de canje), «Tarjetas nuevas (neto)» (antes «Altas menos bajas»). *(Los indicadores FREE de membresías —activas, nuevas, vencidas sin renovar— no existen en la variante «solo tarjetas de recompensa».)*
 - **STARTER:** Retención ("clientes que vuelven"), Clientes que se están alejando, Días y horas con más visitas, Tipos de cliente (Casual/Habitual/VIP), **Edad y sexo** (demográficos — el Excel los ubica en Starter, no en Growth), Top 10 clientes (también replicado como tabla "Top clientes por frecuencia" en Inicio, indicador #25), Cerca del premio (1–2 sellos). *(Omitidos en esta variante: Renovación de membresías, Uso de la membresía, Niveles de membresía y De sellos a membresía.)*
 - **GROWTH:** **Todo el módulo "Locales"** (nav, crear/editar/ver local — no solo las comparativas: el Excel clasifica la sección completa como "MULTI-LOCAL — EXCLUSIVO GROWTH", indicadores #43–48), Comparar tus locales, Clientes de varios locales / embajadores, Perfiles avanzados (horario, patrón, velocidad de ciclo, ascendente), Dónde viven tus clientes (distrito). *(Omitido en esta variante: Ventas de tus socios / POS, que dependía de membresías. «Perfiles avanzados» pierde además su línea «Subieron de nivel».)*
 
@@ -212,18 +212,18 @@ Las listas de la vista **Planes** están alineadas con este mapeo.
 ## ESTADO ACTUAL
 
 ### DONE
-- Estadísticas con 2 pestañas (General/Sellos), gating por plan y revelado real al mejorar.
+- Estadísticas en una sola vista (dos secciones), gating por plan y revelado real al mejorar.
 - Detalle inline (drill-down) dentro de las tarjetas, sin modales.
-- Panel lateral "Ideas para hoy" consistente en las 2 pestañas.
-- Paneles "también disponible en planes superiores" por pestaña, sin CTA de Ver planes.
+- Panel lateral "Ideas para hoy" consistente.
+- Panel "también disponible en planes superiores" sin CTA de Ver planes.
 - Estado de plan persistente (`w2_plan`) que actualiza Estadísticas, Configuración y Planes.
-- App Scanner con cuentas de staff en tabla + insight minimizable.
+- App de caja con cuentas de staff en tabla + aviso minimizable.
 - Reglas de perfil de cliente configurables y persistentes.
 - Facturación integrada en Configuración; nombres de plan unificados Free/Starter/Growth.
 - **Design system formalizado** en un canvas de Claude Design (Foundations/Components/Patterns/Rules), extraído fielmente de `assets/styles.css`/`index.html` — ver enlace en la sección "Sistema de diseño" más abajo.
 - **Mis tarjetas:** mini-preview sin progreso simulado (regla fija "N sellos → premio" en vez de "X/10"), dato real de clientes por tarjeta (`.lc-stat`), alturas parejas entre tarjetas, toggle grilla/lista (`w2_cards_view`) reutilizando `.scanner-table`.
 - **Drawer de cliente** (`#cliDrawer`) en dos columnas (900px): billetera a la izquierda, datos/historial a la derecha.
-- **Componentes que antes eran oscuros sin token** ("Ideas para hoy", toast, botón Starter, App Scanner, wallet toggles) unificados al sistema claro; `.si-badge` reutiliza los mismos tintes que `.badge`.
+- **Componentes que antes eran oscuros sin token** ("Ideas para hoy", toast, botón Starter, App de caja, wallet toggles) unificados al sistema claro; `.si-badge` reutiliza los mismos tintes que `.badge`.
 - Colores casi-duplicados consolidados a los tokens `--green`/`--blue` (dots de estado, iconos de check, CTA del hero) — se conservan aparte los colores que son **elección de marca del gestor** (paleta de la tarjeta/local), que no son duplicados sino opciones reales.
 - Inter empaquetada localmente (`assets/fonts/`), sin dependencia del CDN.
 - **Locales gateado a Growth**: nav oculto en Free/Starter; `go()` intercepta accesos directos a `locales`/`crearLocal`/`localDetail` y redirige a Planes con toast.
@@ -284,13 +284,13 @@ Estas 5 decisiones estaban marcadas como "Pendiente de resolver (no cerrado en e
 
 | Decisión | Motivo | Alternativas descartadas | Qué evitar cambiar sin razón |
 |---|---|---|---|
-| Estadísticas en pestañas por tipo (hoy General / Sellos; antes también Membresías) | Ordenar indicadores mezclados; el usuario pidió un selector | Pestaña "Todos" (descartada por redundante); dropdown "Tarjeta" (reemplazado) | No reintroducir "Todos" ni mezclar tipos |
+| Estadísticas en pestañas por tipo (General / Sellos / Membresías) → una sola vista con dos secciones | Ordenar indicadores mezclados; el usuario pidió un selector. Con un único tipo de tarjeta las pestañas quedaron vacías de sentido | Pestaña "Todos"; dropdown "Tarjeta"; dejar 2 pestañas (General/Sellos) | No reintroducir pestañas por tipo salvo que vuelva a haber más de un tipo de tarjeta |
 | Drill-down inline en la tarjeta | Petición explícita de "vista interna"; rechazo a modales | Modal de detalle (implementado y luego retirado) | No volver a modales para el detalle |
 | Ideas en panel lateral derecho | Se repetían por pestaña (redundante) | Repetir bloque en cada pestaña | Mantener un único panel consistente |
 | Gating por plan con paneles informativos | ~15 tarjetas borrosas saturaban al usuario Free | Muro de tarjetas bloqueadas/borrosas | No volver al muro borroso |
 | Demográficos (edad/sexo) en Starter | El Excel los ubica en Starter | Tenerlos en Growth (era incongruente) | No moverlos a Growth |
 | Facturación dentro de Configuración | El usuario la sacó del menú; upgrade ya en sidebar | Item de menú "Facturación" | No devolverla al menú lateral |
-| App Scanner = cuentas usuario/contraseña en tabla | Modelo de staff pedido por el usuario; formato lista | Dispositivos por código de vinculación; cards | Mantener tabla y credenciales |
+| App de caja (antes «App Scanner») = cuentas usuario/contraseña en tabla | Modelo de staff pedido por el usuario; formato lista | Dispositivos por código de vinculación; cards | Mantener tabla y credenciales |
 | Reglas de perfil configurables | Coherencia del dato "Perfil" en toda la app | Perfiles fijos por umbrales hardcodeados | No hardcodear los umbrales |
 | Nombres de plan Free/Starter/Growth | Unificar con el lenguaje del usuario y el Excel | Free/Pro/Business (inconsistente) | No renombrar los planes |
 | Componentes oscuros pasados a claro (Ideas para hoy, toast, botón Starter, etc.) | No tenían token propio y rompían la coherencia con el resto de la app (100% clara) | Formalizar un token "superficie oscura" y dejarlos así | No reintroducir fondos oscuros sin token en componentes nuevos |
@@ -306,3 +306,13 @@ Estas 5 decisiones estaban marcadas como "Pendiente de resolver (no cerrado en e
 | Consentimiento de datos como checkbox obligatorio en onboarding | Mínimo exigible por la Ley N.° 29733 (Perú) para justificar el uso de datos de clientes | Dejar el registro sin mención a privacidad (como estaba) | No quitar `#onbConsent` ni la validación que bloquea `onbDone` sin marcarlo |
 | Confirmación (no bloqueo) al bajar de plan con locales | El downgrade no debe borrar datos de locales/staff, pero el gestor debe saber que los perderá de vista hasta subir de nuevo | Bloquear el downgrade por completo mientras haya >1 local; o bajar el plan en silencio sin avisar | No quitar el `confirmAsk` de `coPay` ni convertirlo en un bloqueo duro |
 | **Variante «solo tarjetas de recompensa»: se elimina el tipo Membresía** (rama `claude/solo-tarjetas-recompensa`) | El producto se simplifica a un único tipo de tarjeta: sellos / recompensa, gratuita para el cliente. Se quitó todo lo que dependía de membresías, en todas las pantallas: selector de tipo (`#tipoView`/vista `crearTipo`, ahora «Crear nueva tarjeta» abre directo el formulario), bloque de membresía del formulario (precio, usos, vigencia ilimitada), pestaña y grupo «Membresías» de Estadísticas (+ su lock panel), tarjetas mock «Gym · 10 Clases» y «Plan Café Ilimitado», chips «Fidelidad/Membresía» (con un solo tipo eran ruido), billetera del cliente (usos, check-in, renovar, «Socio»), drill-downs `dormant`/`renew`/`convert`, columnas «Socios»/«Membresía» en comparativas, insight «14 membresías vencen esta semana», KPI «Membresías vendidas hoy» (sustituido por «Premios por reclamar»), «Ventas de tus socios / POS» de Growth, líneas de copy en Planes y todo el CSS asociado. | Mantener un selector de tipo con una sola opción (descartado: un paso extra sin decisión); conservar los chips «Fidelidad» (descartado); dejar las membresías ocultas con un flag (descartado: dejaba código muerto). Locales/Growth se conservan: no dependían de membresías. | No reintroducir membresías, socios, niveles ni selector de tipo en esta rama. La versión completa con membresías sigue en `claude/prototype-review-20ahy1`. Los indicadores/fichas de membresías del Excel (`Dashboard_Final_v15.xlsx`) quedan simplemente fuera de esta variante, el Excel no se modificó. |
+| **Revisión de coherencia y lenguaje** (dueño de cafetería + UX) en la variante de sellos | Una evaluación como dueño de una cafetería peruana y como UX encontró cifras que se contradecían entre pantallas, jerga que un dueño no usa y fricciones en el flujo principal. Se corrigió: cifras (ver sección siguiente); hero de Inicio («Avisarles ahora» abre «Crear notificación» en vez de Estadísticas); precios de Planes y Checkout en **S/** (Free S/ 0, Starter S/ 89, Growth S/ 149, este último ya figuraba en el historial de facturación; **Starter S/ 89 es un valor provisional**); filtro «Local» visible solo en Growth (único plan con Locales); «Crear tarjeta» ya no se deshabilita: marca los campos faltantes y dice cuáles; ayudas bajo cada campo del formulario; al crear una tarjeta se abre «Comparte tu tarjeta» (QR, enlace, póster) para llevarla al mostrador; el detalle de tarjeta calcula sus métricas con los clientes de esa tarjeta (una tarjeta nueva muestra 0 y un estado vacío que invita a imprimir el QR); se corrigió el bug del drawer (Sumar/Quitar sello no hacían nada: el listener estaba en el contenedor equivocado). Lenguaje: «insight» → «sugerencia/dato/aviso», «push» → «aviso», «App scanner» → «App de caja», «tarjeta de fidelidad» → «tarjeta de sellos». | Dejar la jerga y solo documentarla; mantener el botón de crear desactivado con tooltip | No reintroducir «insight», «push» ni «scanner» en textos visibles; no volver a deshabilitar el botón de crear sin explicar qué falta; no hardcodear métricas distintas por pantalla. |
+
+### Coherencia de cifras mock (misma historia en todas las pantallas)
+
+- **Clientes nuevos del mes: 84** (KPI de Estadísticas, «Nuevos 38%», insight/Ideas «84 vs. 71 de tu promedio», «Tarjetas entregadas +84», «Clientes registrados +84», «Tarjetas nuevas (neto) +76 = 84 − 8»). Clientes activos 221 = 84 nuevos + 137 que vuelven.
+- **Cerca del premio:** 12 a 1 sello + 8 a 2 sellos = 20. Inicio, Estadísticas, Ideas y detalle de tarjeta usan 12 para «a 1 sello» (ficha #5, exactamente 1 sello). Las 4 tarjetas reparten esos 12 (7/2/2/1) por proporción de clientes.
+- **Frecuencia de visita: 2.4/mes** (Estadísticas y «Mis clientes»).
+- **Tipos de cliente** del detalle = reglas por defecto de perfil: Casual 1–2, Habitual 3–5, VIP ≥ 6 visitas/mes (el gestor puede cambiarlas). VIP: 36 (30 el mes pasado, +20%).
+- **Premios:** 74 tarjetas llenas = 43 reclamadas + 31 sin reclamar; el detalle de cada tarjeta reparte esas cifras por proporción de clientes.
+- **Planes y moneda:** todo en S/; Growth S/ 149 coincide con el historial de facturación.
