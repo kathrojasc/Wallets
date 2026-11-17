@@ -1110,7 +1110,7 @@ select.dr-input{cursor:pointer;-webkit-appearance:none;appearance:none}
 @media(max-width:1040px){.cli-kpis{grid-template-columns:1fr}.cli-slot{display:none}}
 @media(max-width:520px){.dr-stamp-controls{flex-wrap:wrap}.dr-lbl{flex-basis:90px}}
 /* el modal de confirmación va por encima del drawer y de todo */
-#confirmModal{z-index:200}
+#confirmModal,#delCardModal{z-index:200}
 
 /* ============================================================
    AUTH — login / crear cuenta (2 columnas)
@@ -1530,6 +1530,43 @@ body.empty-mode .empty-state{display:flex}
 .cli-cards{display:flex;flex-direction:column;gap:6px}
 .cli-chip{display:inline-flex;align-items:center;gap:8px;background:#f8fafc;border:1px solid #eef1f5;
   border-radius:9px;padding:5px 10px;font-size:12.5px;color:#334155;width:fit-content;max-width:340px}
+/* opciones tipo radio (regla de sellos, vencimiento, eliminar tarjeta) */
+.radio-card{display:flex;align-items:flex-start;gap:11px;width:100%;border:1px solid #e2e8f0;border-radius:11px;
+  padding:13px 15px;cursor:pointer;margin-bottom:10px;transition:.14s;font-size:13.5px;font-weight:500;
+  color:#334155;background:#fff;font-family:inherit;text-align:left}
+.radio-card:hover{border-color:#cbd5e1}
+.radio-card.sel{border-color:var(--blue);background:#f7f8fe}
+.radio-card b{display:block;font-weight:600;color:#1e293b}
+.radio-card small{display:block;font-size:12px;font-weight:400;color:#64748b;line-height:1.4;margin-top:2px}
+.radio-dot{width:20px;height:20px;flex:0 0 20px;border-radius:50%;border:1.6px solid #cbd5e1;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;color:#fff;transition:.14s}
+.radio-dot svg{width:11px;height:11px;opacity:0}
+.radio-card.sel .radio-dot{background:var(--blue);border-color:var(--blue)}
+.radio-card.sel .radio-dot svg{opacity:1}
+.input-prefix{display:flex;align-items:stretch;border:1px solid #e2e8f0;border-radius:11px;overflow:hidden;transition:.15s}
+.input-prefix:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px rgba(39,67,214,.12)}
+.input-prefix>span{display:flex;align-items:center;padding:0 12px;background:#f8fafc;color:#64748b;font-size:13.5px;font-weight:600;border-right:1px solid #e2e8f0}
+.input-prefix .input{border:none;border-radius:0;box-shadow:none}
+.input-prefix .input:focus{box-shadow:none}
+.input-prefix:has(.input.err){border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,.12)}
+/* eliminar tarjeta */
+.lc-actions .act-del{flex:0 0 40px;color:#c5342f}
+.lc-actions .act-del svg{color:#c5342f}
+.lc-actions .act-del:hover{background:#fdeaea;border-color:#f3c2c0}
+.dh-actions{display:flex;gap:10px;align-items:center}
+.cd-del{display:inline-flex;align-items:center;gap:8px;color:#c5342f}
+.cd-del svg{width:16px;height:16px}
+.cd-del:hover{background:#fdeaea;border-color:#f3c2c0;color:#b3261e}
+.del-modal{max-width:480px;text-align:left}
+.del-modal .cm-icon{margin:0 0 12px}
+.del-modal h3{text-align:left}
+.dc-warn{background:#fdeaea;border:1px solid #f3c2c0;color:#8f1f1a;border-radius:11px;padding:12px 14px;font-size:13px;line-height:1.5;margin-bottom:14px}
+.dc-warn b{display:block;font-weight:600}
+.del-modal .dc-clients{font-size:13.5px;color:#334155;margin-bottom:14px}
+.del-modal .fld{margin-bottom:6px}
+.dc-check{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:#334155;margin:6px 0 20px;cursor:pointer}
+.dc-check input{margin-top:2px;accent-color:#dc2626}
+.btn-primary.danger:disabled{opacity:.45;cursor:not-allowed}
 .cc-dot{width:9px;height:9px;border-radius:50%;flex:0 0 9px}
 .cc-nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cc-pr{margin-left:2px;color:#64748b;font-weight:500;white-space:nowrap;flex:0 0 auto}
